@@ -6,9 +6,11 @@ export default {
       "./resources/**/*.vue",
     ],
     theme: {
-      colors: {
-        'pizza-orange': '#ff5400',
-      },
+      extend: {
+        colors: {
+          'pizza-orange': '#ff5400',
+        }
+      }
     },
     plugins: [],
   }

@@ -9,7 +9,7 @@
         @vite('resources/css/app.css')
     </head>
     <body class="bg-pizza-orange">
-        <h1 class="p-24 text-3xl font-bold">
+        <h1 class="p-24 text-3xl text-white font-bold">
             {{ config('app.name') }}
         </h1>
     </body>
