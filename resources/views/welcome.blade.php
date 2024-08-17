@@ -13,18 +13,18 @@
             {{ config('app.name') }}
         </h1>
         <div class="flex px-16 space-x-10 text-white">
-            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
+            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
+            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
+            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
+            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
+            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
         </div>
         <div class="flex mt-8 px-16 space-x-10 text-white">
-            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-            <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
+            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
+            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
+            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
+            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
+            <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
         </div>
         <h2 class="px-16 mt-24 text-3xl text-white font-bold">
             TEAM
