@@ -5,8 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ config('app.name') }}</title>
-    </head>
-    <body>
 
+        @vite('resources/css/app.css')
+    </head>
+    <body class="bg-pizza-orange">
+        <h1 class="p-24 text-3xl font-bold">
+            {{ config('app.name') }}
+        </h1>
     </body>
 </html>
