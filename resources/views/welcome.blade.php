@@ -7,6 +7,10 @@
         <title>{{ config('app.name') }}</title>
 
         @vite('resources/css/app.css')
+
+        @if(config('services.fathom.site_id'))
+        <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
+        @endif
     </head>
     <body class="bg-pizza-orange">
         <h1 class="p-16 text-3xl text-white font-bold">
