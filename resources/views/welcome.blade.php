@@ -9,8 +9,16 @@
         @vite('resources/css/app.css')
     </head>
     <body class="bg-pizza-orange">
-        <h1 class="p-24 text-3xl text-white font-bold">
+        <h1 class="p-16 text-3xl text-white font-bold">
             {{ config('app.name') }}
         </h1>
+
+        <div class="flex p-16 space-x-10 text-white">
+            <x-icon-pizza-slice class="w-24"/>
+            <x-icon-pizza-slice class="w-24"/>
+            <x-icon-pizza-slice class="w-24"/>
+            <x-icon-pizza-slice class="w-24"/>
+            <x-icon-pizza-slice class="w-24"/>
+        </div>
     </body>
 </html>
