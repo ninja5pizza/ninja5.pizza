@@ -99,6 +99,14 @@ return [
 
         ],
 
+        'ninjas' => [
+
+            'path' => 'resources/svg/ninjas',
+
+            'prefix' => 'ninjas',
+
+        ]
+
     ],
 
     /*
