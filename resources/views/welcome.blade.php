@@ -45,7 +45,11 @@
         </h2>
         <div class="flex px-16 mt-8 space-x-10 text-white">
             <div class="flex flex-col">
-                <a href="https://x.com/OfficialKeptain" target="_blank">
+                <a
+                    href="https://x.com/OfficialKeptain"
+                    class="hover:text-orange-100"
+                    target="_blank"
+                >
                     <x-ninjas-181 class="w-24 border rounded-lg"/>
                     <span class="mt-1 text-xs">
                         @OfficialKeptain
@@ -54,7 +58,11 @@
             </div>
 
             <div class="flex flex-col">
-                <a href="https://x.com/KimiBoyNFT" target="_blank">
+                <a
+                    href="https://x.com/KimiBoyNFT"
+                    class="hover:text-orange-100"
+                    target="_blank"
+                >
                     <x-ninjas-110 class="w-24 border rounded-lg"/>
                     <span class="mt-1 text-xs">
                         @KimiBoyNFT
@@ -63,7 +71,11 @@
             </div>
 
             <div class="flex flex-col">
-                <a href="https://x.com/sjen_anoubis" target="_blank">
+                <a
+                    href="https://x.com/sjen_anoubis"
+                    class="hover:text-orange-100"
+                    target="_blank"
+                >
                     <x-ninjas-268 class="w-24 border rounded-lg"/>
                     <span class="mt-1 text-xs">
                         @sjen_anoubis
@@ -72,7 +84,11 @@
             </div>
 
             <div class="flex flex-col">
-                <a href="https://x.com/mca_chef" target="_blank">
+                <a
+                    href="https://x.com/mca_chef"
+                    class="hover:text-orange-100"
+                    target="_blank"
+                >
                     <x-ninjas-962 class="w-24 border rounded-lg"/>
                     <span class="mt-1 text-xs">
                         @mca_chef
@@ -81,7 +97,11 @@
             </div>
 
             <div class="flex flex-col">
-                <a href="https://x.com/mvdnbrk" target="_blank">
+                <a
+                    href="https://x.com/mvdnbrk"
+                    class="hover:text-orange-100"
+                    target="_blank"
+                >
                     <x-ninjas-874 class="w-24 border rounded-lg"/>
                     <span class="mt-1 text-xs">
                         @mvdnbrk
