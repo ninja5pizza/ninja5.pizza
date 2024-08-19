@@ -89,5 +89,20 @@
                 </a>
             </div>
         </div>
+        <h3 class="px-16 mt-24 text-3xl text-white font-bold">
+            FOLLOW US
+        </h3>
+        <div class="flex mt-8 px-16 text-white">
+            <a
+                href="https://x.com/ninja5_pizza"
+                class="hover:text-orange-100"
+                target="_blank"
+            >
+                <x-icon-twitter-x class="w-8"/>
+            </a>
+        </div>
+        <footer class="my-16 border-t">
+
+        </footer>
     </body>
 </html>
