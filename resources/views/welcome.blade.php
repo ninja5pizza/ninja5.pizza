@@ -46,13 +46,13 @@
         <div class="flex px-16 mt-8 space-x-10 text-white">
             <div class="flex flex-col">
                 <a
-                    href="https://x.com/OfficialKeptain"
+                    href="https://x.com/billybitcoins"
                     class="hover:text-orange-100"
                     target="_blank"
                 >
-                    <x-ninjas-181 class="w-24 border rounded-lg"/>
+                    <x-ninjas-807 class="w-24 border rounded-lg"/>
                     <span class="mt-1 text-xs">
-                        @OfficialKeptain
+                        @billybitcoins
                     </span>
                 </a>
             </div>
