@@ -25,7 +25,7 @@
     <body class="bg-pizza-orange">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-3xl">
-                <h1 class="mt-4 text-3xl text-white font-bold">
+                <h1 class="mt-8 text-3xl text-white font-bold">
                     {{ config('app.name') }}
                 </h1>
             </div>
@@ -33,7 +33,7 @@
 
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-3xl">
-                <div class="mt-8 flex space-x-10 text-white">
+                <div class="mt-16 flex space-x-10 text-white">
                     <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
                     <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
                     <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
