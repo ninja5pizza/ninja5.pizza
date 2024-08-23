@@ -156,8 +156,10 @@
             </div>
         </div>
 
-        <footer class="my-16 border-t">
-
+        <footer class="my-16 border-t border-white pt-8 sm:mt-20 lg:mt-24">
+            <p class="text-center text-xs leading-5 text-white">
+                &copy; 2024 {{ config('app.name') }}. All rights reserved.
+            </p>
         </footer>
     </body>
 </html>
