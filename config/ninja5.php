@@ -4,11 +4,15 @@ return [
 
     'billybitcoins' => [
 
+        'inscription_id' => '9d6e3f1c019acaaf89dfbb53432ee654bfa0aa7260848db5e579b5a669a83e38i2'
+
         'pizza_ninjas_number' => 807,
 
     ],
 
     'KimiBoyNFT' => [
+
+        'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i95',
 
         'pizza_ninjas_number' => 110,
 
@@ -16,17 +20,23 @@ return [
 
     'mca_chef' => [
 
+        'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i5',
+
         'pizza_ninjas_number' => 962,
 
     ],
 
     'mvdbbrk' => [
 
+        'inscription_id' => '9d6e3f1c019acaaf89dfbb53432ee654bfa0aa7260848db5e579b5a669a83e38i69',
+
         'pizza_ninjas_number' => 874,
 
     ],
 
     'sjen_anoubis' => [
+
+        'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i88',
 
         'pizza_ninjas_number' => 268,
 
