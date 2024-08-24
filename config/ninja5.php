@@ -4,7 +4,7 @@ return [
 
     'billybitcoins' => [
 
-        'inscription_id' => '9d6e3f1c019acaaf89dfbb53432ee654bfa0aa7260848db5e579b5a669a83e38i2'
+        'inscription_id' => '9d6e3f1c019acaaf89dfbb53432ee654bfa0aa7260848db5e579b5a669a83e38i2',
 
         'inscription_number' => 56255086,
 
