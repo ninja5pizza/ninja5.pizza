@@ -23,34 +23,13 @@
         @endif
     </head>
     <body class="bg-pizza-orange">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl">
-                <h1 class="mt-8 text-3xl text-white font-bold">
-                    {{ config('app.name') }}
-                </h1>
-            </div>
+        <div class="bg-pizza-orange h-2">
         </div>
 
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl">
-                <div class="mt-16 flex space-x-10 text-white">
-                    <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-ninja class="p-4 w-24 border rounded-lg"/>
-                </div>
-            </div>
-        </div>
-
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl">
-                <div class="flex mt-8 space-x-10 text-white">
-                    <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
-                    <x-icon-pizza-slice class="p-4 w-24 border rounded-lg"/>
+        <div class="bg-gray-50">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-3xl">
+                    <x-icon-logo title="NINJA5.pizza"/>
                 </div>
             </div>
         </div>
