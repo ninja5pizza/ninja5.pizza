@@ -59,9 +59,9 @@
 
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl">
-                <div class="flex mt-8 space-x-10 text-white">
+                <div class="flex flex-col md:flex-row mt-8 md:space-x-10 text-white">
                     @foreach(config('ninja5') as $key => $value)
-                    <div class="flex flex-col">
+                    <div class="flex flex-col mt-4 md:mt-0">
                         <a
                             href="https://x.com/{{ $key }}"
                             class="hover:text-orange-100"
