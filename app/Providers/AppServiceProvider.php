@@ -21,8 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::share('ninja5', new NinjaFive(
-            config('ninja5')
-        ));
+        //
     }
 }
