@@ -32,7 +32,7 @@ return [
 
     ],
 
-    'mvdbnrk' => [
+    'mvdnbrk' => [
 
         'inscription_id' => '9d6e3f1c019acaaf89dfbb53432ee654bfa0aa7260848db5e579b5a669a83e38i69',
 
