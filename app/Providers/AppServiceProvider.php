@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\NinjaFive;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
