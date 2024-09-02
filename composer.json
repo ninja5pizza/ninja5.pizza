@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "mvdnbrk/ninja5.pizza",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "The website for ninja5.pizza",
+    "keywords": ["ninja", "5", "five", "pizza", "ninjas"],
     "license": "MIT",
     "require": {
         "php": "^8.3",
