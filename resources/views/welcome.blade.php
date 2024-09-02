@@ -44,7 +44,9 @@
         <div class="bg-gray-50">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-3xl">
-                    <x-icon-logo/>
+                    <div class="ninja5-logo">
+                        <x-icon-logo-animated/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,5 +134,17 @@
                 &copy; 2024 {{ config('app.name') }}. All rights reserved.
             </p>
         </footer>
+
+        <script>
+        var wrapper = document.querySelector('.ninja5-logo svg')
+
+        function draw() {
+            wrapper.classList.add('active')
+        }
+
+        document.addEventListener("DOMContentLoaded", function(e) {
+            setTimeout(draw, 150)
+        })
+        </script>
     </body>
 </html>
