@@ -51,6 +51,21 @@
             </div>
         </div>
 
+        @if(Cache::has('bitcoin_price'))
+        <div class=" bg-neutral-900">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-center mx-auto max-w-3xl space-x-2 py-1 text-xs font-medium leading-6 text-neutral-400">
+                    <dt>
+                        BITCOIN PRICE
+                    </dt>
+                    <dd>
+                        {{ Number::currency(Cache::get('bitcoin_price'), in: 'USD') }}
+                    </dd>
+                </div>
+            </div>
+        </div>
+        @endif
+
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl">
                 <h2 class="mt-24 text-3xl text-white font-bold">
