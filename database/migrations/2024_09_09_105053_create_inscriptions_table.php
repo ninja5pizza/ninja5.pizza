@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('inscription_id')->unique();
             $table->string('name')->nullable();
+            $table->json('meta')->nullable();
             $table->timestamps();
         });
     }
