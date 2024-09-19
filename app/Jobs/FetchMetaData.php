@@ -9,15 +9,12 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 
-class FetchMetaData implements ShouldQueue, ShouldBeUnique
+class FetchMetaData implements ShouldQueue
 {
     use Dispatchable, Queueable, SerializesModels;
 
     public string $url;
-
-    public $uniqueFor = 1;
 
     public function __construct(
         public Inscription $inscription,
