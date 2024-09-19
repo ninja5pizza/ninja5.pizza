@@ -35,6 +35,10 @@ return [
         ],
     ],
 
+    'horizon' => [
+        'token' => env('HORIZON_TOKEN'),
+    ],
+
     'fathom' => [
         'site_id' => env('FATHOM_SITE_ID'),
     ],
