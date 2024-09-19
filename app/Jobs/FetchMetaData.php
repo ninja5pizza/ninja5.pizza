@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use Exception;
 use App\Models\Inscription;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Queue\SerializesModels;
@@ -27,6 +28,10 @@ class FetchMetaData implements ShouldQueue, ShouldBeUnique
     public function handle(): void
     {
         $response = Http::get($this->url);
+
+        if (! $response->successful()) {
+            throw new Exception("HTTP Request failed with status: ".$response->status());
+        }
 
         if ($response->successful()) {
             $json = $this->extractJsonFromHtml($response->body());
