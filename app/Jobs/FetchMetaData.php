@@ -5,7 +5,6 @@ namespace App\Jobs;
 use App\Models\Inscription;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -13,7 +12,7 @@ use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class FetchMetaData implements ShouldQueue, ShouldBeUnique
 {
-    use Dispatchable, Queueable;
+    use Dispatchable, Queueable, SerializesModels;
 
     public string $url;
 
