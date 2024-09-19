@@ -14,7 +14,7 @@ class FetchNinjaMetaData extends Command
 
     public function handle()
     {
-        foreach (Inscription::all() as $inscription) {
+        foreach (Inscription::whereNull('meta')->all() as $inscription) {
             FetchMetaData::dispatch($inscription);
 
             $this->info('Fetching meta data for '.$inscription->name.'.');
