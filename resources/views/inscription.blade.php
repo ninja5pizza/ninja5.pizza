@@ -48,6 +48,18 @@
             </div>
         </main>
 
+        <section class="mt-12">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="bg-slate-900 rounded mx-auto max-w-2xl">
+                    <pre class="text-sm leading-6 text-slate-50 flex ligatures-none overflow-auto">
+                        <code>
+                            {{ json_encode($inscription->meta, JSON_PRETTY_PRINT) }}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
         <footer class="my-16 border-t border-orange-200 pt-8 sm:mt-20 lg:mt-24">
             <div class="flex flex-col md:flex-row items-center justify-center space-x-4 text-white">
                 <div class="mt-4 flex space-x-4">
