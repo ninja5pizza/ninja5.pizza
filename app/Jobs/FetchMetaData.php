@@ -33,7 +33,7 @@ class FetchMetaData implements ShouldQueue
         if ($response->successful()) {
             $json = $this->extractJsonFromHtml($response->body());
 
-            $this->inscription->meta = $json;
+            $this->inscription->meta = json_decode($json, true);
 
             $this->inscription->save();
         }

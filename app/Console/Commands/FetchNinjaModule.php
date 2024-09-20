@@ -36,7 +36,7 @@ class FetchNinjaModule extends Command
     public function fetchAllNinjaModuleSvgs(): void
     {
         foreach (Inscription::whereNotNull('meta')->get() as $inscription) {
-            collect(json_decode($inscription->meta, true))
+            collect($inscription->meta)
                 ->each(function ($item) {
                     FetchNinjaModuleSvg::dispatch($item['id']);
                 });

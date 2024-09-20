@@ -15,6 +15,13 @@ class Inscription extends Model
         'name',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'meta' => 'array',
+        ];
+    }
+
     protected function getInternalCollectionId(): int
     {
         return (int) Str::of($this->name)
