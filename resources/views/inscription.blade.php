@@ -51,7 +51,7 @@
         <section class="mt-12">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="bg-slate-900 rounded mx-auto max-w-2xl">
-                    <pre class="text-sm leading-6 text-slate-50 flex ligatures-none overflow-auto">
+                    <pre class="p-4 text-sm leading-6 text-slate-50 flex ligatures-none overflow-auto">
                         <code>
                             {{ json_encode($inscription->meta, JSON_PRETTY_PRINT) }}
                         </code>
