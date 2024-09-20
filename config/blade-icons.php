@@ -107,6 +107,14 @@ return [
 
         ],
 
+        'ninjamodule' => [
+
+            'path' => 'resources/svg/ninja_modules',
+
+            'prefix' => 'ninjamodule',
+
+        ],
+
     ],
 
     /*
