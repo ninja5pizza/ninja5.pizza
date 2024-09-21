@@ -50,15 +50,26 @@
 
         <section class="mt-12">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="bg-slate-900 rounded mx-auto max-w-2xl">
+                <div class="bg-slate-900 rounded-md mx-auto max-w-2xl">
                     <pre class="p-4 text-sm leading-6 text-slate-50 flex ligatures-none overflow-auto">
-                        <code>
-                            {{ json_encode($inscription->meta, JSON_PRETTY_PRINT) }}
-                        </code>
+                        <code>{{ json_encode($inscription->meta, JSON_PRETTY_PRINT) }}</code>
                     </pre>
                 </div>
             </div>
         </section>
+
+        <section class="mt-12">
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-4">
+                @foreach(collect($inscription->meta) as $key => $value)
+                    @if ($value['id'])
+                        @svg('ninjamodule-'.$value['id'], 'w-42 border rounded-lg')
+                    @endif
+                @endforeach
+                </div>
+            </div>
+        </section>
+
 
         <footer class="my-16 border-t border-orange-200 pt-8 sm:mt-20 lg:mt-24">
             <div class="flex flex-col md:flex-row items-center justify-center space-x-4 text-white">
