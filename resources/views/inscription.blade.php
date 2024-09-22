@@ -59,7 +59,7 @@
                                 <div class="w-2 h-2 rounded-full bg-green-500"></div>
                             </div>
                             <div class="text-slate-400 text-sm font-semibold">
-                                ninja.module
+                                ninja.load
                             </div>
                         </div>
                         <div class="p-4 h-[calc(100%-40px)]">
