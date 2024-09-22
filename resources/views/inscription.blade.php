@@ -12,11 +12,11 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="{{ config('app.name') }}">
         <meta property="og:description" content="We are the NINJA5 from the Pizza Ninjas Bootcamp 2024">
-        <meta property="og:image" content="{{ asset('images/twitter-card-large.png') }}">
+        <meta property="og:image" content="{{ asset('images/240902-twitter-card-large.png') }}">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ config('app.name') }}">
-        <meta name="twitter:image" content="{{ asset('images/twitter-card-large.png') }}">
+        <meta name="twitter:image" content="{{ asset('images/240902-twitter-card-large.png') }}">
 
         <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/favicons/apple-icon-57x57.png') }}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/favicons/apple-icon-60x60.png') }}">
