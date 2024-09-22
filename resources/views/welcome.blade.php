@@ -49,9 +49,8 @@
                 @foreach(config('ninja5') as $key => $value)
                 <div class="flex flex-col mt-4 md:mt-0">
                     <a
-                        href="https://x.com/{{ $key }}"
+                        href="{{ route('profile', ['handle' => $key]) }}"
                         class="hover:text-orange-100"
-                        target="_blank"
                     >
                         @svg('ninjas.'.$value['pizza_ninjas_number'], 'w-24 border rounded-lg')
                         <span class="mt-1 text-xs">
