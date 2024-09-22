@@ -10,7 +10,7 @@
     </div>
 
     @if(Cache::has('bitcoin_price') && Cache::has('ordinals_collection_stats_pizza-ninjas'))
-    <div class=" bg-neutral-900">
+    <div class="bg-neutral-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-center mx-auto max-w-3xl space-x-2 py-1 text-xs font-medium leading-6 text-neutral-400">
                 <div class="flex space-x-2">
