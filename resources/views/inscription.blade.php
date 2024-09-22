@@ -50,10 +50,24 @@
 
         <section class="mt-12">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="bg-slate-900 rounded-md mx-auto max-w-2xl">
-                    <pre class="p-4 text-sm leading-6 text-slate-50 flex ligatures-none overflow-auto">
-                        <code>{{ json_encode($inscription->meta, JSON_PRETTY_PRINT) }}</code>
-                    </pre>
+                <div class="mx-auto max-w-2xl">
+                    <div class="bg-material-theme-ocean rounded-lg shadow-lg overflow-auto">
+                        <div class="flex justify-between gap-2 px-6 py-4 border-b border-slate-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-slate-400 text-sm font-semibold">
+                                ninja.module
+                            </div>
+                        </div>
+                        <div class="p-4 h-[calc(100%-40px)]">
+                            <div class="language-json">
+                                {!! json_encode($inscription->meta) !!}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,5 +117,7 @@
                 &copy; 2024 {{ config('app.name') }}. All rights reserved.
             </p>
         </footer>
+
+        @vite('resources/js/app.js')
     </body>
 </html>

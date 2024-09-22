@@ -10,6 +10,7 @@ export default {
     extend: {
       colors: {
         'pizza-orange': '#ff5400',
+        'material-theme-ocean': '#0F111A',
       }
     }
   },
