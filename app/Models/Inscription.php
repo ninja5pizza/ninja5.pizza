@@ -24,6 +24,17 @@ class Inscription extends Model
         ];
     }
 
+    public function fullSvgExists(): bool
+    {
+        $filePath = resource_path('svg/ninjas/'.$this->getInternalCollectionId().'.svg');
+
+        if (File::exists($filePath)) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function getInternalCollectionId(): int
     {
         return (int) Str::of($this->name)
