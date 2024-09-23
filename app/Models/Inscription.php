@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Inscription extends Model
 {
@@ -34,7 +34,7 @@ class Inscription extends Model
 
     public function getShortenedInscriptionIdFor(string $id, $startLength = 5, $endLength = 5, $separator = '...'): string
     {
-        return substr($id, 0, $startLength) . $separator . substr($id, -$endLength);
+        return substr($id, 0, $startLength).$separator.substr($id, -$endLength);
     }
 
     public function getSvgComponentCount(): int
@@ -56,7 +56,7 @@ class Inscription extends Model
         $filePath = resource_path('svg/ninja_modules/'.$id.'.svg');
 
         if (File::exists($filePath)) {
-             return filesize($filePath);
+            return filesize($filePath);
         }
 
         return 0;
