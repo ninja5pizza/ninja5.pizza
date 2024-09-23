@@ -32,7 +32,7 @@ class Inscription extends Model
             ->__toString();
     }
 
-    public function getShortenedInscriptionIdFor(string $id, $startLength = 5, $endLength = 5, $separator = '...'): string
+    public function getShortenedInscriptionIdFor(string $id, $startLength = 8, $endLength = 8, $separator = '....'): string
     {
         return substr($id, 0, $startLength).$separator.substr($id, -$endLength);
     }
