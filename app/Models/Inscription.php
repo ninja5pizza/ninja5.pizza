@@ -22,7 +22,7 @@ class Inscription extends Model
         ];
     }
 
-    protected function getInternalCollectionId(): int
+    public function getInternalCollectionId(): int
     {
         return (int) Str::of($this->name)
             ->trim()
