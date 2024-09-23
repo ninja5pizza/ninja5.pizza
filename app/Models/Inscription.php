@@ -71,7 +71,9 @@ class Inscription extends Model
 
     public function getTraitTypeForInscriptionId(string $id, $upper = true): string
     {
-        $trait = (new Collection($this->meta))->where('id', $id)->first()['type'] ?? '';
+        $trait = (new Collection($this->meta))
+            ->where('id', $id)
+            ->first()['type'] ?? '';
 
         if ($upper) {
             return Str::of($trait)->upper();
