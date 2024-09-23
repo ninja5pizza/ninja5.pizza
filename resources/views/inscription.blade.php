@@ -37,7 +37,7 @@
                                 <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
                                 <div class="w-2 h-2 rounded-full bg-green-500"></div>
                             </div>
-                            <div class="text-slate-400 text-sm font-semibold">
+                            <div class="text-neutral-400 text-sm font-semibold">
                                 ninja.load
                             </div>
                         </div>
@@ -51,11 +51,26 @@
             </div>
         </section>
 
-        <section class="mt-12">
+        <section class="mt-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl">
+                    <h4 class="text-xl text-white text-center">
+                        {{ $inscription->name }} has {{ $inscription->getSvgComponentCount() }} components with a total size of {{ Number::fileSize($inscription->getSvgComponentsTotalFileSize(), precision: 2) }}
+                    </h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-6">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
                 @foreach($inscription->getSvgComponentsInscriptionIds() as $item)
-                    @svg('ninjamodule-'.$item, 'w-42 border rounded-lg')
+                    <x-svg-component-card
+                        :inscriptionId="$item"
+                        :shortInscriptionId="$inscription->getShortenedInscriptionIdFor($item)"
+                        :traitType="$inscription->getTraitTypeForInscriptionId($item)"
+                        :fileSize="$inscription->getSvgComponentFileSizeForId($item)"
+                    />
                 @endforeach
                 </div>
             </div>
