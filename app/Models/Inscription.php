@@ -69,6 +69,28 @@ class Inscription extends Model
         ))->pluck('id');
     }
 
+    public function getRawTraitForInscriptionId(string $id, $withSuffix = false): string
+    {
+        $string = (new Collection($this->meta))
+            ->where('id', $id)
+            ->first()['trait'] ?? '';
+
+        if ($withSuffix) {
+            return $string;
+        }
+
+        return Str::of($string)->before('.svg')->__toString();
+    }
+
+    public function getTraitForInscriptionId(string $id): Collection
+    {
+        $rawString = $this->getRawTraitForInscriptionId($id);
+
+        return Str::of($rawString)->split('/\__+/')->map(function ($item) {
+            return Str::of($item)->headline();
+        });
+    }
+
     public function getTraitTypeForInscriptionId(string $id, $upper = true): string
     {
         $trait = (new Collection($this->meta))

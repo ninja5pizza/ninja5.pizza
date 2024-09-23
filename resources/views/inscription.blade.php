@@ -55,7 +55,7 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl">
                     <h4 class="text-xl text-white text-center">
-                        {{ $inscription->name }} has {{ $inscription->getSvgComponentCount() }} components with a total size of {{ Number::fileSize($inscription->getSvgComponentsTotalFileSize(), precision: 2) }}
+                        {{ $inscription->name }} has {{ $inscription->getSvgComponentCount() }} components with a total file size of {{ Number::fileSize($inscription->getSvgComponentsTotalFileSize(), precision: 2) }}
                     </h4>
                 </div>
             </div>
@@ -69,6 +69,7 @@
                         :inscriptionId="$item"
                         :shortInscriptionId="$inscription->getShortenedInscriptionIdFor($item)"
                         :traitType="$inscription->getTraitTypeForInscriptionId($item)"
+                        :trait="$inscription->getTraitForInscriptionId($item)"
                         :fileSize="$inscription->getSvgComponentFileSizeForId($item)"
                     />
                 @endforeach
