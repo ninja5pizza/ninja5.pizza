@@ -21,9 +21,16 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl">
                     <div class="mt-24 flex flex-col md:flex-row justify-between">
-                        <h3 class="text-3xl text-white font-bold">
-                            {{ $inscription->name }}
-                        </h3>
+                        <div class="flex gap-2">
+                            <h3 class="text-3xl text-white font-bold">
+                                {{ $inscription->name }}
+                            </h3>
+                            @if($ninja5->isCoreMemberForInscriptionId($inscription->inscription_id))
+                                <div class="text-orange-200">
+                                    <x-icon-verified class="w-4"/>
+                                </div>
+                            @endif
+                        </div>
                         @if($inscription->fullSvgExists())
                             @svg('ninjas.'.$inscription->getInternalCollectionId(), 'mt-4 md:mt-0 w-48 border rounded-lg')
                         @endif
