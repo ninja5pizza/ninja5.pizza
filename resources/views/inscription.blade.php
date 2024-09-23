@@ -54,10 +54,8 @@
         <section class="mt-12">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row gap-4">
-                @foreach(collect($inscription->meta) as $key => $value)
-                    @if ($value['id'])
-                        @svg('ninjamodule-'.$value['id'], 'w-42 border rounded-lg')
-                    @endif
+                @foreach($inscription->getSvgComponentsInscriptionIds() as $item)
+                    @svg('ninjamodule-'.$item, 'w-42 border rounded-lg')
                 @endforeach
                 </div>
             </div>

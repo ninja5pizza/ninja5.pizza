@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Inscription extends Model
 {
@@ -28,5 +29,12 @@ class Inscription extends Model
             ->trim()
             ->after('#')
             ->__toString();
+    }
+
+    public function getSvgComponentsInscriptionIds(): Collection
+    {
+        return (new Collection(
+            $this->meta
+        ))->pluck('id');
     }
 }
