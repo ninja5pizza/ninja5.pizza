@@ -3,11 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Inscription;
-use App\Models\InscriptionTrait;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 
 class PizzaNinjasSeeder extends Seeder
 {

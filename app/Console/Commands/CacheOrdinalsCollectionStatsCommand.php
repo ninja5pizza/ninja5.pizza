@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Jobs\CacheOrdinalsCollectionStats;
+use Illuminate\Console\Command;
 
 class CacheOrdinalsCollectionStatsCommand extends Command
 {

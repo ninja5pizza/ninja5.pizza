@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\FetchNinjaModuleSvg;
 use App\Models\Inscription;
 use Illuminate\Console\Command;
-use App\Jobs\FetchNinjaModuleSvg;
 
 class FetchNinjaModule extends Command
 {
@@ -40,6 +40,6 @@ class FetchNinjaModule extends Command
                 ->each(function ($item) {
                     FetchNinjaModuleSvg::dispatch($item['id']);
                 });
-        };
+        }
     }
 }

@@ -3,11 +3,11 @@
 namespace App\Jobs;
 
 use Exception;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 
 class FetchNinjaModuleSvg implements ShouldQueue
 {
@@ -34,11 +34,11 @@ class FetchNinjaModuleSvg implements ShouldQueue
         $response = Http::get($this->url);
 
         if (! $response->successful()) {
-            throw new Exception("HTTP Request failed with status: ".$response->status());
+            throw new Exception('HTTP Request failed with status: '.$response->status());
         }
 
         if ($response->header('Content-Type') !== 'image/svg+xml') {
-            throw new Exception("Inscription is not a SVG file: ".$this->inscription_id);
+            throw new Exception('Inscription is not a SVG file: '.$this->inscription_id);
         }
 
         if ($response->successful()) {

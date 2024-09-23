@@ -2,13 +2,13 @@
 
 namespace App\Jobs;
 
-use Exception;
 use App\Models\Inscription;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Foundation\Queue\Queueable;
+use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Http;
 
 class FetchMetaData implements ShouldQueue
 {
@@ -27,7 +27,7 @@ class FetchMetaData implements ShouldQueue
         $response = Http::get($this->url);
 
         if (! $response->successful()) {
-            throw new Exception("HTTP Request failed with status: ".$response->status());
+            throw new Exception('HTTP Request failed with status: '.$response->status());
         }
 
         if ($response->successful()) {
@@ -39,12 +39,13 @@ class FetchMetaData implements ShouldQueue
         }
     }
 
-    public function extractJsonFromHtml(string $html): ?string {
+    public function extractJsonFromHtml(string $html): ?string
+    {
         $pattern = '/Ninja\.load\((.*?)\)/s';
 
         preg_match($pattern, $html, $matches);
 
-        if (!empty($matches[1])) {
+        if (! empty($matches[1])) {
             $jsonString = trim($matches[1], " \t\n\r\0\x0B,");
 
             return $jsonString;
