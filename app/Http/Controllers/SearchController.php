@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Inscription;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class SearchController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'query' => [
