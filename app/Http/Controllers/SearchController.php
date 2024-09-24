@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inscription;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
@@ -18,7 +19,7 @@ class SearchController extends Controller
             ],
         ]);
 
-        $query = $validated['query'];
+        $query = Str::of($validated['query'])->after('#')->toString();
 
         $inscription = Inscription::where('name', 'LIKE', "%#{$query}")
             ->orWhere('inscription_id', $query)
