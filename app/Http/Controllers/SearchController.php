@@ -9,7 +9,15 @@ class SearchController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $query = $request->input('query');
+        $validated = $request->validate([
+            'query' => [
+                'required',
+                'string',
+                'max:65',
+            ],
+        ]);
+
+        $query = $validated['query'];
 
         $inscription = Inscription::where('name', 'LIKE', "%#{$query}")
             ->orWhere('inscription_id', 'LIKE', "%{$query}%")
