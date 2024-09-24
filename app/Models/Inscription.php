@@ -40,7 +40,7 @@ class Inscription extends Model
         return (int) Str::of($this->name)
             ->trim()
             ->after('#')
-            ->__toString();
+            ->toString();
     }
 
     public function getShortenedInscriptionIdFor(string $id, $startLength = 8, $endLength = 8, $separator = '....'): string
@@ -90,7 +90,7 @@ class Inscription extends Model
             return $string;
         }
 
-        return Str::of($string)->before('.svg')->__toString();
+        return Str::of($string)->before('.svg')->toString();
     }
 
     public function getTraitForInscriptionId(string $id): Collection
