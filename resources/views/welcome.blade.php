@@ -1,5 +1,5 @@
 <x-layout.main>
-    <div class="bg-gray-50">
+<div class="bg-gray-50">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-3xl">
                 <div class="ninja5-logo">
@@ -38,6 +38,14 @@
         </div>
     </div>
     @endif
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl">
+            <div class="mt-10">
+                <x-search/>
+            </div>
+        </div>
+    </div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-2xl">
