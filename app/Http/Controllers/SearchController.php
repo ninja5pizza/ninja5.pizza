@@ -21,7 +21,7 @@ class SearchController extends Controller
         $query = $validated['query'];
 
         $inscription = Inscription::where('name', 'LIKE', "%#{$query}")
-            ->orWhere('inscription_id', 'LIKE', "%{$query}%")
+            ->orWhere('inscription_id', $query)
             ->orderBy('name')
             ->first();
 
