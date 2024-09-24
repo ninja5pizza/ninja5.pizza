@@ -22,6 +22,7 @@ class SearchController extends Controller
 
         $inscription = Inscription::where('name', 'LIKE', "%#{$query}")
             ->orWhere('inscription_id', 'LIKE', "%{$query}%")
+            ->orderBy('name')
             ->first();
 
         if ($inscription) {
