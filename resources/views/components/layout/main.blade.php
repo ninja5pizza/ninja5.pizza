@@ -17,8 +17,7 @@
         @endif
     </head>
     <body class="bg-pizza-orange">
-        <div class="bg-pizza-orange h-2">
-        </div>
+        <x-navigation-bar/>
 
         <main>
             {{ $slot }}
