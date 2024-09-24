@@ -14,7 +14,7 @@ class SearchController extends Controller
             'query' => [
                 'required',
                 'string',
-                'max:65',
+                'max:67',
             ],
         ]);
 
