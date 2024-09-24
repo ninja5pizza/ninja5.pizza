@@ -23,3 +23,8 @@
         <span class="sr-only">Search</span>
     </button>
 </form>
+@error('query')
+    <div class="max-w-sm mx-auto mt-1">
+        <p class="text-red-900 font-medium text-sm">{{ $message }}</p>
+    </div>
+@enderror
