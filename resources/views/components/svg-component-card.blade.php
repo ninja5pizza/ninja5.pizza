@@ -14,7 +14,15 @@
                 </dl>
             </li>
             <li class="px-1 py-2">{{ Number::fileSize($fileSize, precision: 2) }}</li>
-            <li class="px-1 py-2">{{ $shortInscriptionId }}</li>
+            <li class="px-1 py-2">
+                <a
+                    class="underline hover:no-underline"
+                    href="{{ Str::of('https://ordiscan.com/inscription/')->append($inscriptionId) }}"
+                    target="_blank"
+                >
+                    {{ $shortInscriptionId }}
+                </a>
+            </li>
         </ul>
   </div>
 </div>
