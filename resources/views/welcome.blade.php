@@ -30,7 +30,7 @@
                     </dt>
                     <dd>
                         <a href="https://magiceden.io/ordinals/marketplace/pizza-ninjas" target="_blank">
-                            {{ collect(Cache::get('ordinals_collection_stats_pizza-ninjas'))->get('floorPrice') / 1000000000 }} BTC
+                            {{ collect(Cache::get('ordinals_collection_stats_pizza-ninjas'))->get('floorPrice') / 100000000 }} BTC
                         </a>
                     </dd>
                 </div>
