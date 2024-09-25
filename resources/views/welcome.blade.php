@@ -21,16 +21,11 @@
 
     <x-team/>
 
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-2xl">
             <h3 class="mt-24 text-3xl text-white font-bold">
                 FOLLOW US
             </h3>
-        </div>
-    </div>
-
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl">
             <div class="flex mt-8 text-white">
                 <a
                     href="https://x.com/ninja5_pizza"
@@ -41,7 +36,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
     @pushOnce('scripts')
     <script>
