@@ -31,6 +31,7 @@
                     <dd>
                         <a href="https://magiceden.io/ordinals/marketplace/pizza-ninjas" target="_blank">
                             {{ collect(Cache::get('ordinals_collection_stats_pizza-ninjas'))->get('floorPrice') / 100000000 }} BTC
+                            / {{ Number::currency(Cache::get('bitcoin_price') * collect(Cache::get('ordinals_collection_stats_pizza-ninjas'))->get('floorPrice') / 100000000, in: 'USD') }}
                         </a>
                     </dd>
                 </div>
