@@ -10,7 +10,7 @@
                     href="{{ route('profile', ['handle' => $key]) }}"
                     class="hover:text-orange-100"
                 >
-                    @svg('ninjas.'.$value['pizza_ninjas_number'], 'w-24 border rounded-lg')
+                    @svg('ninjas.'.$value['pizza_ninjas_number'], 'w-96 md:w-24 border rounded-lg')
                     <span class="mt-1 text-xs">
                         {{ $key }}
                     </span>
