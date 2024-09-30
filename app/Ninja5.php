@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Support\Collection;
 
-class ninja5
+class Ninja5
 {
     public Collection $members;
 
