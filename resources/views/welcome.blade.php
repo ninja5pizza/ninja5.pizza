@@ -1,5 +1,5 @@
 <x-layout.main>
-    <div class="bg-gray-50">
+    <div class="bg-gray-50 dark:bg-neutral-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-3xl">
                 <div class="ninja5-logo">

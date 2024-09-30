@@ -1,7 +1,7 @@
 @if(Cache::has('bitcoin_price') && Cache::has('ordinals_collection_stats_pizza-ninjas'))
-<section class="bg-neutral-900">
+<section class="bg-neutral-900 dark:bg-neutral-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center justify-center mx-auto max-w-3xl space-x-2 py-1 text-xs font-medium leading-6 text-neutral-400">
+        <div class="flex flex-col md:flex-row items-center justify-center mx-auto max-w-3xl space-x-2 py-1 text-xs font-medium leading-6 text-neutral-400 dark:text-neutral-600">
             <div class="flex space-x-2">
                 <dt>
                     BITCOIN PRICE
