@@ -44,6 +44,13 @@ return [
             'throw' => false,
         ],
 
+        'ninja_modules' => [
+            'driver' => 'local',
+            'root' => base_path('resources/svg/ninja_modules'),
+            'visibility' => 'private',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
