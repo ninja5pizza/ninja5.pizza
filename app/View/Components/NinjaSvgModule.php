@@ -28,7 +28,7 @@ class NinjaSvgModule extends Component implements Htmlable
         $this->innerSvg = Str::of($svgContent)
             ->replaceMatches('/<svg[^>]*>/', '')
             ->replaceMatches('/<\/svg>/', '')
-            ->__toString();
+            ->toString();
 
         $this->contents = Str::of($this->openTag())
             ->append($this->innerSvg)
