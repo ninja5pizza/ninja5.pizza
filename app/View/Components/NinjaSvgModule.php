@@ -23,6 +23,10 @@ class NinjaSvgModule extends Component implements Htmlable
         $this->readContentsFromDisk();
 
         $this->removeDeprecatedCssAttributes();
+
+        $this->content = Str::of($this->openTag())
+            ->append($this->innerSvg)
+            ->append($this->closeTag());
     }
 
     public function removeDeprecatedCssAttributes(): void
@@ -65,10 +69,6 @@ class NinjaSvgModule extends Component implements Htmlable
             )
             ->trim()
             ->toString();
-
-        $this->content = Str::of($this->openTag())
-            ->append($this->innerSvg)
-            ->append($this->closeTag());
     }
 
     public function openTag(): string
