@@ -26,6 +26,7 @@ class NinjaSvgModule extends Component implements Htmlable
         $svgContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
 
         $this->innerSvg = Str::of($svgContent)
+            ->replaceMatches('/enable-background:\s*new\s*\;/', '')
             ->replaceMatches('/<svg[^>]*>/', '')
             ->replaceMatches('/<\/svg>/', '')
             ->toString();
