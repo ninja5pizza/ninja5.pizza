@@ -29,7 +29,7 @@ class NinjaSvgModule extends Component implements Htmlable
             ->append($this->closeTag());
     }
 
-    public function removeDeprecatedCssAttributes(): void
+    protected function removeDeprecatedCssAttributes(): void
     {
         $this->styleElement = Str::of($this->styleElement)
             ->replaceMatches(
@@ -39,7 +39,7 @@ class NinjaSvgModule extends Component implements Htmlable
             ->toString();
     }
 
-    public function readContentsFromDisk(): void
+    protected function readContentsFromDisk(): void
     {
         $this->fileContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
 
