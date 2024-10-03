@@ -13,7 +13,7 @@ class NinjaSvgModule extends Component implements Htmlable
 
     private string $styleElement;
 
-    private string $contents;
+    private string $content;
 
     public function __construct(
         public string $inscriptionId
@@ -56,7 +56,7 @@ class NinjaSvgModule extends Component implements Htmlable
             ->trim()
             ->toString();
 
-        $this->contents = Str::of($this->openTag())
+        $this->content = Str::of($this->openTag())
             ->append($this->innerSvg)
             ->append($this->closeTag());
     }
@@ -73,7 +73,7 @@ class NinjaSvgModule extends Component implements Htmlable
 
     public function toHtml(): string
     {
-        return $this->contents;
+        return $this->content;
     }
 
     public function render(): string
