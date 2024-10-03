@@ -24,6 +24,8 @@ class NinjaSvgModule extends Component implements Htmlable
 
         $this->extractStyleElement();
 
+        $this->removeNewlinesFromSvgPaths();
+
         $this->content = Str::of($this->openTag())
             ->append($this->innerSvgContent)
             ->append($this->closeTag());
@@ -40,6 +42,7 @@ class NinjaSvgModule extends Component implements Htmlable
                     return '';
                 }
             )
+            ->trim()
             ->toString();
 
         $this->removeDeprecatedCssAttributes();
@@ -51,6 +54,18 @@ class NinjaSvgModule extends Component implements Htmlable
             ->replaceMatches(
                 pattern: '/enable-background:\s*new\s*\;/',
                 replace: '',
+            )
+            ->toString();
+    }
+
+    protected function removeNewlinesFromSvgPaths(): void
+    {
+        $this->innerSvgContent = Str::of($this->innerSvgContent)
+            ->replaceMatches(
+                pattern: '/<path[^>]*\/>/s',
+                replace: function ($matches) {
+                    return str_replace(["\r\n", "\n", "\r"], ' ', $matches[0]);
+                }
             )
             ->toString();
     }
@@ -68,12 +83,6 @@ class NinjaSvgModule extends Component implements Htmlable
             ->replaceMatches(
                 pattern: '/<\/svg>/',
                 replace: '',
-            )
-            ->replaceMatches(
-                pattern: '/<path[^>]*\/>/s',
-                replace: function ($matches) {
-                    return str_replace(["\r\n", "\n", "\r"], ' ', $matches[0]);
-                }
             )
             ->trim()
             ->toString();
