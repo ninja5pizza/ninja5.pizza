@@ -13,8 +13,6 @@ class NinjaSvgModule extends Component implements Htmlable
 
     private string $styleElement;
 
-    private string $content;
-
     private string $fileContent;
 
     public function __construct(
