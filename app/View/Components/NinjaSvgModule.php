@@ -71,6 +71,11 @@ class NinjaSvgModule extends Component implements Htmlable
         return PHP_EOL.'</svg>';
     }
 
+    public function styleElement(): string
+    {
+        return $this->styleElement;
+    }
+
     public function toHtml(): string
     {
         return $this->content;
