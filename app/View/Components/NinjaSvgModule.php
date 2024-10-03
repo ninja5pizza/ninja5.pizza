@@ -30,6 +30,7 @@ class NinjaSvgModule extends Component implements Htmlable
                 pattern: '/enable-background:\s*new\s*\;/',
                 replace: '',
             )
+            ->replace("\t", '')
             ->replaceMatches(
                 pattern: '/<svg[^>]*>/',
                 replace: '',
@@ -46,6 +47,13 @@ class NinjaSvgModule extends Component implements Htmlable
                     return '';
                 }
             )
+            ->replaceMatches(
+                pattern: '/<path[^>]*\/>/s',
+                replace: function ($matches) {
+                    return str_replace(["\r\n", "\n", "\r"], ' ', $matches[0]);
+                }
+            )
+            ->trim()
             ->toString();
 
         $this->contents = Str::of($this->openTag())
@@ -55,12 +63,12 @@ class NinjaSvgModule extends Component implements Htmlable
 
     public function openTag(): string
     {
-        return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">';
+        return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">'.PHP_EOL;
     }
 
     public function closeTag(): string
     {
-        return '</svg>';
+        return PHP_EOL.'</svg>';
     }
 
     public function toHtml(): string
