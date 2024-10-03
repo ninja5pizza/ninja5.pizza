@@ -15,6 +15,8 @@ class NinjaSvgModule extends Component implements Htmlable
 
     private string $fileContent;
 
+    private array $cssRules;
+
     public function __construct(
         public string $inscriptionId
     ) {
@@ -25,6 +27,10 @@ class NinjaSvgModule extends Component implements Htmlable
         $this->extractStyleElement();
 
         $this->removeNewlinesFromSvgPaths();
+
+        $this->parseCssRulesToArray();
+
+        $this->parseClassesToInlineProperties();
     }
 
     protected function extractStyleElement(): void
@@ -56,6 +62,56 @@ class NinjaSvgModule extends Component implements Htmlable
                 replace: '',
             )
             ->toString();
+    }
+
+    protected function parseClassesToInlineProperties(): void
+    {
+        // TODO
+    }
+
+    protected function parseCssRulesToArray(): void
+    {
+        $cssContent = Str::of($this->styleElement())
+            ->between('<style type="text/css">', '</style>')
+            ->trim();
+
+        $this->cssRules = Str::of($cssContent)->split('/\}/')
+            ->map(function ($rule) {
+                $rule = Str::of($rule)->trim();
+
+                if ($rule->isEmpty()) {
+                    return null;
+                }
+
+                $ruleParts = $rule->split('/\\{/', 2);
+
+                $selector = $ruleParts[0];
+                $properties = $ruleParts[1];
+
+                $properties = Str::of($properties)->split('/\s*;\s*/')
+                    ->map(function ($property) {
+                        if (Str::of($property)->trim()->isEmpty()) {
+                            return null;
+                        }
+
+                        $parts = Str::of($property)->split('/:/', 2);
+
+                        if ($parts->count() == 2) {
+                            return [$parts[0] => $parts[1]];
+                        }
+
+                        return null;
+                    })
+                    ->filter()
+                    ->collapse()
+                    ->toArray();
+
+                return [
+                    $selector => $properties
+                ];
+            })
+            ->collapse()
+            ->toArray();
     }
 
     protected function removeDeprecatedCssAttributes(): void
