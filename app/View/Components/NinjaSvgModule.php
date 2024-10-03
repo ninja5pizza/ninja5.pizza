@@ -107,7 +107,7 @@ class NinjaSvgModule extends Component implements Htmlable
                     ->toArray();
 
                 return [
-                    $selector => $properties
+                    $selector => $properties,
                 ];
             })
             ->collapse()
