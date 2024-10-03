@@ -2,12 +2,10 @@
 
 namespace App\View\Components;
 
-use Closure;
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
-use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Contracts\Support\Htmlable;
 
 class NinjaSvgModule extends Component implements Htmlable
 {
