@@ -11,6 +11,8 @@ class NinjaSvgModule extends Component implements Htmlable
 {
     private string $innerSvg;
 
+    private string $styleElement;
+
     private string $contents;
 
     public function __construct(
@@ -24,16 +26,32 @@ class NinjaSvgModule extends Component implements Htmlable
         $svgContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
 
         $this->innerSvg = Str::of($svgContent)
-            ->replaceMatches('/enable-background:\s*new\s*\;/', '')
-            ->replaceMatches('/<svg[^>]*>/', '')
-            ->replaceMatches('/<\/svg>/', '')
+            ->replaceMatches(
+                pattern: '/enable-background:\s*new\s*\;/',
+                replace: '',
+            )
+            ->replaceMatches(
+                pattern: '/<svg[^>]*>/',
+                replace: '',
+            )
+            ->replaceMatches(
+                pattern: '/<\/svg>/',
+                replace: '',
+            )
+            ->replaceMatches(
+                pattern: '/<style\s+type="text\/css">(.*?)<\/style>/si',
+                replace: function ($match) {
+                    $this->styleElement = $match[0];
+
+                    return '';
+                }
+            )
             ->toString();
 
         $this->contents = Str::of($this->openTag())
             ->append($this->innerSvg)
             ->append($this->closeTag());
     }
-
 
     public function openTag(): string
     {
