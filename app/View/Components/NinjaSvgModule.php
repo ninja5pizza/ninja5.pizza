@@ -22,11 +22,27 @@ class NinjaSvgModule extends Component implements Htmlable
     ) {
         $this->readContentsFromDisk();
 
-        $this->removeDeprecatedCssAttributes();
+        $this->extractStyleElement();
 
         $this->content = Str::of($this->openTag())
             ->append($this->innerSvg)
             ->append($this->closeTag());
+    }
+
+    protected function extractStyleElement(): void
+    {
+        $this->innerSvg = Str::of($this->innerSvg)
+            ->replaceMatches(
+                pattern: '/<style\s+type="text\/css">(.*?)<\/style>/si',
+                replace: function ($match) {
+                    $this->styleElement = $match[0];
+
+                    return '';
+                }
+            )
+            ->toString();
+
+        $this->removeDeprecatedCssAttributes();
     }
 
     protected function removeDeprecatedCssAttributes(): void
@@ -52,14 +68,6 @@ class NinjaSvgModule extends Component implements Htmlable
             ->replaceMatches(
                 pattern: '/<\/svg>/',
                 replace: '',
-            )
-            ->replaceMatches(
-                pattern: '/<style\s+type="text\/css">(.*?)<\/style>/si',
-                replace: function ($match) {
-                    $this->styleElement = $match[0];
-
-                    return '';
-                }
             )
             ->replaceMatches(
                 pattern: '/<path[^>]*\/>/s',
