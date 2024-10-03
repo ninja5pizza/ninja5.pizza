@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 
 class NinjaSvgModule extends Component implements Htmlable
 {
-    private string $innerSvg;
+    private string $innerSvgContent;
 
     private string $styleElement;
 
@@ -25,13 +25,13 @@ class NinjaSvgModule extends Component implements Htmlable
         $this->extractStyleElement();
 
         $this->content = Str::of($this->openTag())
-            ->append($this->innerSvg)
+            ->append($this->innerSvgContent)
             ->append($this->closeTag());
     }
 
     protected function extractStyleElement(): void
     {
-        $this->innerSvg = Str::of($this->innerSvg)
+        $this->innerSvgContent = Str::of($this->innerSvg)
             ->replaceMatches(
                 pattern: '/<style\s+type="text\/css">(.*?)<\/style>/si',
                 replace: function ($match) {
@@ -59,7 +59,7 @@ class NinjaSvgModule extends Component implements Htmlable
     {
         $this->fileContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
 
-        $this->innerSvg = Str::of($this->fileContent)
+        $this->innerSvgContent = Str::of($this->fileContent)
             ->replace("\t", '')
             ->replaceMatches(
                 pattern: '/<svg[^>]*>/',
