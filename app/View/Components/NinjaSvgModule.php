@@ -27,10 +27,6 @@ class NinjaSvgModule extends Component implements Htmlable
         $this->extractStyleElement();
 
         $this->removeNewlinesFromSvgPaths();
-
-        $this->content = Str::of($this->openTag())
-            ->append($this->innerSvgContent)
-            ->append($this->closeTag());
     }
 
     protected function extractStyleElement(): void
@@ -113,7 +109,10 @@ class NinjaSvgModule extends Component implements Htmlable
 
     public function toHtml(): string
     {
-        return $this->content;
+        return Str::of($this->openTag())
+            ->append($this->innerSvgContent)
+            ->append($this->closeTag())
+            ->toString();
     }
 
     public function render(): string
