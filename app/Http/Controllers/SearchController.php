@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inscription;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SearchController extends Controller
 {
