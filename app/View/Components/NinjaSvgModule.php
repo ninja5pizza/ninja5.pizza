@@ -31,7 +31,7 @@ class NinjaSvgModule extends Component implements Htmlable
 
     protected function extractStyleElement(): void
     {
-        $this->innerSvgContent = Str::of($this->innerSvg)
+        $this->innerSvgContent = Str::of($this->innerSvgContent)
             ->replaceMatches(
                 pattern: '/<style\s+type="text\/css">(.*?)<\/style>/si',
                 replace: function ($match) {
