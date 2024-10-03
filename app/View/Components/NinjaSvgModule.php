@@ -21,6 +21,18 @@ class NinjaSvgModule extends Component implements Htmlable
         public string $inscriptionId
     ) {
         $this->readContentsFromDisk();
+
+        $this->removeDeprecatedCssAttributes();
+    }
+
+    public function removeDeprecatedCssAttributes(): void
+    {
+        $this->styleElement = Str::of($this->styleElement)
+            ->replaceMatches(
+                pattern: '/enable-background:\s*new\s*\;/',
+                replace: '',
+            )
+            ->toString();
     }
 
     public function readContentsFromDisk(): void
@@ -28,10 +40,6 @@ class NinjaSvgModule extends Component implements Htmlable
         $this->fileContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
 
         $this->innerSvg = Str::of($this->fileContent)
-            ->replaceMatches(
-                pattern: '/enable-background:\s*new\s*\;/',
-                replace: '',
-            )
             ->replace("\t", '')
             ->replaceMatches(
                 pattern: '/<svg[^>]*>/',
