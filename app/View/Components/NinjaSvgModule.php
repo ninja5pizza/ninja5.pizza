@@ -15,6 +15,8 @@ class NinjaSvgModule extends Component implements Htmlable
 
     private string $content;
 
+    private string $fileContent;
+
     public function __construct(
         public string $inscriptionId
     ) {
@@ -23,9 +25,9 @@ class NinjaSvgModule extends Component implements Htmlable
 
     public function readContentsFromDisk(): void
     {
-        $svgContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
+        $this->fileContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
 
-        $this->innerSvg = Str::of($svgContent)
+        $this->innerSvg = Str::of($this->fileContent)
             ->replaceMatches(
                 pattern: '/enable-background:\s*new\s*\;/',
                 replace: '',
