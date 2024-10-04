@@ -41,41 +41,7 @@
             </div>
         </main>
 
-        <section class="mt-12">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl">
-                    <div class="bg-material-theme-ocean rounded-lg shadow-lg overflow-auto">
-                        <div class="flex justify-between gap-2 px-6 py-4 border-b border-slate-600">
-                            <div class="flex items-center gap-2">
-                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
-                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                            </div>
-                            <div class="text-neutral-400 text-sm font-semibold">
-                                ninja.load
-                            </div>
-                        </div>
-                        <div class="p-4 h-[calc(100%-40px)]">
-                            <div class="language-json">
-                                {!! json_encode($inscription->meta) !!}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mt-24">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl">
-                    <h4 class="text-xl text-white text-center">
-                        {{ $inscription->name }} has {{ $inscription->getSvgComponentCount() }} components with a total file size of {{ Number::fileSize($inscription->getSvgComponentsTotalFileSize(), precision: 2) }}
-                    </h4>
-                </div>
-            </div>
-        </section>
-
-        <section class="mt-6">
+        <section class="mt-32 bg-material-theme-ocean pt-16 pb-24 shadow-lg">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
                 @foreach($inscription->getSvgComponentsInscriptionIds() as $item)
@@ -87,6 +53,40 @@
                         :fileSize="$inscription->getSvgComponentFileSizeForId($item)"
                     />
                 @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl">
+                    <h4 class="pb-6 text-orange-100 font-bold">
+                        {{ $inscription->name }} has {{ $inscription->getSvgComponentCount() }} components with a total file size of {{ Number::fileSize($inscription->getSvgComponentsTotalFileSize(), precision: 2) }}
+                    </h4>
+                    <p class="pb-4 text-orange-200">
+                        A Pizza Ninja is an HTML file,<br>
+                        a script inside that HTML file is called to load its elements dynamically.<br>
+                    </p>
+                    <p class="pb-6 text-orange-200">
+                        For {{ $inscription->name }} this <code class="text-sm">Ninja.load()</code> function is called:
+                    </p>
+                    <div class="bg-material-theme-ocean rounded-lg shadow-lg overflow-auto">
+                        <div class="flex justify-between gap-2 px-6 py-4 border-b border-slate-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-neutral-400 text-sm font-semibold">
+                                Ninja.load()
+                            </div>
+                        </div>
+                        <div class="p-4 h-[calc(100%-40px)]">
+                            <div class="language-json">
+                                {!! json_encode($inscription->meta) !!}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
