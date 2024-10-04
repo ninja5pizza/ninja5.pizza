@@ -13,7 +13,9 @@
                     <dd>{{ $trait->last() }}</dd>
                 </dl>
             </li>
-            <li class="px-1 py-2">{{ Number::fileSize($fileSize, precision: 2) }}</li>
+            <li class="px-1 py-2">
+                {{ Number::fileSize($fileSize, precision: 2) }}
+            </li>
             <li class="px-1 py-2">
                 <a
                     class="underline hover:no-underline"
