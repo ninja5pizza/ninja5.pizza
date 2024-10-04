@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
@@ -15,7 +16,7 @@ class NinjaSvgModule extends Component implements Htmlable
 
     private string $fileContent;
 
-    private array $cssRules;
+    private Collection $cssRules;
 
     public function __construct(
         public string $inscriptionId
@@ -30,7 +31,9 @@ class NinjaSvgModule extends Component implements Htmlable
 
         $this->parseCssRulesToArray();
 
-        $this->parseClassesToInlineProperties();
+        $this->addCssStringsToInnerSvg();
+
+        $this->removeClassAttributesFromInnerSvg();
     }
 
     protected function extractStyleElement(): void
@@ -64,9 +67,39 @@ class NinjaSvgModule extends Component implements Htmlable
             ->toString();
     }
 
-    protected function parseClassesToInlineProperties(): void
+    protected function parseCssRulesToAttributeString(): Collection
     {
-        // TODO
+        return $this->cssRules->map(function ($attributes) {
+            return collect($attributes)->map(function ($value, $key) {
+                if (preg_match('/%%ST\d+%%/', $value)) {
+                    return null;
+                }
+
+                return "$key=\"$value\"";
+            })
+                ->implode(' ');
+        })
+            ->mapWithKeys(function ($attributeString, $class) {
+                return [
+                    ltrim($class, '.') => $attributeString,
+                ];
+            })
+            ->filter();
+    }
+
+    protected function addCssStringsToInnerSvg(): void
+    {
+        $this->parseCssRulesToAttributeString()->each(function ($string, $class) {
+            $pattern = "/class=\"$class\"([^>]*)/";
+
+            $this->innerSvgContent = Str::replaceMatches(
+                pattern: $pattern,
+                replace: function ($match) use ($class, $string) {
+                    return 'class="'.$class.'" '.$string.$match[1];
+                },
+                subject: $this->innerSvgContent,
+            );
+        });
     }
 
     protected function parseCssRulesToArray(): void
@@ -110,8 +143,7 @@ class NinjaSvgModule extends Component implements Htmlable
                     $selector => $properties,
                 ];
             })
-            ->collapse()
-            ->toArray();
+            ->collapse();
     }
 
     protected function removeDeprecatedCssAttributes(): void
@@ -134,6 +166,15 @@ class NinjaSvgModule extends Component implements Htmlable
                 }
             )
             ->toString();
+    }
+
+    protected function removeClassAttributesFromInnerSvg(): void
+    {
+        $this->innerSvgContent = Str::replaceMatches(
+            pattern: "/class=\"st\d+\"/i",
+            replace: fn() => '',
+            subject: $this->innerSvgContent
+        );
     }
 
     protected function readContentsFromDisk(): void
