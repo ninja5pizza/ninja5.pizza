@@ -17,7 +17,7 @@
                     </dd>
                 </dl>
             </li>
-            <li class="px-1 py-2">
+            <li class="px-1 py-2 text-neutral-600 font-semibold">
                 {{ Number::fileSize($fileSize, precision: 2) }}
             </li>
             <li class="px-1 py-2">
