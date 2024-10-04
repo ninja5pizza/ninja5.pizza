@@ -9,8 +9,12 @@
         <ul role="list" class="divide-y divide-neutral-300">
             <li class="px-1 bg-neutral-200 py-2 rounded-t">
                 <dl>
-                    <dt class="font-semibold">{{ Str::upper($trait->first()) }}</dt>
-                    <dd>{{ $trait->last() }}</dd>
+                    <dt class="font-semibold">
+                        {{ Str::upper($trait->first()) }}
+                    </dt>
+                    <dd>
+                        {{ $trait->last() }}
+                    </dd>
                 </dl>
             </li>
             <li class="px-1 py-2">
