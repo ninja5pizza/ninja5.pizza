@@ -18,7 +18,7 @@
             </li>
             <li class="px-1 py-2">
                 <a
-                    class="underline hover:no-underline"
+                    class="underline hover:no-underline text-neutral-500"
                     href="{{ Str::of('https://ordiscan.com/inscription/')->append($inscriptionId) }}"
                     target="_blank"
                 >
