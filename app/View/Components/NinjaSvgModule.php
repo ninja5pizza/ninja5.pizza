@@ -173,7 +173,7 @@ class NinjaSvgModule extends Component implements Htmlable
     {
         $this->innerSvgContent = Str::replaceMatches(
             pattern: "/class=\"st\d+\"/i",
-            replace: fn() => '',
+            replace: fn () => '',
             subject: $this->innerSvgContent
         );
     }
