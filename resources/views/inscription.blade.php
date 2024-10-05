@@ -49,6 +49,7 @@
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
                 @foreach($inscription->getSvgComponentsInscriptionIds() as $item)
                     <x-svg-component-card
+                        :ninja="$inscription"
                         :inscriptionId="$item"
                         :shortInscriptionId="$inscription->getShortenedInscriptionIdFor($item)"
                         :traitType="$inscription->getTraitTypeForInscriptionId($item)"

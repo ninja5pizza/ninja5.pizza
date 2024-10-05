@@ -3,7 +3,10 @@
         {{ $traitType }}
     </div>
     <div class="px-2 py-2">
-        <x-ninja-svg-module :inscriptionId="$inscriptionId"/>
+        <x-ninja-svg-module
+            :config="$ninja->meta"
+            :inscriptionId="$inscriptionId"
+        />
     </div>
     <div class="bg-neutral-100 px-2 py-1 text-sm text-neutral-700">
         <ul role="list" class="divide-y divide-neutral-300">

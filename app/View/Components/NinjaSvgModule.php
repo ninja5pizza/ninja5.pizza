@@ -19,7 +19,8 @@ class NinjaSvgModule extends Component implements Htmlable
     private Collection $cssRules;
 
     public function __construct(
-        public string $inscriptionId
+        public string $inscriptionId,
+        public array $config,
     ) {
         $this->readContentsFromDisk();
 
