@@ -4,7 +4,7 @@
     </div>
     <div class="px-2 py-2">
         <x-ninja-svg-module
-            :config="$ninja->meta"
+            :config="$ninja->getConfigForInscriptionId($inscriptionId)"
             :inscriptionId="$inscriptionId"
         />
     </div>

@@ -80,6 +80,13 @@ class Inscription extends Model
         ))->pluck('id');
     }
 
+    public function getConfigForInscriptionId(string $id): array
+    {
+        return (new Collection($this->meta))
+            ->where('id', $id)
+            ->first();
+    }
+
     public function getRawTraitForInscriptionId(string $id, $withSuffix = false): string
     {
         $string = (new Collection($this->meta))
