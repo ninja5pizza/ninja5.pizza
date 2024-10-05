@@ -24,7 +24,7 @@
                 <div class="mx-auto max-w-2xl">
                     <div class="mt-24 flex flex-col md:flex-row justify-between">
                         <div class="flex gap-2">
-                            <h3 class="text-3xl text-white font-bold">
+                            <h3 class="text-3xl text-orange-100 font-bold">
                                 {{ $inscription->name }}
                             </h3>
                             @if($ninja5->isCoreMemberForInscriptionId($inscription->inscription_id))
@@ -34,7 +34,7 @@
                             @endif
                         </div>
                         @if($inscription->fullSvgExists())
-                            @svg('ninjas.'.$inscription->getInternalCollectionId(), 'mt-4 md:mt-0 w-48 border rounded-lg')
+                            @svg('ninjas.'.$inscription->getInternalCollectionId(), 'mt-4 md:mt-0 w-48 border border-2 border-orange-400 rounded-lg')
                         @endif
                     </div>
                 </div>
