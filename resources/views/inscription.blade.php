@@ -34,7 +34,10 @@
                             @endif
                         </div>
                         @if($inscription->fullSvgExists())
-                            @svg('ninjas.'.$inscription->getInternalCollectionId(), 'mt-4 md:mt-0 w-48 border border-2 border-orange-400 rounded-lg')
+                            @svg(
+                                'ninjas.'.$inscription->getInternalCollectionId(),
+                                'mt-4 md:mt-0 w-48 border border-2 border-orange-400 rounded-lg'
+                            )
                         @endif
                     </div>
                 </div>
