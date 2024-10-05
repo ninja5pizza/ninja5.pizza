@@ -32,6 +32,8 @@ class NinjaSvgModule extends Component implements Htmlable
 
         $this->parseCssRulesToArray();
 
+        $this->parseConfigCssRulesToArray();
+
         $this->addCssStringsToInnerSvg();
 
         $this->removeClassAttributesFromInnerSvg();
@@ -145,6 +147,30 @@ class NinjaSvgModule extends Component implements Htmlable
                 ];
             })
             ->collapse();
+    }
+
+    protected function parseConfigCssRulesToArray(): void
+    {
+        Collection::make($this->config)
+            ->filter(function ($value, $key) {
+                return preg_match('/^ST\d+$/', $key);
+            })
+            ->mapWithKeys(function ($value, $key) {
+                $key = Str::of($key)
+                    ->lower()
+                    ->prepend('.')
+                    ->toString();
+
+                return [
+                    $key => $value,
+                ];
+            })
+            ->each(function ($hexColor, $class) {
+                $this->cssRules->put(
+                    $class,
+                    ['fill' => $hexColor],
+                );
+            });
     }
 
     protected function removeDeprecatedCssAttributes(): void
