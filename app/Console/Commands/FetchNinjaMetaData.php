@@ -10,7 +10,7 @@ class FetchNinjaMetaData extends Command
 {
     protected $signature = 'ninja:meta';
 
-    protected $description = 'Retrieve meta data for an inscription.';
+    protected $description = 'Retrieve meta data for all Ninjas.';
 
     public function handle()
     {
