@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Models\Inscription;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 
