@@ -3,7 +3,7 @@
         {{ $traitType }}
     </div>
     <div class="px-2 py-2">
-        <x-ninja-svg-module
+        <x-ninja-svg-component
             :config="$ninja->getConfigForInscriptionId($inscriptionId)"
             :inscriptionId="$inscriptionId"
         />

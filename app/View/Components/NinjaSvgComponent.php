@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
 
-class NinjaSvgModule extends Component implements Htmlable
+class NinjaSvgComponent extends Component implements Htmlable
 {
     private string $innerSvgContent = '';
 
