@@ -15,19 +15,19 @@ class FetchNinjaSvgComponent implements ShouldQueue
 
     public string $url;
 
-    public string $ninja_module_svg_file;
+    public string $ninja_svg_component_file;
 
     public function __construct(
         public string $inscription_id
     ) {
         $this->url = 'https://ordiscan.com/content/'.$this->inscription_id;
 
-        $this->ninja_module_svg_file = base_path('resources/svg/ninja_modules/'.$this->inscription_id.'.svg');
+        $this->ninja_svg_component_file = base_path('resources/svg/ninja_modules/'.$this->inscription_id.'.svg');
     }
 
     public function handle(): void
     {
-        if (File::exists($this->ninja_module_svg_file)) {
+        if (File::exists($this->ninja_svg_component_file)) {
             return;
         }
 
@@ -43,7 +43,7 @@ class FetchNinjaSvgComponent implements ShouldQueue
 
         if ($response->successful()) {
             File::put(
-                $this->ninja_module_svg_file,
+                $this->ninja_svg_component_file,
                 $response->body()
             );
         }
