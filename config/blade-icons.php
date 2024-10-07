@@ -109,9 +109,9 @@ return [
 
         'ninjamodule' => [
 
-            'path' => 'resources/svg/ninja_modules',
+            'path' => 'resources/svg/ninja_components',
 
-            'prefix' => 'ninjamodule',
+            'prefix' => 'ninjacomponent',
 
         ],
 

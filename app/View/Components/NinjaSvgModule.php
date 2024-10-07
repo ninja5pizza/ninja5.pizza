@@ -206,7 +206,7 @@ class NinjaSvgModule extends Component implements Htmlable
 
     protected function readContentsFromDisk(): void
     {
-        $this->fileContent = Storage::disk('ninja_modules')->get($this->inscriptionId.'.svg');
+        $this->fileContent = Storage::disk('ninja_components')->get($this->inscriptionId.'.svg');
 
         $this->fileContent = Str::of($this->fileContent)
             ->replace("\t", '')

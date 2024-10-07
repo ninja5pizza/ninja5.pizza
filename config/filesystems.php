@@ -44,9 +44,9 @@ return [
             'throw' => false,
         ],
 
-        'ninja_modules' => [
+        'ninja_components' => [
             'driver' => 'local',
-            'root' => base_path('resources/svg/ninja_modules'),
+            'root' => base_path('resources/svg/ninja_components'),
             'visibility' => 'private',
             'throw' => false,
         ],

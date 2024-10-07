@@ -6,8 +6,8 @@ use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class FetchNinjaSvgComponent implements ShouldQueue
 {
@@ -15,19 +15,19 @@ class FetchNinjaSvgComponent implements ShouldQueue
 
     public string $url;
 
-    public string $ninja_svg_component_file;
+    public string $file_name;
 
     public function __construct(
         public string $inscription_id
     ) {
         $this->url = 'https://ordiscan.com/content/'.$this->inscription_id;
 
-        $this->ninja_svg_component_file = base_path('resources/svg/ninja_modules/'.$this->inscription_id.'.svg');
+        $this->file_name = $this->inscription_id.'.svg';
     }
 
     public function handle(): void
     {
-        if (File::exists($this->ninja_svg_component_file)) {
+        if (Storage::disk('ninja_components')->exists($this->file_name)) {
             return;
         }
 
@@ -42,8 +42,8 @@ class FetchNinjaSvgComponent implements ShouldQueue
         }
 
         if ($response->successful()) {
-            File::put(
-                $this->ninja_svg_component_file,
+            Storage::disk('ninja_components')->put(
+                $this->file_name,
                 $response->body()
             );
         }
