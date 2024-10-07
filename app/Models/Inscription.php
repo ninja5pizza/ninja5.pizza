@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Inscription extends Model
@@ -64,10 +65,10 @@ class Inscription extends Model
 
     public function getSvgComponentFileSizeForId(string $id): int
     {
-        $filePath = resource_path('svg/ninja_modules/'.$id.'.svg');
+        $file = $id.'.svg';
 
-        if (File::exists($filePath)) {
-            return filesize($filePath);
+        if (Storage::disk('ninja_components')->exists($file)) {
+            return Storage::disk('ninja_components')->fileSize($file);
         }
 
         return 0;
