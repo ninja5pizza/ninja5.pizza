@@ -35,7 +35,7 @@ class FetchNinjaSvgComponentCommand extends Command
         $this->info('Fethed Ninja SVG component: '.$this->argument('inscription_id').'.');
     }
 
-    public function fetchAllNinjaSvgComponents(): void
+    protected function fetchAllNinjaSvgComponents(): void
     {
         foreach (Inscription::whereNotNull('meta')->get() as $inscription) {
             collect($inscription->meta)
