@@ -19,13 +19,13 @@ class FetchNinjaSvgComponentCommand extends Command
 
             $this->info('All Ninja SVG components are queued for fetching.');
 
-            return false;
+            return Command::SUCCESS;
         }
 
         if (is_null($this->argument('inscription_id'))) {
             $this->error('No inscription ID provided.');
 
-            return false;
+            return Command::INVALID;
         }
 
         FetchNinjaSvgComponent::dispatch(
