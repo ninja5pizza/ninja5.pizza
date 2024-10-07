@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 
 class FetchNinjaSvgComponentCommand extends Command
 {
-    protected $signature = 'ninja:component {inscription_id?} {--a|all : Fetch all Ninja SVG Components}';
+    protected $signature = 'ninja:component {inscription_id? : The inscription ID} {--a|all : Fetch all Ninja SVG Components}';
 
     protected $description = 'Fetch Ninja SVG components.';
 
