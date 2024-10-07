@@ -198,7 +198,7 @@ class NinjaSvgComponent extends Component implements Htmlable
     protected function removeClassAttributesFromInnerSvg(): void
     {
         $this->innerSvgContent = Str::replaceMatches(
-            pattern: "/class=\"st\d+\"/i",
+            pattern: "/ class=\"st\d+\"/i",
             replace: fn () => '',
             subject: $this->innerSvgContent
         );
@@ -223,6 +223,11 @@ class NinjaSvgComponent extends Component implements Htmlable
     public function closeTag(): string
     {
         return PHP_EOL.'</svg>';
+    }
+
+    public function backgroundRectangle(): string
+    {
+        return '<rect x="0" y="0" width="1000" height="1000" fill="#FF5400"/>'.PHP_EOL;
     }
 
     public function innerSvgContent(): string
