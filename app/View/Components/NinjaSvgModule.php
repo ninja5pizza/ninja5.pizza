@@ -10,11 +10,11 @@ use Illuminate\View\Component;
 
 class NinjaSvgModule extends Component implements Htmlable
 {
-    private string $innerSvgContent;
+    private string $innerSvgContent = '';
 
-    private string $styleElement;
+    private string $styleElement = '';
 
-    private string $fileContent;
+    private string $fileContent = '';
 
     private Collection $cssRules;
 
