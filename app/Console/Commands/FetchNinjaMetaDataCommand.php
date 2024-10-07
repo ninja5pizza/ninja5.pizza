@@ -6,7 +6,7 @@ use App\Jobs\FetchMetaData;
 use App\Models\Inscription;
 use Illuminate\Console\Command;
 
-class FetchNinjaMetaData extends Command
+class FetchNinjaMetaDataCommand extends Command
 {
     protected $signature = 'ninja:meta';
 

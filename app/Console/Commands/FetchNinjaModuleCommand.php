@@ -6,7 +6,7 @@ use App\Jobs\FetchNinjaModuleSvg;
 use App\Models\Inscription;
 use Illuminate\Console\Command;
 
-class FetchNinjaModule extends Command
+class FetchNinjaModuleCommand extends Command
 {
     protected $signature = 'ninja:module {inscription_id?} {--all}';
 
