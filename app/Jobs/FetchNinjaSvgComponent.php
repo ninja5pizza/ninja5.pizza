@@ -9,7 +9,7 @@ use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 
-class FetchNinjaModuleSvg implements ShouldQueue
+class FetchNinjaSvgComponent implements ShouldQueue
 {
     use Dispatchable, Queueable;
 
