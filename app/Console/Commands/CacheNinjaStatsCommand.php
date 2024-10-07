@@ -5,9 +5,9 @@ namespace App\Console\Commands;
 use App\Jobs\CacheOrdinalsCollectionStats;
 use Illuminate\Console\Command;
 
-class CacheOrdinalsCollectionStatsCommand extends Command
+class CacheNinjaStatsCommand extends Command
 {
-    protected $signature = 'ord-collection:cache-stats';
+    protected $signature = 'ninja:cache-stats';
 
     protected $description = 'Cache the stats for the Pizza Ninjas collection';
 
