@@ -67,7 +67,7 @@ class Inscription extends Model
         $file = $id.'.svg';
 
         if (Storage::disk('ninja_components')->exists($file)) {
-            return Storage::disk('ninja_components')->fileSize($file);
+            return Storage::disk('ninja_components')->size($file);
         }
 
         return 0;
