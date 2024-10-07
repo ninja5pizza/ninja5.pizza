@@ -4,13 +4,15 @@
             TEAM
         </h2>
         <div class="flex flex-col md:flex-row mt-8 md:space-x-10 text-white">
-            @foreach(config('ninja5') as $key => $value)
+            @foreach($ninja5->members as $key => $value)
             <div class="flex flex-col mt-4 md:mt-0">
                 <a
                     href="{{ route('profile', ['handle' => $key]) }}"
                     class="hover:text-orange-100"
                 >
-                    @svg('ninjas.'.$value['pizza_ninjas_number'], 'w-96 md:w-24 border rounded-lg')
+                    @if($ninja5->fullSvgExistsForNumber($value['pizza_ninjas_number']))
+                        @svg('ninjas.'.$value['pizza_ninjas_number'], 'w-96 md:w-24 border rounded-lg')
+                    @endif
                     <span class="mt-1 text-xs">
                         {{ $key }}
                     </span>
