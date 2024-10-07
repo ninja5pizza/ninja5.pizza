@@ -39,8 +39,10 @@ class FetchNinjaSvgComponentCommand extends Command
     {
         foreach (Inscription::whereNotNull('meta')->get() as $inscription) {
             collect($inscription->meta)
-                ->each(function ($item) {
-                    FetchNinjaSvgComponent::dispatch($item['id']);
+                ->each(function ($inscription_meta) {
+                    FetchNinjaSvgComponent::dispatch(
+                        $inscription_meta['id']
+                    );
                 });
         }
     }
