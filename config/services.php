@@ -48,6 +48,7 @@ return [
     ],
 
     'magiceden' => [
+        'base_url' => 'https://api-mainnet.magiceden.dev/v2/',
         'api_key' => env('MAGIC_EDEN_API_KEY'),
     ],
 

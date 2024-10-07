@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class CacheOrdinalsCollectionStats implements ShouldQueue
 {
@@ -17,7 +18,10 @@ class CacheOrdinalsCollectionStats implements ShouldQueue
     public function __construct(
         public string $symbol,
     ) {
-        $this->apiUrl = 'https://api-mainnet.magiceden.dev/v2/ord/btc/stat?collectionSymbol='.$this->symbol;
+        $this->apiUrl = Str::of(config('services.magiceden.base_url'))
+            ->append('ord/btc/stat?collectionSymbol=')
+            ->append($this->symbol)
+            ->toString();
     }
 
     public function handle(): void
