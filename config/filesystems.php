@@ -44,6 +44,13 @@ return [
             'throw' => false,
         ],
 
+        'ninjas' => [
+            'driver' => 'local',
+            'root' => base_path('resources/svg/ninjas'),
+            'visibility' => 'private',
+            'throw' => false,
+        ],
+
         'ninja_components' => [
             'driver' => 'local',
             'root' => base_path('resources/svg/ninja_components'),

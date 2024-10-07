@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -27,9 +26,9 @@ class Inscription extends Model
 
     public function fullSvgExists(): bool
     {
-        $filePath = resource_path('svg/ninjas/'.$this->getInternalCollectionId().'.svg');
-
-        if (File::exists($filePath)) {
+        if (Storage::disk('ninjas')->exists(
+            $this->getInternalCollectionId().'.svg'
+        )) {
             return true;
         }
 
