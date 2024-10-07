@@ -5,14 +5,12 @@ namespace App\Jobs;
 use App\Models\Inscription;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
 
 class FetchMetaData implements ShouldQueue
 {
-    use Dispatchable, Queueable, SerializesModels;
+    use Queueable;
 
     public string $url;
 

@@ -2,16 +2,15 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class CacheOrdinalsCollectionStats implements ShouldQueue
 {
-    use Dispatchable, Queueable;
+    use Queueable;
 
     protected string $apiUrl;
 
