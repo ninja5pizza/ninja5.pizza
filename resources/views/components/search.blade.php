@@ -1,5 +1,5 @@
 <form
-    class="flex items-center max-w-sm mx-auto"
+    class="flex grow items-center"
     action="{{ route('search') }}"
     method="POST"
 >
