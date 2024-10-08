@@ -3,7 +3,6 @@
     "type": "project",
     "description": "The website for ninja5.pizza",
     "keywords": ["ninja", "5", "five", "pizza", "ninjas"],
-    "license": "MIT",
     "require": {
         "php": "^8.3",
         "blade-ui-kit/blade-icons": "^1.7",
