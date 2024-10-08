@@ -18,6 +18,8 @@ class NinjaSvgComponent extends Component implements Htmlable
 
     private Collection $cssRules;
 
+    private Collection $placeholders;
+
     public function __construct(
         public string $inscriptionId,
         public array $config,
@@ -30,11 +32,13 @@ class NinjaSvgComponent extends Component implements Htmlable
 
         $this->removeNewlinesFromSvgPaths();
 
-        $this->parseCssRulesToArray();
+        $this->parseCssRulesToCollection();
 
-        $this->parseConfigCssRulesToArray();
+        $this->parsePlaceholdersToCollection();
 
         $this->addCssStringsToInnerSvg();
+
+        $this->replacePlaceholders();
 
         $this->removeClassAttributesFromInnerSvg();
     }
@@ -74,20 +78,9 @@ class NinjaSvgComponent extends Component implements Htmlable
     {
         return $this->cssRules->map(function ($attributes) {
             return collect($attributes)->map(function ($value, $key) {
-                if (preg_match('/%%ST\d+%%/', $value)) {
-                    return null;
-                }
-
                 return "$key=\"$value\"";
-            })
-                ->implode(' ');
-        })
-            ->mapWithKeys(function ($attributeString, $class) {
-                return [
-                    ltrim($class, '.') => $attributeString,
-                ];
-            })
-            ->filter();
+            })->implode(' ');
+        });
     }
 
     protected function addCssStringsToInnerSvg(): void
@@ -105,7 +98,7 @@ class NinjaSvgComponent extends Component implements Htmlable
         });
     }
 
-    protected function parseCssRulesToArray(): void
+    protected function parseCssRulesToCollection(): void
     {
         $cssContent = Str::of($this->styleElement())
             ->between('<style type="text/css">', '</style>')
@@ -121,7 +114,7 @@ class NinjaSvgComponent extends Component implements Htmlable
 
                 $ruleParts = $rule->split('/\\{/', 2);
 
-                $selector = $ruleParts[0];
+                $selector = ltrim($ruleParts[0], '.');
                 $properties = $ruleParts[1];
 
                 $properties = Str::of($properties)->split('/\s*;\s*/')
@@ -149,27 +142,14 @@ class NinjaSvgComponent extends Component implements Htmlable
             ->collapse();
     }
 
-    protected function parseConfigCssRulesToArray(): void
+    protected function parsePlaceholdersToCollection(): void
     {
-        Collection::make($this->config)
+        $this->placeholders = Collection::make($this->config)
             ->filter(function ($value, $key) {
                 return preg_match('/^ST\d+$/', $key);
             })
             ->mapWithKeys(function ($value, $key) {
-                $key = Str::of($key)
-                    ->lower()
-                    ->prepend('.')
-                    ->toString();
-
-                return [
-                    $key => $value,
-                ];
-            })
-            ->each(function ($hexColor, $class) {
-                $this->cssRules->put(
-                    $class,
-                    ['fill' => $hexColor],
-                );
+                return ['%%'.$key.'%%' => $value];
             });
     }
 
@@ -202,6 +182,17 @@ class NinjaSvgComponent extends Component implements Htmlable
             replace: fn () => '',
             subject: $this->innerSvgContent
         );
+    }
+
+    protected function replacePlaceholders(): void
+    {
+        $this->placeholders->each(function ($value, $placeholder) {
+            $this->innerSvgContent = Str::replaceMatches(
+                pattern: '/'.preg_quote($placeholder, '/').'/',
+                replace: fn () => $value,
+                subject: $this->innerSvgContent
+            );
+        });
     }
 
     protected function readContentsFromDisk(): void
