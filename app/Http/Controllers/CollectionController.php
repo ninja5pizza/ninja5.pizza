@@ -9,7 +9,7 @@ class CollectionController extends Controller
 {
     public function __invoke(): View
     {
-        $inscriptions = Inscription::orderBy('name')->paginate(6);
+        $inscriptions = Inscription::orderBy('name')->paginate(5);
 
         return view('collection', [
             'inscriptions' => $inscriptions,
