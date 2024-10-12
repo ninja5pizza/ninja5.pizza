@@ -19,7 +19,7 @@ class CompileNinjaSvg implements ShouldQueue
 
     public function __construct(
         public Inscription $inscription,
-        public $overwrite = false,
+        public bool $overwrite = false,
     ) {
         $this->file_name = $this->inscription->getInternalCollectionId().'.svg';
     }
