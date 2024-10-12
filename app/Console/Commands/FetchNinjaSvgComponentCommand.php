@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 
 class FetchNinjaSvgComponentCommand extends Command
 {
-    protected $signature = 'ninja:component {inscription_id? : The inscription ID} {--a|all : Fetch all Ninja SVG Components}';
+    protected $signature = 'ninja:component {inscription_id? : The inscription ID} {--a|all : Fetch all Ninja SVG components}  {--force : Force files to be overwritten}';
 
     protected $description = 'Fetch Ninja SVG components.';
 
@@ -29,7 +29,8 @@ class FetchNinjaSvgComponentCommand extends Command
         }
 
         FetchNinjaSvgComponent::dispatch(
-            $this->argument('inscription_id')
+            $this->argument('inscription_id'),
+            $this->option('force')
         );
 
         $this->info('Fethed Ninja SVG component: '.$this->argument('inscription_id').'.');
@@ -41,7 +42,8 @@ class FetchNinjaSvgComponentCommand extends Command
             collect($inscription->meta)
                 ->each(function ($inscription_meta) {
                     FetchNinjaSvgComponent::dispatch(
-                        $inscription_meta['id']
+                        $inscription_meta['id'],
+                        $this->option('force')
                     );
                 });
         }

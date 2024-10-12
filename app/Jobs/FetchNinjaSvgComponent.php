@@ -18,7 +18,8 @@ class FetchNinjaSvgComponent implements ShouldQueue
     public string $file_name;
 
     public function __construct(
-        public string $inscription_id
+        public string $inscription_id,
+        public bool $overwrite = false,
     ) {
         $this->url = 'https://ordiscan.com/content/'.$this->inscription_id;
 
@@ -27,7 +28,7 @@ class FetchNinjaSvgComponent implements ShouldQueue
 
     public function handle(): void
     {
-        if (Storage::disk('ninja_components')->exists($this->file_name)) {
+        if (Storage::disk('ninja_components')->exists($this->file_name) && $this->overwrite === false) {
             return;
         }
 
