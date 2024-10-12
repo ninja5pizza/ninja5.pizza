@@ -58,13 +58,6 @@ return [
             'throw' => false,
         ],
 
-        'ninja_stickers' => [
-            'driver' => 'local',
-            'root' => base_path('resources/svg/ninja_stickers'),
-            'visibility' => 'private',
-            'throw' => false,
-        ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

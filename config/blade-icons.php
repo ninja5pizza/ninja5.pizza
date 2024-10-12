@@ -115,14 +115,6 @@ return [
 
         ],
 
-        'ninjasticker' => [
-
-            'path' => 'resources/svg/ninja_stickers',
-
-            'prefix' => 'ninjasticker',
-
-        ],
-
     ],
 
     /*
