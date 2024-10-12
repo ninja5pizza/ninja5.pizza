@@ -52,9 +52,7 @@ class CompileNinjaSvg implements ShouldQueue
                 ->innerSvgContent();
 
             $this->content = Str::of($this->content)
-                //->append('    ')
                 ->append($innerSvg)
-                //->append(PHP_EOL)
                 ->toString();
         });
 
