@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
 use App\Models\Inscription;
+use Illuminate\View\View;
 
 class CollectionController extends Controller
 {

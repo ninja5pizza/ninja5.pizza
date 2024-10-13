@@ -15,7 +15,7 @@ return [
     ],
     [
         'label' => 'st_patricks_day',
-        'inscription_id' => 'c4c41f4d2bc7ea34edf9cd9c652253802f21746c5859932954faf9d065b67d95i8'
+        'inscription_id' => 'c4c41f4d2bc7ea34edf9cd9c652253802f21746c5859932954faf9d065b67d95i8',
     ],
     [
         'label' => 'easter_day',
@@ -39,6 +39,6 @@ return [
     ],
     [
         'label' => 'christmas_day',
-        'inscription_id' => 'c4c41f4d2bc7ea34edf9cd9c652253802f21746c5859932954faf9d065b67d95i2'
+        'inscription_id' => 'c4c41f4d2bc7ea34edf9cd9c652253802f21746c5859932954faf9d065b67d95i2',
     ],
 ];
