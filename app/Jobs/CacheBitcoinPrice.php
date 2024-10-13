@@ -6,6 +6,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class CacheBitcoinPrice implements ShouldQueue
 {
@@ -15,7 +16,9 @@ class CacheBitcoinPrice implements ShouldQueue
 
     public function __construct()
     {
-        $this->apiUrl = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC';
+        $this->apiUrl = Str::of(config('services.coinmarketcap.base_url'))
+            ->append('cryptocurrency/quotes/latest?symbol=BTC')
+            ->toString();
     }
 
     public function handle(): void
