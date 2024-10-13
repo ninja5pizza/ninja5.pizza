@@ -15,7 +15,7 @@ class FetchNinjaSvgComponentCommand extends Command
     public function handle()
     {
         if ($this->option('all')) {
-            $this->fetchAllNinjaSvgComponents();
+            $this->fetchNinjaSvgComponents();
 
             $this->info('All Ninja SVG components are queued for fetching.');
 
@@ -36,7 +36,7 @@ class FetchNinjaSvgComponentCommand extends Command
         $this->info('Fethed Ninja SVG component: '.$this->argument('inscription_id').'.');
     }
 
-    protected function fetchAllNinjaSvgComponents(): void
+    protected function fetchNinjaSvgComponents(): void
     {
         Inscription::whereNotNull('meta')
             ->get()
