@@ -43,7 +43,9 @@ class FetchNinjaSvgComponentCommand extends Command
             ->pluck('meta')
             ->flatMap(function (array $item) {
                 return collect($item)->pluck('id');
-            })->unique()->each(function ($inscription_id) {
+            })
+            ->unique()
+            ->each(function ($inscription_id) {
                 FetchNinjaSvgComponent::dispatch(
                     $inscription_id,
                     $this->option('force')
