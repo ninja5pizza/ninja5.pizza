@@ -38,14 +38,16 @@ class FetchNinjaSvgComponentCommand extends Command
 
     protected function fetchAllNinjaSvgComponents(): void
     {
-        foreach (Inscription::whereNotNull('meta')->get() as $inscription) {
-            collect($inscription->meta)
-                ->each(function ($inscription_meta) {
-                    FetchNinjaSvgComponent::dispatch(
-                        $inscription_meta['id'],
-                        $this->option('force')
-                    );
-                });
-        }
+        Inscription::whereNotNull('meta')
+            ->get()
+            ->pluck('meta')
+            ->flatMap(function (array $item) {
+                return collect($item)->pluck('id');
+            })->unique()->each(function ($inscription_id) {
+                FetchNinjaSvgComponent::dispatch(
+                    $inscription_id,
+                    $this->option('force')
+                );
+            });
     }
 }
