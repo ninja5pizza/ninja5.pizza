@@ -13,7 +13,7 @@ class DownloadSvgController extends Controller
         return Storage::disk('ninjas')->download(
             $inscription->getInternalCollectionId().'.svg',
             Str::of($inscription->name)->slug()->append('.svg')->toString(),
-            ['Content-Type' => 'image/xml+svg']
+            ['Content-Type' => 'image/svg+xml']
         );
     }
 }
