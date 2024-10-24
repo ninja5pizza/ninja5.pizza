@@ -17,7 +17,7 @@ Route::get('/collection', CollectionController::class)->name('collection');
 Route::get('/{handle}', ProfileController::class)->name('profile');
 
 Route::get('/pizza-ninjas/{id}', PizzaNinjaController::class)
-    ->where('id', '[1-9]|[1-9][0-9]|1[0-4][0-9][0-9]|1500');
+    ->where('id', '[0-9]+');
 
 Route::get(
     '/content/{inscription:inscription_id}',
