@@ -35,17 +35,17 @@
                         </div>
                         <div class="flex flex-col">
                             @if($inscription->fullSvgExists())
-                                @svg(
-                                    'ninjas.'.$inscription->getInternalCollectionId(),
-                                    'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
-                                )
-                            @endif
+                            @svg(
+                                'ninjas.'.$inscription->getInternalCollectionId(),
+                                'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
+                            )
                             <a
                                 href="{{ route('download-svg', $inscription) }}"
                                 class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-bold text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                             >
                                 Download SVG
                             </a>
+                            @endif
                         </div>
                     </div>
                 </div>
