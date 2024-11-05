@@ -6,7 +6,7 @@
     "require": {
         "php": "^8.3",
         "blade-ui-kit/blade-icons": "^1.7",
-        "laravel/framework": "^11.29",
+        "laravel/framework": "^11.30",
         "laravel/horizon": "^5.29",
         "laravel/tinker": "^2.10"
     },
