@@ -19,6 +19,15 @@ class Ninja5
         return $this->members->contains('inscription_id', $id);
     }
 
+    public function getTwitterHandleForInscriprionId(string $id): string
+    {
+        $member = $this->members->filter(function ($value, $key) use ($id) {
+            return $value['inscription_id'] === $id;
+        });
+
+        return $member->keys()->first() ?? '';
+    }
+
     public function fullSvgExistsForNumber(int $id)
     {
         return Storage::disk('ninjas')->exists($id.'.svg');

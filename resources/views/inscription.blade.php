@@ -23,14 +23,28 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl">
                     <div class="mt-24 flex flex-col md:flex-row justify-between">
-                        <div class="flex gap-2">
-                            <h3 class="text-3xl text-orange-100 font-bold">
-                                {{ $inscription->name }}
-                            </h3>
-                            @if($ninja5->isCoreMemberForInscriptionId($inscription->inscription_id))
-                                <div class="text-orange-200">
-                                    <x-icon-verified class="w-4"/>
-                                </div>
+                        <div class="flex flex-col">
+                            <div class="flex gap-2">
+                                <h3 class="text-3xl text-orange-100 font-bold">
+                                    {{ $inscription->name }}
+                                </h3>
+                                @if($ninja5->isCoreMemberForInscriptionId($inscription->inscription_id))
+                                    <div class="text-orange-200">
+                                        <x-icon-verified class="w-4"/>
+                                    </div>
+                                @endif
+                            </div>
+                            @if($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))
+                            <div class="mt-4">
+                                <a
+                                    class="flex items-center text-orange-200 hover:text-white font-semibold"
+                                    href="{{ Str::of($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))->prepend('https://x.com/') }}"
+                                    target="_blank"
+                                >
+                                    <x-icon-twitter-x class="w-6 pr-2"/>
+                                    <span>{{ $ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id) }}</span>
+                                </a>
+                            </div>
                             @endif
                         </div>
                         <div class="flex flex-col">
