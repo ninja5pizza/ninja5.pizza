@@ -70,6 +70,16 @@ return [
             'throw' => false,
         ],
 
+        'cloudflare' => [
+            'driver' => 's3',
+            'key' => env('CLOUDFLARE_R2_KEY'),
+            'secret' => env('CLOUDFLARE_R2_SECRET'),
+            'region' => env('CLOUDFLARE_R2_REGION'),
+            'bucket' => env('CLOUDFLARE_R2_BUCKET'),
+            'endpoint' => env('CLOUDFLARE_R2_ENDPOINT'),
+            'use_path_style_endpoint' => true,
+        ],
+
     ],
 
     /*
