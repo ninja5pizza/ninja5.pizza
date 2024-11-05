@@ -52,6 +52,32 @@
             </div>
         </main>
 
+        @if($inscription->hasMoodzImages())
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-6">
+            <div class="mx-auto max-w-2xl">
+                <div class="flex gap-x-2 justify-end">
+                    @foreach($inscription->getMoodzFullUrls() as $url)
+                    <img
+                        src="{{ $url }}"
+                        class=" w-full md:w-64 border border-2 border-orange-400 rounded-lg"
+                        alt="{{ $inscription->name }} animation by 0xmoodz"
+                    >
+                    @endforeach
+                </div>
+                <div class="flex px-2 justify-end text-orange-200 text-sm">
+                    <p class="mt-1">
+                        animation by
+                        <a
+                            class="underline"
+                            href="https://x.com/0xmoodz"
+                            target="_blank"
+                        >@0xmoodz</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        @endif
+
         <section class="mt-32 bg-material-theme-ocean pt-16 pb-24 shadow-lg">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
