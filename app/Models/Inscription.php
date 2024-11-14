@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 class Inscription extends Model
 {
-    use HasFactory, HasMoodzAnimations, HasBtcLoongArt, HasJasmineArt;
+    use HasBtcLoongArt, HasFactory, HasJasmineArt, HasMoodzAnimations;
 
     protected $fillable = [
         'inscription_id',

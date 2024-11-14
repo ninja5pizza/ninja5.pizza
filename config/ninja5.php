@@ -54,6 +54,6 @@ return [
             'pizza_ninjas_number' => 107,
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i12',
         ],
-    ]
+    ],
 
 ];
