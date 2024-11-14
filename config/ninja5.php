@@ -61,6 +61,12 @@ return [
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i20',
         ],
 
+        'joi39597427' => [
+            'twitter_name' => '277',
+            'pizza_ninjas_number' => 168,
+            'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i148',
+        ],
+
     ],
 
 ];
