@@ -10,11 +10,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', HomepageController::class)->name('home');
+Route::get('/', HomepageController::class)
+    ->name('home');
 
-Route::get('/collection', CollectionController::class)->name('collection');
+Route::get('/collection', CollectionController::class)
+    ->name('collection');
 
-Route::get('/{handle}', ProfileController::class)->name('profile');
+Route::get('/{handle}', ProfileController::class)
+    ->name('profile');
 
 Route::get('/pizza-ninjas/{id}', PizzaNinjaController::class)
     ->whereNumber('id');
@@ -22,16 +25,19 @@ Route::get('/pizza-ninjas/{id}', PizzaNinjaController::class)
 Route::get(
     '/content/{inscription:inscription_id}',
     ContentController::class
-)->name('content');
+)
+    ->name('content');
 
 Route::get(
     '/inscription/{inscription:inscription_id}',
     InscriptionController::class
-)->name('inscription');
+)
+    ->name('inscription');
 
 Route::get(
     '/download/{inscription:inscription_id}',
     DownloadSvgController::class
-)->name('download-svg');
+)
+    ->name('download-svg');
 
 Route::post('/search', SearchController::class)->name('search');
