@@ -16,7 +16,7 @@ class Ninja5
 
     public function isCoreMemberForInscriptionId(string $id): bool
     {
-        return $this->members->only('core')->contains('inscription_id', $id);
+        return $this->members->only('core')->collapse()->contains('inscription_id', $id);
     }
 
     public function getTwitterHandleForInscriprionId(string $id): string
