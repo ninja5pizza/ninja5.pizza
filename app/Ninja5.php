@@ -19,6 +19,16 @@ class Ninja5
         return $this->members->only('core')->collapse()->contains('inscription_id', $id);
     }
 
+    public function getTwitterNameForInscriprionId(string $id): string
+    {
+        $member = $this->members->collapse()->filter(function ($value, $key) use ($id) {
+            return $value['inscription_id'] === $id;
+        })
+            ->collapse();
+
+        return $member->get('twitter_name', '');
+    }
+
     public function getTwitterHandleForInscriprionId(string $id): string
     {
         $member = $this->members->collapse()->filter(function ($value, $key) use ($id) {

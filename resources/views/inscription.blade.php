@@ -36,13 +36,16 @@
                             </div>
                             @if($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))
                             <div class="mt-4">
+                                <span class="text-xl text-orange-50 font-bold">
+                                    {{ $ninja5->getTwitterNameForInscriprionId($inscription->inscription_id) }}
+                                </span>
                                 <a
-                                    class="flex items-center text-orange-200 hover:text-white font-semibold"
+                                    class="mt-1 flex items-center text-orange-200 hover:text-white"
                                     href="{{ Str::of($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))->prepend('https://x.com/') }}"
                                     target="_blank"
                                 >
-                                    <x-icon-twitter-x class="w-6 pr-2"/>
-                                    <span>{{ $ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id) }}</span>
+                                    <x-icon-twitter-x class="w-6 h-6 pr-2"/>
+                                    <span>{{ Str::of('@')->append($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id)) }}</span>
                                 </a>
                             </div>
                             @endif
