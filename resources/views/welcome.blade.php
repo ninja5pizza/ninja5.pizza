@@ -34,18 +34,25 @@
             </h3>
             <div class="flex items-center mt-8 text-white">
                 <a
-                    href="https://discord.com/invite/PeDXfvzTCk"
-                    class="hover:text-orange-100"
-                    target="_blank"
-                >
-                    <x-icon-discord class="w-8"/>
-                </a>
-                <a
                     href="https://x.com/ninja5_pizza"
                     class="hover:text-orange-100"
                     target="_blank"
                 >
-                    <x-icon-twitter-x class="ml-12 w-8"/>
+                    <x-icon-twitter-x class="w-8"/>
+                </a>
+                <a
+                    href="https://discord.com/invite/PeDXfvzTCk"
+                    class="hover:text-orange-100"
+                    target="_blank"
+                >
+                    <x-icon-discord class="ml-12 w-8"/>
+                </a>
+                <a
+                    href="https://github.com/ninja5pizza"
+                    class="hover:text-orange-100"
+                    target="_blank"
+                >
+                    <x-icon-github class="ml-12 w-8"/>
                 </a>
             </div>
         </div>
