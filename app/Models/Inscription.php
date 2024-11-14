@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Traits\HasBtcLoongArt;
+use App\Traits\HasJasmineArt;
 use App\Traits\HasMoodzAnimations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +13,7 @@ use Illuminate\Support\Str;
 
 class Inscription extends Model
 {
-    use HasFactory, HasMoodzAnimations;
+    use HasFactory, HasMoodzAnimations, HasBtcLoongArt, HasJasmineArt;
 
     protected $fillable = [
         'inscription_id',

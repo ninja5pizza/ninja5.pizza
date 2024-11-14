@@ -92,6 +92,58 @@
         </section>
         @endif
 
+        @if($inscription->hasBtcLoongImages())
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-6">
+            <div class="mx-auto max-w-2xl">
+                <div class="flex gap-x-2 justify-end">
+                    @foreach($inscription->getBtcLoongFullUrls() as $url)
+                    <img
+                        src="{{ $url }}"
+                        class=" w-full md:w-64 border border-2 border-orange-400 rounded-lg"
+                        alt="{{ $inscription->name }} art by loong.btc"
+                    >
+                    @endforeach
+                </div>
+                <div class="flex px-2 justify-end text-orange-200 text-sm">
+                    <p class="mt-1">
+                        art by
+                        <a
+                            class="underline"
+                            href="https://x.com/btc_loong"
+                            target="_blank"
+                        >@btc_loong</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        @endif
+
+        @if($inscription->hasJasmineImages())
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-6">
+            <div class="mx-auto max-w-2xl">
+                <div class="flex gap-x-2 justify-end">
+                    @foreach($inscription->getJasmineFullUrls() as $url)
+                    <img
+                        src="{{ $url }}"
+                        class=" w-full md:w-64 border border-2 border-orange-400 rounded-lg"
+                        alt="{{ $inscription->name }} art by jasmine"
+                    >
+                    @endforeach
+                </div>
+                <div class="flex px-2 justify-end text-orange-200 text-sm">
+                    <p class="mt-1">
+                        art by
+                        <a
+                            class="underline"
+                            href="https://x.com/itisjasminnee"
+                            target="_blank"
+                        >@itisjasminnee</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        @endif
+
         <section class="mt-32 bg-material-theme-ocean pt-16 pb-24 shadow-lg">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row gap-4 justify-center">
