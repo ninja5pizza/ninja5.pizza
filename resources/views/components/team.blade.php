@@ -4,7 +4,7 @@
             TEAM
         </h2>
         <div class="flex flex-col md:flex-row mt-8 md:space-x-10 text-white">
-            @foreach($ninja5->members as $key => $value)
+            @foreach($ninja5->members->get('core') as $key => $value)
             <div class="flex flex-col mt-4 md:mt-0">
                 <a
                     href="{{ route('profile', ['handle' => $key]) }}"

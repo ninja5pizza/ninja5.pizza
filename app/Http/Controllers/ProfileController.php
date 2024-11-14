@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     public function __invoke(string $handle): View
     {
-        $ninja = collect(config('ninja5'))->get($handle);
+        $ninja = collect(config('ninja5'))->collapse()->get($handle);
         $inscription_id = collect($ninja)->get('inscription_id');
 
         $inscription = Inscription::where(
