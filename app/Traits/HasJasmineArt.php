@@ -51,7 +51,7 @@ trait HasJasmineArt
                 })
                 ->values();
 
-            Cache::put($this->getMoodzCacheKey(), $files, now()->addDay());
+            Cache::put($this->getJasmineCacheKey(), $files, now()->addDay());
         } catch (Exception $e) {
             $files = collect([]);
             Log::error('Error checking Jasmine art for model: '.$this->id.': '.$e->getMessage());
