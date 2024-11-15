@@ -1,4 +1,5 @@
-<footer class="my-16 border-t border-orange-200 pt-8 sm:mt-20 lg:mt-24">
+<footer class="my-16 border-t border-orange-200 pt-8 sm:mt-20 lg:mt-24" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="flex flex-col md:flex-row items-center justify-center space-x-4 text-white">
         <div class="mt-4 flex space-x-4">
             <p>Proudly hosted with</p>
