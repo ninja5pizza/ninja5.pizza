@@ -43,7 +43,7 @@
                     <x-icon-twitter-x class="w-8"/>
                 </a>
                 <a
-                    href="https://discord.com/invite/PeDXfvzTCk"
+                    href="https://discord.com/invite/PVpFta7tKC"
                     class="hover:text-orange-100"
                     target="_blank"
                 >
