@@ -127,6 +127,12 @@ return [
             'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i28',
         ],
 
+        'DoggfatherCrew' => [
+            'twitter_name' => 'Doggfather',
+            'pizza_ninjas_number' => 402,
+            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i39',
+        ],
+
         'im5p3c14l' => [
             'twitter_name' => '5P3C14L',
             'pizza_ninjas_number' => 1489,
@@ -143,6 +149,12 @@ return [
             'twitter_name' => 'jasmine',
             'pizza_ninjas_number' => 177,
             'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i6',
+        ],
+
+        'joi39597427' => [
+            'twitter_name' => '277',
+            'pizza_ninjas_number' => 168,
+            'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i148',
         ],
 
         'ken1000x' => [
@@ -181,10 +193,10 @@ return [
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i20',
         ],
 
-        'joi39597427' => [
-            'twitter_name' => '277',
-            'pizza_ninjas_number' => 168,
-            'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i148',
+        'yafeelmi1st' => [
+            'twitter_name' => 'Native Loup',
+            'pizza_ninjas_number' => 951,
+            'inscription_id' => '9d6e3f1c019acaaf89dfbb53432ee654bfa0aa7260848db5e579b5a669a83e38i144',
         ],
 
     ],
