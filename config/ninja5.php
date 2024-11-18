@@ -43,6 +43,18 @@ return [
 
     'verified' => [
 
+        'boozybtc' => [
+            'twitter_name' => 'boozy.btc',
+            'pizza_ninjas_number' => 281,
+            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i29',
+        ],
+
+        'BryanXBT' => [
+            'twitter_name' => '₿ryan 🍕🥷 ▣ bryan.xbt 🦾🐼 🔥🍌',
+            'pizza_ninjas_number' => 36,
+            'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i32',
+        ],
+
         'BTCAlchemist' => [
             'twitter_name' => 'BTCAlchemist | BIP-420 🆓🔮🧙🏻‍♂️🛡️',
             'pizza_ninjas_number' => 47,
