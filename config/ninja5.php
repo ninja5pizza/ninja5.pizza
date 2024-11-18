@@ -43,6 +43,12 @@ return [
 
     'verified' => [
 
+        '3dsam7999831' => [
+            'twitter_name' => '3Dsam.btc',
+            'pizza_ninjas_number' => 985,
+            'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i1',
+        ],
+
         'boozybtc' => [
             'twitter_name' => 'boozy.btc',
             'pizza_ninjas_number' => 281,
@@ -61,10 +67,46 @@ return [
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i3',
         ],
 
+        'ChrisCoffeeEth' => [
+            'twitter_name' => 'Chris ☕️',
+            'pizza_ninjas_number' => 117,
+            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i14',
+        ],
+
+        'damonnam' => [
+            'twitter_name' => 'Damon 🟠💊',
+            'pizza_ninjas_number' => 580,
+            'inscription_id' => '9f9b2c8ffa7c6ceb2ee820ad4dec998fe94a4b338162b29d5267b240f98abbabi79',
+        ],
+
+        'EricNelson' => [
+            'twitter_name' => 'Blessed',
+            'pizza_ninjas_number' => 424,
+            'inscription_id' => '6a74748d2df24b852ccaade43b27dfd12bd887755f3a9436838141209dce43fai79',
+        ],
+
+        'Fc2068' => [
+            'twitter_name' => 'hibtc.btc',
+            'pizza_ninjas_number' => 19,
+            'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i15',
+        ],
+
+        'fred_builds' => [
+            'twitter_name' => 'Fred 📈',
+            'pizza_ninjas_number' => 201,
+            'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i28',
+        ],
+
         'LeonidasNFT' => [
             'twitter_name' => 'Leonidas',
             'pizza_ninjas_number' => 107,
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i12',
+        ],
+
+        'lodouNono' => [
+            'twitter_name' => '⚔️ Nono ⚔️',
+            'pizza_ninjas_number' => 258,
+            'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i79',
         ],
 
         'TO' => [
