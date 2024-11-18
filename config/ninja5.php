@@ -181,6 +181,12 @@ return [
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i25',
         ],
 
+        'Oranijo' => [
+            'twitter_name' => 'MyNameGoesHere',
+            'pizza_ninjas_number' => 749,
+            'inscription_id' => '712abfb78437156b772ca7f895339ec879dc58141e87fab783d7e3c04ca25580i95',
+        ],
+
         'nonfungible_jan' => [
             'twitter_name' => 'Jan | BIP-420🐱',
             'pizza_ninjas_number' => 170,
