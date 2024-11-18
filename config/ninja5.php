@@ -43,10 +43,28 @@ return [
 
     'verified' => [
 
+        '0xDeano' => [
+            'twitter_name' => 'Dean◎ (⏳)',
+            'pizza_ninjas_number' => 1037,
+            'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i77',
+        ],
+
+        '0xmoodz' => [
+            'twitter_name' => 'Moodz',
+            'pizza_ninjas_number' => 1318,
+            'inscription_id' => 'fd9e4f52b0017d11e5e0541c252505a62b8d89a3412cfeca584aadedffe2d77bi50',
+        ],
+
         '3dsam7999831' => [
             'twitter_name' => '3Dsam.btc',
             'pizza_ninjas_number' => 985,
             'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i1',
+        ],
+
+        'Agent_Keyway' => [
+            'twitter_name' => 'Keyway',
+            'pizza_ninjas_number' => 501,
+            'inscription_id' => '9f9b2c8ffa7c6ceb2ee820ad4dec998fe94a4b338162b29d5267b240f98abbabi0',
         ],
 
         'boozybtc' => [
@@ -95,6 +113,18 @@ return [
             'twitter_name' => 'Fred 📈',
             'pizza_ninjas_number' => 201,
             'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i28',
+        ],
+
+        'irzhanskaya' => [
+            'twitter_name' => 'Liza',
+            'pizza_ninjas_number' => 1143,
+            'inscription_id' => '9743b10cf3238982f30e55870d1ea89a6b20db4883da9674b71aaa7728fc7243i31',
+        ],
+
+        'itisjasminnee' => [
+            'twitter_name' => 'jasmine',
+            'pizza_ninjas_number' => 177,
+            'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i6',
         ],
 
         'LeonidasNFT' => [
