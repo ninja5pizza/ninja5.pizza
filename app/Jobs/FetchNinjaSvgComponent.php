@@ -3,11 +3,12 @@
 namespace App\Jobs;
 
 use Exception;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 
 class FetchNinjaSvgComponent implements ShouldQueue
 {
@@ -23,7 +24,7 @@ class FetchNinjaSvgComponent implements ShouldQueue
     ) {
         $this->url = Str::of(config('services.ordinals.base_url'))
             ->append('/content/')
-            ->append($this->inscription->inscription_id)
+            ->append($this->inscription_id)
             ->toString();
 
         $this->file_name = $this->inscription_id.'.svg';
