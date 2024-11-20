@@ -32,7 +32,7 @@ class FetchMetaData implements ShouldQueue
             $json = $this->extractJsonFromHtml($response->body());
 
             $this->inscription->meta = json_decode($json, true);
-
+dd($this->inscription->meta);
             $this->inscription->save();
         }
     }
