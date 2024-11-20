@@ -44,6 +44,8 @@ class CompileNinjaSvgCommand extends Command
         CompileNinjaSvg::dispatchSync($inscription, $this->option('force'));
 
         $this->info($inscription->name.' compiled into a SVG file successfully!');
+
+        return Command::SUCCESS;
     }
 
     protected function compileAllNinjas(): void
