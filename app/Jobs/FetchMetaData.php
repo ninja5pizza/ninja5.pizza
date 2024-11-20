@@ -6,9 +6,9 @@ use App\Models\Inscription;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use Laravel\Horizon\Exec;
 
 class FetchMetaData implements ShouldQueue
 {
@@ -40,15 +40,7 @@ class FetchMetaData implements ShouldQueue
         }
 
         if ($response->successful()) {
-            $body = $response->body();
-
-            if ($response->header('Content-Encoding') === 'br') {
-                try {
-                    $body = brotli_uncompress($response->body());
-                } catch (Exception $e) {
-                    throw new Exception('Brotli decoding failed: '.$e->getMessage());
-                }
-            }
+            $body = $this->getBodyFromResponse($response);
 
             $this->inscription->meta = json_decode($this->extractJsonFromHtml($body), true);
 
@@ -58,6 +50,21 @@ class FetchMetaData implements ShouldQueue
 
             $this->inscription->save();
         }
+    }
+
+    protected function getBodyFromResponse(Response $response): string
+    {
+        $body = $response->body();
+
+        if ($response->header('Content-Encoding') === 'br') {
+            try {
+                $body = brotli_uncompress($response->body());
+            } catch (Exception $e) {
+                throw new Exception('Brotli decoding failed: '.$e->getMessage());
+            }
+        }
+
+        return $body;
     }
 
     protected function extractJsonFromHtml(string $html): ?string
