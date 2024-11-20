@@ -26,7 +26,11 @@ class FetchMetaData implements ShouldQueue
 
     public function handle(): void
     {
-        $response = Http::get($this->url);
+        $response = Http::withHeaders([
+            'Accept-Encoding' => 'gzip, deflate, br, zstd',
+        ])
+            ->withOptions(['decode_content' => false])
+            ->get($this->url);
 
         if (! $response->successful()) {
             throw new Exception('HTTP Request failed with status: '.$response->status());
