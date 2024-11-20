@@ -42,7 +42,7 @@ class CompileNinjaSvgCommand extends Command
         }
 
         if ($this->option('force') === false && $inscription->fullSvgExists()) {
-            $this->error('SVG already exists. Use --force to overwrite it.');
+            $this->error('SVG already exists for '.$inscription->name.'. Use --force to overwrite it.');
 
             return Command::FAILURE;
         }
