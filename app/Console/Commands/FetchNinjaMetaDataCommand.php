@@ -20,11 +20,11 @@ class FetchNinjaMetaDataCommand extends Command
             return Command::SUCCESS;
         }
 
-        foreach (Inscription::whereNull('meta')->orderByDesc('name')->get() as $inscription) {
+        foreach (Inscription::whereNull('meta')->orderBy('name')->get() as $inscription) {
             FetchMetaData::dispatch($inscription);
-        }
 
-        $this->info('Fetching meta data for '.$inscription->name.'.');
+            $this->info('Fetching meta data for '.$inscription->name.'.');
+        }
 
         return Command::SUCCESS;
     }
