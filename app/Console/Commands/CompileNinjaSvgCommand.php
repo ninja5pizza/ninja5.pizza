@@ -41,6 +41,12 @@ class CompileNinjaSvgCommand extends Command
             return Command::INVALID;
         }
 
+        if ($this->option('force') === false && $inscription->fullSvgExists()) {
+            $this->error('SVG already exists for '.$inscription->name.'. Use --force to overwrite it.');
+
+            return Command::FAILURE;
+        }
+
         CompileNinjaSvg::dispatchSync($inscription, $this->option('force'));
 
         $this->info($inscription->name.' compiled into a SVG file successfully!');
