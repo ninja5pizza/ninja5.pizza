@@ -13,6 +13,8 @@ class FetchMetaData implements ShouldQueue
 {
     use Queueable;
 
+    public $tries = 2;
+
     public string $url;
 
     public function __construct(

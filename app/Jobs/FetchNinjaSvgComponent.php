@@ -14,6 +14,8 @@ class FetchNinjaSvgComponent implements ShouldQueue
 {
     use Dispatchable, Queueable;
 
+    public $tries = 2;
+
     public string $url;
 
     public string $file_name;
