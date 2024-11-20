@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use Laravel\Horizon\Exec;
 
 class FetchMetaData implements ShouldQueue
 {
@@ -39,9 +40,21 @@ class FetchMetaData implements ShouldQueue
         }
 
         if ($response->successful()) {
-            $json = $this->extractJsonFromHtml($response->body());
+            $body = $response->body();
 
-            $this->inscription->meta = json_decode($json, true);
+            if ($response->header('Content-Encoding') === 'br') {
+                try {
+                    $body = brotli_uncompress($response->body());
+                } catch (Exception $e) {
+                    throw new Exception('Brotli decoding failed: '.$e->getMessage());
+                }
+            }
+
+            $this->inscription->meta = json_decode($this->extractJsonFromHtml($body), true);
+
+            if (! $this->inscription->isDirty('meta')) {
+                throw new Exception('Unable to retrieve meta data for '.$this->inscription->name);
+            }
 
             $this->inscription->save();
         }
