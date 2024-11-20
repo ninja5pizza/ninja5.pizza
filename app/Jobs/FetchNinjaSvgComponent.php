@@ -21,7 +21,10 @@ class FetchNinjaSvgComponent implements ShouldQueue
         public string $inscription_id,
         public bool $overwrite = false,
     ) {
-        $this->url = 'https://ordiscan.com/content/'.$this->inscription_id;
+        $this->url = Str::of(config('services.ordinals.base_url'))
+            ->append('/content/')
+            ->append($this->inscription->inscription_id)
+            ->toString();
 
         $this->file_name = $this->inscription_id.'.svg';
     }

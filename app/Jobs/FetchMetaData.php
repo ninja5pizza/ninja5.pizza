@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class FetchMetaData implements ShouldQueue
 {
@@ -17,7 +18,10 @@ class FetchMetaData implements ShouldQueue
     public function __construct(
         public Inscription $inscription,
     ) {
-        $this->url = 'https://ordiscan.com/content/'.$this->inscription->inscription_id;
+        $this->url = Str::of(config('services.ordinals.base_url'))
+            ->append('/content/')
+            ->append($this->inscription->inscription_id)
+            ->toString();
     }
 
     public function handle(): void
