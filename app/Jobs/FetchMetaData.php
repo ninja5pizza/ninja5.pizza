@@ -60,7 +60,7 @@ class FetchMetaData implements ShouldQueue
         }
     }
 
-    public function extractJsonFromHtml(string $html): ?string
+    protected function extractJsonFromHtml(string $html): ?string
     {
         $pattern = '/Ninja\.load\((.*?)\)/s';
 
