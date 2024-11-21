@@ -55,6 +55,12 @@ return [
             'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i77',
         ],
 
+        '0xNorby' => [
+            'twitter_name' => 'Norbert ༺༽𝐁𝐓𝐂༼༻',
+            'pizza_ninjas_number' => 1372,
+            'inscription_id' => 'fd9e4f52b0017d11e5e0541c252505a62b8d89a3412cfeca584aadedffe2d77bi101',
+        ],
+
         '0xmoodz' => [
             'twitter_name' => 'Moodz',
             'pizza_ninjas_number' => 1318,
