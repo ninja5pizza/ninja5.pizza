@@ -115,6 +115,12 @@ return [
             'inscription_id' => '9f9b2c8ffa7c6ceb2ee820ad4dec998fe94a4b338162b29d5267b240f98abbabi79',
         ],
 
+        'DoggfatherCrew' => [
+            'twitter_name' => 'Doggfather',
+            'pizza_ninjas_number' => 402,
+            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i39',
+        ],
+
         'EricNelson' => [
             'twitter_name' => 'Blessed',
             'pizza_ninjas_number' => 424,
@@ -131,12 +137,6 @@ return [
             'twitter_name' => 'Fred 📈',
             'pizza_ninjas_number' => 201,
             'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i28',
-        ],
-
-        'DoggfatherCrew' => [
-            'twitter_name' => 'Doggfather',
-            'pizza_ninjas_number' => 402,
-            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i39',
         ],
 
         'im5p3c14l' => [
@@ -185,6 +185,12 @@ return [
             'twitter_name' => 'migvy',
             'pizza_ninjas_number' => 231,
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i25',
+        ],
+
+        'n1cohy' => [
+            'twitter_name' => 'nico',
+            'pizza_ninjas_number' => 149,
+            'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i129',
         ],
 
         'Oranijo' => [
