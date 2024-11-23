@@ -11,9 +11,9 @@
 
     <x-price/>
 
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-0 sm:px-4 lg:px-8">
         <div class="mx-auto max-w-2xl">
-            <div class="mt-10 flex flex-col md:flex-row justify-center items-center mx-24">
+            <div class="mt-10 flex flex-col md:flex-row justify-center items-center mx-12">
                 <x-search/>
                 <a
                     href="{{ route('collection') }}"
