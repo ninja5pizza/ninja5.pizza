@@ -109,12 +109,6 @@ return [
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i14',
         ],
 
-        'CryptoNpizza' => [
-            'twitter_name' => 'cryptoNpizza',
-            'pizza_ninjas_number' => 261,
-            'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i82',
-        ],
-
         'damonnam' => [
             'twitter_name' => 'Damon 🟠💊',
             'pizza_ninjas_number' => 580,
