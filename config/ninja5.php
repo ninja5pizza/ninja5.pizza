@@ -69,7 +69,7 @@ return [
 
         '3dsam7999831' => [
             'twitter_name' => '3Dsam.btc',
-            'pizza_ninjas_number' => 985,
+            'pizza_ninjas_number' => 958,
             'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i1',
         ],
 
