@@ -127,6 +127,12 @@ return [
             'inscription_id' => '6a74748d2df24b852ccaade43b27dfd12bd887755f3a9436838141209dce43fai79',
         ],
 
+        'erikaleetv' => [
+            'twitter_name' => 'Erika Lee',
+            'pizza_ninjas_number' => 452,
+            'inscription_id' => '6a74748d2df24b852ccaade43b27dfd12bd887755f3a9436838141209dce43fai101',
+        ],
+
         'Fc2068' => [
             'twitter_name' => 'hibtc.btc',
             'pizza_ninjas_number' => 19,
