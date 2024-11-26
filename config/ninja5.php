@@ -169,6 +169,12 @@ return [
             'inscription_id' => '24d39f0dbba4b23bfdc50ec44276a23cf039fb80df5db14bc4f6f127fa2399b4i5',
         ],
 
+        'Keptainmusic' => [
+            'twitter_name' => 'KEPTAIN.BTC',
+            'pizza_ninjas_number' => 1453,
+            'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i9',
+        ],
+
         'LeonidasNFT' => [
             'twitter_name' => 'Leonidas',
             'pizza_ninjas_number' => 107,
