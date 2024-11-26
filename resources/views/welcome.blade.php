@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <x-price/>
+    <x-stats/>
 
     <div class="mx-auto max-w-7xl px-0 sm:px-4 lg:px-8">
         <div class="mx-auto max-w-2xl">
