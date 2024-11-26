@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\FloorPrice;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Cache;
@@ -33,6 +34,11 @@ class CacheOrdinalsCollectionStats implements ShouldQueue
 
         if ($response->successful()) {
             Cache::put('ordinals_collection_stats_'.$this->symbol, $response->json());
+
+            $model = new FloorPrice;
+            $model->symbol = $response->json('symbol');
+            $model->price_in_sats = $response->json('floorPrice');
+            $model->save();
         }
     }
 }

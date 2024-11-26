@@ -3,6 +3,7 @@
 namespace Tests\Unit\Jobs;
 
 use App\Jobs\CacheOrdinalsCollectionStats;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
@@ -10,6 +11,8 @@ use Tests\TestCase;
 
 class CacheOrdinalsCollectionStatsTest extends TestCase
 {
+    use RefreshDatabase;
+
     protected function validResponse(): array
     {
         return [
