@@ -3,6 +3,9 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
+    build: {
+        target: 'es2022'
+    },
     plugins: [
         laravel({
             input: [
