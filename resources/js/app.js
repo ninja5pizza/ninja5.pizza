@@ -1,4 +1,4 @@
-// import './bootstrap';
+import './bootstrap';
 
 import { codeToHtml } from 'shiki'
 
