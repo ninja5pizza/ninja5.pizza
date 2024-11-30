@@ -11,6 +11,8 @@
 
     <x-stats/>
 
+    <x-chart/>
+
     <div class="mx-auto max-w-7xl px-0 sm:px-4 lg:px-8">
         <div class="mx-auto max-w-2xl">
             <div class="mt-10 flex flex-col md:flex-row justify-center items-center mx-12">
