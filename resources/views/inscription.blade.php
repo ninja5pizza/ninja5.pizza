@@ -50,7 +50,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col gap-y-2">
                             @if($inscription->fullSvgExists())
                             @svg(
                                 'ninjas.'.$inscription->getInternalCollectionId(),
@@ -63,6 +63,17 @@
                                 Download SVG
                             </a>
                             @endif
+                            <div>
+                                <label
+                                    for="ninja-share"
+                                    class="block text-sm/6 font-medium text-stone-50"
+                                >Share this Ninja:</label>
+                                <input
+                                    id="ninja-share"
+                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-sm"
+                                    value="{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}"
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
