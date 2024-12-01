@@ -18,6 +18,14 @@ Route::get('/', HomepageController::class)
 Route::get('/collection', CollectionController::class)
     ->name('collection');
 
+Route::get('/{id}', function (int $id) {
+    if ($id > 0 && $id < 1500) {
+        return redirect('/pizza-ninjas/'.$id, 301);
+    }
+
+    abort(404);
+})->whereNumber('id');
+
 Route::get('/{handle}', ProfileController::class)
     ->name('profile');
 

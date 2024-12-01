@@ -58,11 +58,22 @@
                             )
                             <a
                                 href="{{ route('download-svg', $inscription) }}"
-                                class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-bold text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                             >
                                 Download SVG
                             </a>
                             @endif
+                            <div class="mt-2">
+                                <label
+                                    for="ninja-share"
+                                    class="block px-2 text-sm/6 font-medium text-orange-100"
+                                >Share this Ninja:</label>
+                                <input
+                                    id="ninja-share"
+                                    class="block w-full text-neutral-500 rounded-md bg-white px-3 py-1.5 text-sm outline outline-1 -outline-offset-1 outline-gray-300"
+                                    value="{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}"
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
