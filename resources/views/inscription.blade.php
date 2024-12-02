@@ -77,7 +77,7 @@
                             <div class="mt-2">
                                 <label
                                     for="ninja-share"
-                                    class="block px-2 text-sm/6 font-medium text-orange-100"
+                                    class="block px-2 text-sm font-medium text-orange-100"
                                 >Share this Ninja:</label>
                                 <input
                                     id="ninja-share"
