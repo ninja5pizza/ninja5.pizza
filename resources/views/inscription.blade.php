@@ -16,7 +16,7 @@
         <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
         @endif
     </head>
-    <body class="bg-pizza-orange">
+    <body id="app" class="bg-pizza-orange">
         <x-navigation-bar/>
 
         <main>
@@ -63,17 +63,7 @@
                                 Download SVG
                             </a>
                             @endif
-                            <div class="mt-2">
-                                <label
-                                    for="ninja-share"
-                                    class="block px-2 text-sm/6 font-medium text-orange-100"
-                                >Share this Ninja:</label>
-                                <input
-                                    id="ninja-share"
-                                    class="block w-full text-neutral-500 rounded-md bg-white px-3 py-1.5 text-sm outline outline-1 -outline-offset-1 outline-gray-300"
-                                    value="{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}"
-                                >
-                            </div>
+                            <share-ninja :initial-url="'{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}'"></share-ninja>
                         </div>
                     </div>
                 </div>
