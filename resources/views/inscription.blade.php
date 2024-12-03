@@ -59,11 +59,11 @@
                                     )
                                     <div class="absolute top-2 right-2">
                                         <a
-                                            class="text-orange-400 hover:text-orange-100"
+                                            class="text-orange-200 hover:text-orange-100"
                                             href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
                                             target="_blank"
                                         ">
-                                            <x-icon-fullscreen class="w-6 h-6"/>
+                                            <x-icon-fullscreen class="w-6 h-6 hover:scale-110 ease-out duration-300"/>
                                         </a>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                             <div class="mt-2">
                                 <label
                                     for="ninja-share"
-                                    class="block px-2 text-sm font-medium text-orange-100"
+                                    class="block mb-1 px-2 text-sm font-medium text-orange-100"
                                 >Share this Pizza Ninja:</label>
                                 <input
                                     id="ninja-share"
