@@ -62,7 +62,7 @@
                                             class="text-orange-200 hover:text-orange-100"
                                             href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
                                             target="_blank"
-                                        ">
+                                        >
                                             <x-icon-fullscreen class="w-6 h-6 hover:scale-110 ease-out duration-300"/>
                                         </a>
                                     </div>
