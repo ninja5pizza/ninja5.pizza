@@ -1,16 +1,16 @@
 <?php
 
+use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\DownloadSvgController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\InscriptionController;
+use App\Http\Controllers\PizzaNinjaController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
+use App\Http\Resources\FloorPricesCollection;
 use App\Models\FloorPrice;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\ContentController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomepageController;
-use App\Http\Resources\FloorPricesCollection;
-use App\Http\Controllers\CollectionController;
-use App\Http\Controllers\PizzaNinjaController;
-use App\Http\Controllers\DownloadSvgController;
-use App\Http\Controllers\InscriptionController;
 
 Route::get('/', HomepageController::class)
     ->name('home');

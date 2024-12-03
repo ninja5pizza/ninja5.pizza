@@ -18,7 +18,7 @@
         <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
         @endif
     </head>
-    <body class="bg-pizza-orange">
+    <body id="app" class="bg-pizza-orange">
         <x-navigation-bar/>
 
         <main>
