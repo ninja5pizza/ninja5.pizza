@@ -78,7 +78,7 @@
                                 <label
                                     for="ninja-share"
                                     class="block px-2 text-sm font-medium text-orange-100"
-                                >Share this Ninja:</label>
+                                >Share this Pizza Ninja:</label>
                                 <input
                                     id="ninja-share"
                                     class="block w-full text-neutral-500 rounded-md bg-white px-3 py-1.5 text-sm outline outline-1 -outline-offset-1 outline-gray-300"
