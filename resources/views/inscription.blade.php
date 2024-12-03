@@ -52,16 +52,33 @@
                         </div>
                         <div class="flex flex-col">
                             @if($inscription->fullSvgExists())
-                            @svg(
-                                'ninjas.'.$inscription->getInternalCollectionId(),
-                                'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
-                            )
-                            <a
-                                href="{{ route('download-svg', $inscription) }}"
-                                class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                            >
-                                Download SVG
-                            </a>
+                                <div class="relative">
+                                    @svg(
+                                        'ninjas.'.$inscription->getInternalCollectionId(),
+                                        'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
+                                    )
+                                    <div class="flex absolute top-2 right-2 space-x-2">
+                                        <a
+                                            class="text-orange-200 hover:text-orange-100"
+                                            href="{{ route('download-svg', $inscription) }}"
+                                        >
+                                            <x-icon-download class="w-6 h-6 hover:scale-110 ease-out duration-300"/>
+                                        </a>
+                                        <a
+                                            class="text-orange-200 hover:text-orange-100"
+                                            href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
+                                            target="_blank"
+                                        >
+                                            <x-icon-fullscreen class="w-6 h-6 hover:scale-110 ease-out duration-300"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a
+                                    href="{{ route('download-svg', $inscription) }}"
+                                    class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                >
+                                    Download SVG
+                                </a>
                             @endif
                             <share-ninja :initial-url="'{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}'"></share-ninja>
                         </div>
