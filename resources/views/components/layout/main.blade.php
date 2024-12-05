@@ -18,16 +18,18 @@
         <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>
         @endif
     </head>
-    <body id="app" class="bg-pizza-orange">
-        <x-navigation-bar/>
+    <body class="bg-pizza-orange">
+        <div id="app">
+            <x-navigation-bar/>
 
-        <main>
-            {{ $slot }}
-        </main>
+            <main>
+                {{ $slot }}
+            </main>
 
-        <x-layout.footer/>
+            <x-layout.footer/>
 
-        @vite('resources/js/app.js')
-        @stack('scripts')
+            @vite('resources/js/app.js')
+            @stack('scripts')
+        </div>
     </body>
 </html>

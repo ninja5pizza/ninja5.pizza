@@ -2,7 +2,7 @@
     <div class="bg-gray-50 dark:bg-neutral-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-3xl">
-                <div class="ninja5-logo">
+                <div id="ninja5-logo">
                     <x-icon-logo-animated/>
                 </div>
             </div>
@@ -64,14 +64,14 @@
 
     @pushOnce('scripts')
     <script>
-    var wrapper = document.querySelector('.ninja5-logo svg')
+    const wrapper = document.querySelector('#ninja5-logo svg')
 
     function draw() {
-        wrapper.classList.add('active')
+        wrapper.classList.add('active');
     }
 
     document.addEventListener("DOMContentLoaded", function(e) {
-        setTimeout(draw, 150)
+        setTimeout(draw, 150);
     })
     </script>
     @endPushOnce
