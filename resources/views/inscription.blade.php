@@ -4,13 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ $inscription->name }} | {{ config('app.name') }}</title>
+        {!! seo()->for($inscription) !!}
 
         @vite('resources/css/app.css')
-
-        <x-layout.head.opengraph/>
-        <x-layout.head.twitter/>
-        <x-layout.head.favicons/>
 
         @if(config('services.fathom.site_id'))
         <script src="https://cdn.usefathom.com/script.js" data-site="{{ config('services.fathom.site_id') }}" defer></script>

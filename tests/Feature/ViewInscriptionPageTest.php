@@ -22,4 +22,24 @@ class ViewInscriptionPageTest extends TestCase
             ->assertOk()
             ->assertViewIs('inscription');
     }
+
+    #[Test]
+    public function a_request_to_the_inscription_page_should_see_the_right_title_and_image(): void
+    {
+        Inscription::factory()->create([
+            'inscription_id' => '1234',
+            'name' => 'Pizza Ninjas #464',
+        ]);
+
+        $this->get('/inscription/1234')
+            ->assertOk()
+            ->assertSee(
+                value: '<title>Pizza Ninjas #464 | NINJA5.pizza</title>',
+                escape: false,
+            )
+            ->assertSee(
+                value: '<meta name="twitter:image" content="https://cdn.pizza.ninja/opengraph/default/464.webp">',
+                escape: false,
+            );
+    }
 }

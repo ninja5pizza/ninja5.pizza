@@ -10,10 +10,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Inscription extends Model
 {
-    use HasBtcLoongArt, HasFactory, HasJasmineArt, HasMoodzAnimations;
+    use HasBtcLoongArt, HasFactory, HasJasmineArt, HasMoodzAnimations, HasSEO;
 
     protected $fillable = [
         'inscription_id',
@@ -25,6 +27,17 @@ class Inscription extends Model
         return [
             'meta' => 'array',
         ];
+    }
+
+    public function getDynamicSEOData(): SEOData
+    {
+        return new SEOData(
+            title: $this->name.' | '.config('app.name'),
+            description: 'This is '.$this->name.' on Bitcoin Ordinals!',
+            image: Str::of('https://cdn.pizza.ninja/opengraph/default/')
+                ->append($this->getInternalCollectionId())
+                ->append.('.webp'),
+        );
     }
 
     public function fullSvgExists(): bool
