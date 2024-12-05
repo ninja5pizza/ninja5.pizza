@@ -55,6 +55,12 @@ return [
             'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i77',
         ],
 
+        '0xNorby' => [
+            'twitter_name' => 'Norbert ༺༽𝐁𝐓𝐂༼༻',
+            'pizza_ninjas_number' => 1372,
+            'inscription_id' => 'fd9e4f52b0017d11e5e0541c252505a62b8d89a3412cfeca584aadedffe2d77bi101',
+        ],
+
         '0xmoodz' => [
             'twitter_name' => 'Moodz',
             'pizza_ninjas_number' => 1318,
@@ -63,7 +69,7 @@ return [
 
         '3dsam7999831' => [
             'twitter_name' => '3Dsam.btc',
-            'pizza_ninjas_number' => 985,
+            'pizza_ninjas_number' => 958,
             'inscription_id' => 'e151d62f71ab4e9cfbe1a6ab368db482a393e2a01627b2f9c0e99106cd54cba5i1',
         ],
 
@@ -109,10 +115,22 @@ return [
             'inscription_id' => '9f9b2c8ffa7c6ceb2ee820ad4dec998fe94a4b338162b29d5267b240f98abbabi79',
         ],
 
+        'DoggfatherCrew' => [
+            'twitter_name' => 'Doggfather',
+            'pizza_ninjas_number' => 402,
+            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i39',
+        ],
+
         'EricNelson' => [
             'twitter_name' => 'Blessed',
             'pizza_ninjas_number' => 424,
             'inscription_id' => '6a74748d2df24b852ccaade43b27dfd12bd887755f3a9436838141209dce43fai79',
+        ],
+
+        'erikaleetv' => [
+            'twitter_name' => 'Erika Lee',
+            'pizza_ninjas_number' => 452,
+            'inscription_id' => '6a74748d2df24b852ccaade43b27dfd12bd887755f3a9436838141209dce43fai101',
         ],
 
         'Fc2068' => [
@@ -125,12 +143,6 @@ return [
             'twitter_name' => 'Fred 📈',
             'pizza_ninjas_number' => 201,
             'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i28',
-        ],
-
-        'DoggfatherCrew' => [
-            'twitter_name' => 'Doggfather',
-            'pizza_ninjas_number' => 402,
-            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i39',
         ],
 
         'im5p3c14l' => [
@@ -163,6 +175,12 @@ return [
             'inscription_id' => '24d39f0dbba4b23bfdc50ec44276a23cf039fb80df5db14bc4f6f127fa2399b4i5',
         ],
 
+        'Keptainmusic' => [
+            'twitter_name' => 'KEPTAIN.BTC',
+            'pizza_ninjas_number' => 1453,
+            'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i9',
+        ],
+
         'LeonidasNFT' => [
             'twitter_name' => 'Leonidas',
             'pizza_ninjas_number' => 107,
@@ -179,6 +197,12 @@ return [
             'twitter_name' => 'migvy',
             'pizza_ninjas_number' => 231,
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i25',
+        ],
+
+        'n1cohy' => [
+            'twitter_name' => 'nico',
+            'pizza_ninjas_number' => 149,
+            'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i129',
         ],
 
         'Oranijo' => [

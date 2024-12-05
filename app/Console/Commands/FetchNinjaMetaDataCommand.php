@@ -14,10 +14,18 @@ class FetchNinjaMetaDataCommand extends Command
 
     public function handle()
     {
-        foreach (Inscription::whereNull('meta')->get() as $inscription) {
+        if (Inscription::whereNull('meta')->doesntExist()) {
+            $this->warn('There are no inscriptions without meta data.');
+
+            return Command::SUCCESS;
+        }
+
+        foreach (Inscription::whereNull('meta')->orderBy('name')->get() as $inscription) {
             FetchMetaData::dispatch($inscription);
 
             $this->info('Fetching meta data for '.$inscription->name.'.');
         }
+
+        return Command::SUCCESS;
     }
 }

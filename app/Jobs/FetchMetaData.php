@@ -6,38 +6,68 @@ use App\Models\Inscription;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class FetchMetaData implements ShouldQueue
 {
     use Queueable;
+
+    public $tries = 2;
 
     public string $url;
 
     public function __construct(
         public Inscription $inscription,
     ) {
-        $this->url = 'https://ordiscan.com/content/'.$this->inscription->inscription_id;
+        $this->url = Str::of(config('services.ordinals.base_url'))
+            ->append('/content/')
+            ->append($this->inscription->inscription_id)
+            ->toString();
     }
 
     public function handle(): void
     {
-        $response = Http::get($this->url);
+        $response = Http::withHeaders([
+            'Accept-Encoding' => 'gzip, deflate, br, zstd',
+        ])
+            ->withOptions(['decode_content' => false])
+            ->get($this->url);
 
         if (! $response->successful()) {
             throw new Exception('HTTP Request failed with status: '.$response->status());
         }
 
         if ($response->successful()) {
-            $json = $this->extractJsonFromHtml($response->body());
+            $body = $this->getBodyFromResponse($response);
 
-            $this->inscription->meta = json_decode($json, true);
+            $this->inscription->meta = json_decode($this->extractJsonFromHtml($body), true);
+
+            if (! $this->inscription->isDirty('meta')) {
+                throw new Exception('Unable to retrieve meta data for '.$this->inscription->name);
+            }
 
             $this->inscription->save();
         }
     }
 
-    public function extractJsonFromHtml(string $html): ?string
+    protected function getBodyFromResponse(Response $response): string
+    {
+        $body = $response->body();
+
+        if ($response->header('Content-Encoding') === 'br') {
+            try {
+                $body = brotli_uncompress($response->body());
+            } catch (Exception $e) {
+                throw new Exception('Brotli decoding failed: '.$e->getMessage());
+            }
+        }
+
+        return $body;
+    }
+
+    protected function extractJsonFromHtml(string $html): ?string
     {
         $pattern = '/Ninja\.load\((.*?)\)/s';
 

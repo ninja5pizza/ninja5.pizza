@@ -8,6 +8,8 @@ use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\PizzaNinjaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
+use App\Http\Resources\FloorPricesCollection;
+use App\Models\FloorPrice;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomepageController::class)
@@ -15,6 +17,14 @@ Route::get('/', HomepageController::class)
 
 Route::get('/collection', CollectionController::class)
     ->name('collection');
+
+Route::get('/{id}', function (int $id) {
+    if ($id > 0 && $id < 1500) {
+        return redirect('/pizza-ninjas/'.$id, 301);
+    }
+
+    abort(404);
+})->whereNumber('id');
 
 Route::get('/{handle}', ProfileController::class)
     ->name('profile');
@@ -41,3 +51,9 @@ Route::get(
     ->name('download-svg');
 
 Route::post('/search', SearchController::class)->name('search');
+
+Route::get('/api/chart', function () {
+    return new FloorPricesCollection(
+        FloorPrice::take(1000)->latest()->get()->reverse()
+    );
+});

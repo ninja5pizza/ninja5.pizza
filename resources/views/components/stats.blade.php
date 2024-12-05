@@ -24,6 +24,15 @@
                     </a>
                 </dd>
             </div>
+            <div class="hidden md:block h-4 w-px bg-neutral-600"></div>
+            <div class="flex space-x-2">
+                <dt>
+                    OWNERS
+                </dt>
+                <dd>
+                    {{ collect(Cache::get('ordinals_collection_stats_pizza-ninjas'))->get('owners') }}
+                </dd>
+            </div>
         </div>
     </div>
 </section>

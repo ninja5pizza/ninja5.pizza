@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name') }}</title>
+        <title>NINJA5 | PIZZA NINJAS</title>
 
         <link rel="preconnect" href="https://rsms.me/">
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -19,14 +19,17 @@
         @endif
     </head>
     <body class="bg-pizza-orange">
-        <x-navigation-bar/>
+        <div id="app">
+            <x-navigation-bar/>
 
-        <main>
-            {{ $slot }}
-        </main>
+            <main>
+                {{ $slot }}
+            </main>
 
-        <x-layout.footer/>
+            <x-layout.footer/>
 
-        @stack('scripts')
+            @vite('resources/js/app.js')
+            @stack('scripts')
+        </div>
     </body>
 </html>

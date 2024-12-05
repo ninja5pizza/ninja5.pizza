@@ -28,6 +28,7 @@
                 >
                     {{ config('app.name') }}
                 </a>
+            </div>
         </div>
     </nav>
 </div>

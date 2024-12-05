@@ -53,4 +53,8 @@ return [
         'api_key' => env('MAGIC_EDEN_API_KEY'),
     ],
 
+    'ordinals' => [
+        'base_url' => env('ORDINALS_URL', 'https://ordinals.com'),
+    ],
+
 ];
