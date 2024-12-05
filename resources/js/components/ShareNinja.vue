@@ -37,14 +37,14 @@
   export default {
     name: 'ShareNinja',
     props: {
-      initialUrl: {
+      dataInitialUrl: {
         type: String,
         required: true
       }
     },
     data() {
       return {
-        shareUrl: this.initialUrl,
+        shareUrl: this.dataInitialUrl,
         copied: false
       };
     },

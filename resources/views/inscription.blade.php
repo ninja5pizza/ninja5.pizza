@@ -80,7 +80,7 @@
                                     Download SVG
                                 </a>
                             @endif
-                            <share-ninja :initial-url="'{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}'"></share-ninja>
+                                <share-ninja data-initial-url="{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}"></share-ninja>
                         </div>
                     </div>
                 </div>
