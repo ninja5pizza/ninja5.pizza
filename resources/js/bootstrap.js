@@ -7,7 +7,7 @@ import { createApp } from 'vue';
 import ShareNinja from './components/ShareNinja.vue';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const app = createApp({}); // Create an empty Vue application
-    app.component('share-ninja', ShareNinja); // Register your component globally
-    app.mount('#app'); // Mount the Vue app to #app
+    const app = createApp({});
+    app.component('share-ninja', ShareNinja);
+    app.mount('#app');
 });
