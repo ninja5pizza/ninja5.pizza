@@ -205,16 +205,22 @@ return [
             'inscription_id' => '39399e536443446eda3f26ce7038178ec3b69157f38eaed19caea4614aabaf62i129',
         ],
 
+        'nonfungible_jan' => [
+            'twitter_name' => 'Jan | BIP-420🐱',
+            'pizza_ninjas_number' => 170,
+            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i18',
+        ],
+
         'Oranijo' => [
             'twitter_name' => 'MyNameGoesHere',
             'pizza_ninjas_number' => 749,
             'inscription_id' => '712abfb78437156b772ca7f895339ec879dc58141e87fab783d7e3c04ca25580i95',
         ],
 
-        'nonfungible_jan' => [
-            'twitter_name' => 'Jan | BIP-420🐱',
-            'pizza_ninjas_number' => 170,
-            'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i18',
+        'ralfthechef' => [
+            'twitter_name' => 'Ralf, PhD',
+            'pizza_ninjas_number' => 1500,
+            'inscription_id' => '269730d6cd8c0795317bb8fd043fc7cecb147bb98ae0fed1a1ca9cc646a0c6a2i0',
         ],
 
         'TO' => [
