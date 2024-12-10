@@ -37,6 +37,7 @@ class Inscription extends Model
             image: Str::of('https://cdn.pizza.ninja/opengraph/default/')
                 ->append($this->getInternalCollectionId())
                 ->append.('.webp'),
+            url: Str::of('https://pizza.ninja/')->append($this->getInternalCollectionId()),
         );
     }
 
