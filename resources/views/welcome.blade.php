@@ -34,7 +34,7 @@
     <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-2xl">
             <h3 class="flex justify-center md:justify-normal mt-24 text-3xl text-white font-bold">
-                FOLLOW NINJA 5IVE
+                FOLLOW NINJA5
             </h3>
             <div class="flex justify-center md:justify-normal items-center mt-8 text-white">
                 <a
