@@ -36,7 +36,7 @@ class Inscription extends Model
             description: 'This is '.$this->name.' on Bitcoin Ordinals!',
             image: Str::of('https://cdn.pizza.ninja/opengraph/default/')
                 ->append($this->getInternalCollectionId())
-                ->append.('.webp'),
+                ->append('.webp'),
             url: Str::of('https://pizza.ninja/')->append($this->getInternalCollectionId()),
         );
     }
