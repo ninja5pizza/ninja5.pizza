@@ -6,8 +6,8 @@
     "require": {
         "php": "^8.3",
         "blade-ui-kit/blade-icons": "^1.7",
-        "laravel/framework": "^11.34",
-        "laravel/horizon": "^5.29",
+        "laravel/framework": "^11.35",
+        "laravel/horizon": "^5.30",
         "laravel/tinker": "^2.10",
         "league/flysystem-aws-s3-v3": "^3.0",
         "league/flysystem-read-only": "^3.0",
@@ -18,7 +18,7 @@
         "laravel/pint": "^1.18",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.5",
-        "phpunit/phpunit": "^11.4"
+        "phpunit/phpunit": "^11.5"
     },
     "autoload": {
         "psr-4": {
