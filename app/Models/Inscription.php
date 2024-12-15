@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\HasBtcLoongArt;
 use App\Traits\HasJasmineArt;
+use App\Traits\HasMcaChefArt;
 use App\Traits\HasMoodzAnimations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Inscription extends Model
 {
-    use HasBtcLoongArt, HasFactory, HasJasmineArt, HasMoodzAnimations, HasSEO;
+    use HasBtcLoongArt, HasFactory, HasJasmineArt, HasMcaChefArt, HasMoodzAnimations, HasSEO;
 
     protected $fillable = [
         'inscription_id',

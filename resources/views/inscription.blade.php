@@ -162,6 +162,32 @@
             </section>
             @endif
 
+            @if($inscription->hasMcaChefImages())
+            <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-6">
+                <div class="mx-auto max-w-2xl">
+                    <div class="flex gap-x-2 justify-end">
+                        @foreach($inscription->getMcaChefFullUrls() as $url)
+                        <img
+                            src="{{ $url }}"
+                            class=" w-full md:w-64 border border-2 border-orange-400 rounded-lg"
+                            alt="{{ $inscription->name }} art by mca_chef"
+                        >
+                        @endforeach
+                    </div>
+                    <div class="flex px-2 justify-end text-orange-200 text-sm">
+                        <p class="mt-1">
+                            art by
+                            <a
+                                class="underline"
+                                href="https://x.com/mca_chef"
+                                target="_blank"
+                            >@mca_chef</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            @endif
+
             <section aria-labelledby="traits-heading" class="mt-32 bg-material-theme-ocean pt-16 pb-24 shadow-lg">
                 <h2 id="traits-heading" class="aria-hidden">
                     Traits
