@@ -57,12 +57,6 @@
                                         <div class="flex absolute top-2 right-2 space-x-2">
                                             <a
                                                 class="text-orange-200 hover:text-orange-100"
-                                                href="{{ route('download-svg', $inscription) }}"
-                                            >
-                                                <x-icon-download class="w-6 h-6 hover:scale-110 ease-out duration-300"/>
-                                            </a>
-                                            <a
-                                                class="text-orange-200 hover:text-orange-100"
                                                 href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
                                                 target="_blank"
                                             >
@@ -70,12 +64,29 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a
-                                        href="{{ route('download-svg', $inscription) }}"
-                                        class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                                    >
-                                        Download SVG
-                                    </a>
+                                    <div class="mt-2 flex flex-col">
+                                        <label
+                                            class="block mb-1 px-2 text-sm font-medium text-orange-100"
+                                        >
+                                            Download this Pizza Ninja:
+                                        </label>
+                                        <div class="flex space-x-1">
+                                        @foreach (['jpg', 'png', 'webp'] as $format)
+                                            <a
+                                                class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-normal text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                                href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => $format]) }}"
+                                            >
+                                                {{ strtoupper($format) }}
+                                            </a>
+                                        @endforeach
+                                        <a
+                                            class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                            href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'svg']) }}"
+                                        >
+                                            SVG
+                                        </a>
+                                        </div>
+                                    </div>
                                 @endif
                                 <share-ninja data-initial-url="{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}"></share-ninja>
                             </div>

@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContentController;
-use App\Http\Controllers\DownloadSvgController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\PizzaNinjaController;
@@ -45,10 +45,10 @@ Route::get(
     ->name('inscription');
 
 Route::get(
-    '/download/{inscription:inscription_id}',
-    DownloadSvgController::class
+    '/download/{inscription:inscription_id}/{format}',
+    DownloadController::class
 )
-    ->name('download-svg');
+    ->name('download-pfp');
 
 Route::post('/search', SearchController::class)->name('search');
 
