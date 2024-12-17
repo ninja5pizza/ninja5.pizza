@@ -28,10 +28,10 @@ class DownloadController extends Controller
         $this->validateFormat($format);
 
         if ($format === 'svg') {
-            return $this->downloadSVG($inscription);
+            return $this->downloadSVG();
         }
 
-        return $this->downloadImage($inscription, $format);
+        return $this->downloadImage();
     }
 
     private function validateFormat(string $format): void
@@ -74,7 +74,7 @@ class DownloadController extends Controller
             ->toString();
     }
 
-    private function downloadImage(Inscription $inscription, string $format)
+    private function downloadImage()
     {
         if (! Storage::disk('cloudflare')->exists($this->cloudflare_path)) {
             abort(404);
@@ -92,7 +92,7 @@ class DownloadController extends Controller
             );
     }
 
-    private function downloadSVG(Inscription $inscription)
+    private function downloadSVG()
     {
         if (! Storage::disk('ninjas')->exists($this->file_name)) {
             abort(404);
