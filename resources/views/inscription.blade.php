@@ -71,20 +71,20 @@
                                             Download this Pizza Ninja:
                                         </label>
                                         <div class="flex space-x-1">
-                                        @foreach (['jpg', 'png', 'webp'] as $format)
+                                            @foreach (['jpg', 'png', 'webp'] as $format)
+                                                <a
+                                                    class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-normal text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                                    href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => $format]) }}"
+                                                >
+                                                    {{ strtoupper($format) }}
+                                                </a>
+                                            @endforeach
                                             <a
-                                                class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-normal text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                                                href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => $format]) }}"
+                                                class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                                href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'svg']) }}"
                                             >
-                                                {{ strtoupper($format) }}
+                                                SVG
                                             </a>
-                                        @endforeach
-                                        <a
-                                            class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                                            href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'svg']) }}"
-                                        >
-                                            SVG
-                                        </a>
                                         </div>
                                     </div>
                                 @endif
