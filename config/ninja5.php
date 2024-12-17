@@ -217,6 +217,12 @@ return [
             'inscription_id' => '712abfb78437156b772ca7f895339ec879dc58141e87fab783d7e3c04ca25580i95',
         ],
 
+        'reubs_btc' => [
+            'twitter_name' => 'reubs',
+            'pizza_ninjas_number' => 857,
+            'inscription_id' => '9d6e3f1c019acaaf89dfbb53432ee654bfa0aa7260848db5e579b5a669a83e38i52',
+        ],
+
         'ralfthechef' => [
             'twitter_name' => 'Ralf, PhD',
             'pizza_ninjas_number' => 1500,
