@@ -19,6 +19,7 @@ class DownloadController extends Controller
         'jpg',
         'svg',
         'webp',
+        'wallpaper_2160_3840'
     ];
 
     public function __invoke(Inscription $inscription, string $format)
@@ -57,6 +58,17 @@ class DownloadController extends Controller
 
     private function getCloudflarePath(Inscription $inscription, string $format): string
     {
+        if (Str::startsWith($format, 'wallpaper_')) {
+            $dimensions = Str::after($format, 'wallpaper_');
+
+            return Str::of('images/wallpapers/')
+                ->append($dimensions)
+                ->append('/')
+                ->append($inscription->getInternalCollectionId())
+                ->append('.png')
+                ->toString();
+        }
+
         return Str::of('images/pfp/')
             ->append($format)
             ->append('/')
@@ -68,6 +80,14 @@ class DownloadController extends Controller
 
     private function getDownloadFileName(Inscription $inscription, string $format): string
     {
+        if (Str::startsWith($format, 'wallpaper_')) {
+            return Str::of($inscription->name)
+                ->slug()
+                ->append('-phone-wallpaper')
+                ->append('.png')
+                ->toString();
+        }
+
         return Str::of($inscription->name)
             ->slug()
             ->append('.'.$format)
