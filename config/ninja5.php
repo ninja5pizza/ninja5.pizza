@@ -109,7 +109,7 @@ return [
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i14',
         ],
 
-        'CryptoWeeve' [
+        'CryptoWeeve' => [
             'twitter_name' => 'Ryan Weaver',
             'pizza_ninjas_number' => 1150,
             'inscription_id' => '9743b10cf3238982f30e55870d1ea89a6b20db4883da9674b71aaa7728fc7243i38',
