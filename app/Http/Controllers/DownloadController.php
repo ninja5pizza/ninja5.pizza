@@ -24,6 +24,7 @@ class DownloadController extends Controller
     public function __invoke(Inscription $inscription, string $format)
     {
         $this->boot($inscription, $format);
+
         $this->validateFormat($format);
 
         if ($format === 'svg') {
