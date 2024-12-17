@@ -177,7 +177,7 @@ return [
 
         'Keptainmusic' => [
             'twitter_name' => 'KEPTAIN.BTC',
-            'pizza_ninjas_number' => 1453,
+            'pizza_ninjas_number' => 181,
             'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i9',
         ],
 
