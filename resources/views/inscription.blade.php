@@ -54,7 +54,7 @@
                                             'ninjas.'.$inscription->getInternalCollectionId(),
                                             'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
                                         )
-                                        <div class="flex absolute top-2 right-2 space-x-2">
+                                        <div class="flex absolute top-8 right-4 md:top-2 md:right-2 space-x-2">
                                             <a
                                                 class="text-orange-200 hover:text-orange-100"
                                                 href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
