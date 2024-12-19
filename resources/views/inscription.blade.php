@@ -16,94 +16,92 @@
         <div id="app">
             <x-navigation-bar/>
 
-            <main>
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="mx-auto max-w-2xl">
-                        <div class="mt-24 flex flex-col md:flex-row justify-between">
-                            <div class="flex flex-col">
-                                <div class="flex gap-2">
-                                    <h3 class="text-3xl text-orange-100 font-bold">
-                                        {{ $inscription->name }}
-                                    </h3>
-                                    @if($ninja5->isCoreMemberForInscriptionId($inscription->inscription_id))
-                                        <div class="text-orange-200">
-                                            <x-icon-verified class="w-4"/>
-                                        </div>
-                                    @endif
-                                </div>
-                                @if($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))
-                                <div class="mt-4">
-                                    <span class="text-xl text-orange-50 font-bold">
-                                        {{ $ninja5->getTwitterNameForInscriprionId($inscription->inscription_id) }}
-                                    </span>
-                                    <a
-                                        class="mt-1 flex items-center text-orange-200 hover:text-white"
-                                        href="{{ Str::of($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))->prepend('https://x.com/') }}"
-                                        target="_blank"
-                                    >
-                                        <x-icon-twitter-x class="w-6 h-6 pr-2"/>
-                                        <span>{{ Str::of('@')->append($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id)) }}</span>
-                                    </a>
-                                </div>
+            <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl">
+                    <div class="mt-24 flex flex-col md:flex-row justify-between">
+                        <div class="flex flex-col">
+                            <div class="flex gap-2">
+                                <h3 class="text-3xl text-orange-100 font-bold">
+                                    {{ $inscription->name }}
+                                </h3>
+                                @if($ninja5->isCoreMemberForInscriptionId($inscription->inscription_id))
+                                    <div class="text-orange-200">
+                                        <x-icon-verified class="w-4"/>
+                                    </div>
                                 @endif
                             </div>
-                            <div class="flex flex-col">
-                                @if($inscription->fullSvgExists())
-                                    <div class="relative">
-                                        @svg(
-                                            'ninjas.'.$inscription->getInternalCollectionId(),
-                                            'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
-                                        )
-                                        <div class="flex absolute top-8 right-6 md:top-2 md:Lright-6 space-x-2">
-                                            <a
-                                                class="text-orange-200 hover:text-orange-100"
-                                                href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
-                                                target="_blank"
-                                            >
-                                                <x-icon-fullscreen class="w-6 h-6 hover:scale-110 ease-out duration-300"/>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="mt-2 flex flex-col">
-                                        <label
-                                            class="block mb-1 px-2 text-sm font-medium text-orange-100"
+                            @if($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))
+                            <div class="mt-4">
+                                <span class="text-xl text-orange-50 font-bold">
+                                    {{ $ninja5->getTwitterNameForInscriprionId($inscription->inscription_id) }}
+                                </span>
+                                <a
+                                    class="mt-1 flex items-center text-orange-200 hover:text-white"
+                                    href="{{ Str::of($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))->prepend('https://x.com/') }}"
+                                    target="_blank"
+                                >
+                                    <x-icon-twitter-x class="w-6 h-6 pr-2"/>
+                                    <span>{{ Str::of('@')->append($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id)) }}</span>
+                                </a>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="flex flex-col">
+                            @if($inscription->fullSvgExists())
+                                <div class="relative">
+                                    @svg(
+                                        'ninjas.'.$inscription->getInternalCollectionId(),
+                                        'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
+                                    )
+                                    <div class="flex absolute top-8 right-6 md:top-2 md:Lright-6 space-x-2">
+                                        <a
+                                            class="text-orange-200 hover:text-orange-100"
+                                            href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
+                                            target="_blank"
                                         >
-                                            Download this Pizza Ninja:
-                                        </label>
-                                        <div class="flex space-x-1">
-                                            @foreach (['jpg', 'png', 'webp'] as $format)
-                                                <a
-                                                    class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-normal text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                                                    href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => $format]) }}"
-                                                >
-                                                    {{ strtoupper($format) }}
-                                                </a>
-                                            @endforeach
-                                            <a
-                                                class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                                                href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'svg']) }}"
-                                            >
-                                                SVG
-                                            </a>
-                                        </div>
-                                        <div class="mt-1 flex flex-col">
-                                            <a
-                                                class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                                                href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'wallpaper_2160_3840']) }}"
-                                            >
-                                                phone wallpaper
-                                            </a>
-                                            <a
-                                                class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
-                                                href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'wallpaper_1920_1080']) }}"
-                                            >
-                                                desktop wallpaper
-                                            </a>
-                                        </div>
+                                            <x-icon-fullscreen class="w-6 h-6 hover:scale-110 ease-out duration-300"/>
+                                        </a>
                                     </div>
-                                @endif
-                                <share-ninja data-initial-url="{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}"></share-ninja>
-                            </div>
+                                </div>
+                                <div class="mt-2 flex flex-col">
+                                    <label
+                                        class="block mb-1 px-2 text-sm font-medium text-orange-100"
+                                    >
+                                        Download this Pizza Ninja:
+                                    </label>
+                                    <div class="flex space-x-1">
+                                        @foreach (['jpg', 'png', 'webp'] as $format)
+                                            <a
+                                                class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-normal text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                                href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => $format]) }}"
+                                            >
+                                                {{ strtoupper($format) }}
+                                            </a>
+                                        @endforeach
+                                        <a
+                                            class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                            href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'svg']) }}"
+                                        >
+                                            SVG
+                                        </a>
+                                    </div>
+                                    <div class="mt-1 flex flex-col">
+                                        <a
+                                            class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                            href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'wallpaper_2160_3840']) }}"
+                                        >
+                                            phone wallpaper
+                                        </a>
+                                        <a
+                                            class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
+                                            href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'wallpaper_1920_1080']) }}"
+                                        >
+                                            desktop wallpaper
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
+                            <share-ninja data-initial-url="{{ Str::of('https://pizza.ninja/')->append($inscription->getInternalCollectionId()) }}"></share-ninja>
                         </div>
                     </div>
                 </div>
