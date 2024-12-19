@@ -83,8 +83,8 @@ class DownloadController extends Controller
     {
         if (Str::startsWith($format, 'wallpaper_')) {
             return Str::of($inscription->name)
+                ->append($format)
                 ->slug()
-                ->append('-phone-wallpaper')
                 ->append('.png')
                 ->toString();
         }
