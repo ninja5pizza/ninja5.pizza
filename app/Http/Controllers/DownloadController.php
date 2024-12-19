@@ -19,7 +19,8 @@ class DownloadController extends Controller
         'jpg',
         'svg',
         'webp',
-        'wallpaper_2160_3840'
+        'wallpaper_1920_1080',
+        'wallpaper_2160_3840',
     ];
 
     public function __invoke(Inscription $inscription, string $format)
