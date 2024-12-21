@@ -54,6 +54,10 @@ Route::post('/search', SearchController::class)->name('search');
 
 Route::get('/api/chart', function () {
     return new FloorPricesCollection(
-        FloorPrice::take(1000)->latest()->get()->reverse()
+        FloorPrice::where('symbol', 'pizza-ninjas')
+            ->take(1000)
+            ->latest()
+            ->get()
+            ->reverse()
     );
 });
