@@ -74,31 +74,39 @@
                                     <div class="flex space-x-1">
                                         @foreach (['jpg', 'png', 'webp'] as $format)
                                             <a
+                                                aria-label="Download {{ strtoupper($format) }} file"
                                                 class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-normal text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                                                 href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => $format]) }}"
                                                 rel="noopener nofollow"
+                                                download
                                             >
                                                 {{ strtoupper($format) }}
                                             </a>
                                         @endforeach
                                         <a
+                                            aria-label="Download SVG file"
                                             class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                                             href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'svg']) }}"
                                             rel="noopener nofollow"
+                                            download
                                         >
                                             SVG
                                         </a>
                                     </div>
                                     <div class="mt-1 flex flex-col">
                                         <a
+                                            aria-label="Download phone wallpaper"
                                             class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                                             href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'wallpaper_2160_3840']) }}"
+                                            download
                                         >
                                             phone wallpaper
                                         </a>
                                         <a
+                                            aria-label="Download desktop wallpaper"
                                             class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                                             href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'wallpaper_1920_1080']) }}"
+                                            download
                                         >
                                             desktop wallpaper
                                         </a>
