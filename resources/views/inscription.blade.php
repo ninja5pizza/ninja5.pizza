@@ -38,6 +38,7 @@
                                 <a
                                     class="mt-1 flex items-center text-orange-200 hover:text-white"
                                     href="{{ Str::of($ninja5->getTwitterHandleForInscriprionId($inscription->inscription_id))->prepend('https://x.com/') }}"
+                                    rel="noopener"
                                     target="_blank"
                                 >
                                     <x-icon-twitter-x class="w-6 h-6 pr-2"/>
@@ -57,6 +58,7 @@
                                         <a
                                             class="text-orange-200 hover:text-orange-100"
                                             href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
+                                            rel="noopener"
                                             target="_blank"
                                         >
                                             <x-icon-fullscreen class="w-6 h-6 hover:scale-110 ease-out duration-300"/>

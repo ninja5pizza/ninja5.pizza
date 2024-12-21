@@ -40,6 +40,7 @@
                 <a
                     href="https://x.com/ninja5_pizza"
                     class="hover:text-orange-100"
+                    rel="noopener"
                     target="_blank"
                 >
                     <x-icon-twitter-x class="w-8"/>
@@ -47,6 +48,7 @@
                 <a
                     href="https://discord.com/invite/PVpFta7tKC"
                     class="hover:text-orange-100"
+                    rel="noopener"
                     target="_blank"
                 >
                     <x-icon-discord class="ml-12 w-8"/>
@@ -54,6 +56,7 @@
                 <a
                     href="https://github.com/ninja5pizza"
                     class="hover:text-orange-100"
+                    rel="noopener"
                     target="_blank"
                 >
                     <x-icon-github class="ml-12 w-8"/>
