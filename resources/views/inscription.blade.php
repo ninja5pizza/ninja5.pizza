@@ -76,6 +76,7 @@
                                             <a
                                                 class="mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-normal text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                                                 href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => $format]) }}"
+                                                rel="noopener nofollow"
                                             >
                                                 {{ strtoupper($format) }}
                                             </a>
@@ -83,6 +84,7 @@
                                         <a
                                             class="flex-grow mt-1 text-center rounded-md bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-orange-200 hover:text-neutral-600"
                                             href="{{ route('download-pfp', ['inscription' => $inscription, 'format' => 'svg']) }}"
+                                            rel="noopener nofollow"
                                         >
                                             SVG
                                         </a>
