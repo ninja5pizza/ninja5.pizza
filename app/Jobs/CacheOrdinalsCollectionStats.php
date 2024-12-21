@@ -37,6 +37,9 @@ class CacheOrdinalsCollectionStats implements ShouldQueue
 
             $model = new FloorPrice;
             $model->symbol = $response->json('symbol');
+            $model->owners = $response->json('owners');
+            $model->supply = $response->json('supply');
+            $model->listed = $response->json('totalListed');
             $model->price_in_sats = $response->json('floorPrice');
             $model->save();
         }
