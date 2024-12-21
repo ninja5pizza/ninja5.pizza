@@ -54,7 +54,7 @@
                                         'ninjas.'.$inscription->getInternalCollectionId(),
                                         'mt-4 md:mt-0 w-full md:w-64 border border-2 border-orange-400 rounded-lg'
                                     )
-                                    <div class="flex absolute top-8 right-6 md:top-2 md:Lright-6 space-x-2">
+                                    <div class="flex absolute top-6 right-2 md:top-2 md:right-2 space-x-2">
                                         <a
                                             aria-label="View this Ninja in fullscreen mode"
                                             class="text-orange-200 hover:text-orange-100"
