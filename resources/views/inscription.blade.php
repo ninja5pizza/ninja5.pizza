@@ -6,6 +6,8 @@
 
         {!! seo()->for($inscription) !!}
 
+        <x-layout.head.favicons/>
+
         @vite('resources/css/app.css')
 
         @if(config('services.fathom.site_id'))
