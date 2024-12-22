@@ -16,6 +16,12 @@ export default {
       },
       colors: {
         'pizza-orange': '#ff5400',
+        'pets-orange-100': '#FFD255',
+        'pets-orange-200': '#FFBE46',
+        'pets-orange-300': '#FFA838',
+        'pets-orange-400': '#FF952B',
+        'pets-orange-500': '#FF7C1B',
+        'pets-orange-600': '#FF690F',
         'material-theme-ocean': '#0F111A',
       }
     }
