@@ -8,7 +8,7 @@
 
         <link rel="preconnect" href="https://rsms.me/">
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        {{ Vite::asset('resources/css/app.css') }}
+        @vite('resources/css/app.css')
 
         <x-layout.head.opengraph/>
         <x-layout.head.twitter/>
@@ -28,7 +28,7 @@
 
             <x-layout.footer/>
 
-            {{ Vite::asset('resources/js/app.js') }}
+            @vite('resources/js/app.js')
             @stack('scripts')
         </div>
     </body>
