@@ -35,9 +35,11 @@ class Inscription extends Model
         return new SEOData(
             title: $this->name.' | '.config('app.name'),
             description: 'This is '.$this->name.' on Bitcoin Ordinals!',
-            image: Str::of('https://cdn.pizza.ninja/opengraph/default/')
-                ->append($this->getInternalCollectionId())
-                ->append('.webp'),
+            image: cdn_asset(
+                Str::of('opengraph/default/')
+                    ->append($this->getInternalCollectionId())
+                    ->append('.webp')
+                ),
             url: Str::of('https://pizza.ninja/')->append($this->getInternalCollectionId()),
         );
     }
