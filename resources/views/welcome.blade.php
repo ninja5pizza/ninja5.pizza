@@ -27,6 +27,8 @@
         </div>
     </div>
 
+    <x-pizza-pets/>
+
     <x-random-ninjas/>
 
     <x-team/>
