@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Pizza Ninjas Collection | Bitcoin Ordinals</title>
+        <title>Pizza Ninjas Collection on Bitcoin Ordinals | NINJA5</title>
 
         @vite('resources/css/app.css')
 
