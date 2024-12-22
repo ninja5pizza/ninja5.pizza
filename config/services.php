@@ -43,6 +43,10 @@ return [
         'site_id' => env('FATHOM_SITE_ID'),
     ],
 
+    'blockcypher' => [
+        'base_url' => 'https://api.blockcypher.com/v1/',
+    ],
+
     'coinmarketcap' => [
         'base_url' => 'https://pro-api.coinmarketcap.com/v1/',
         'api_key' => env('COIN_MARKET_CAP_API_KEY'),
