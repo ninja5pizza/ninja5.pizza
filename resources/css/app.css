@@ -1581,3 +1581,82 @@
   svg.active .ninja-158 {
     fill: rgb(250, 118, 6);
   }
+
+
+#bg-pets-striped div {
+    transition: background-color 1.5s ease-in-out; /* Increased transition time for smoother changes */
+}
+
+@keyframes colorRoll {
+    0%, 16.66% {
+        background-color: #FFD255; /* pets-orange-100 */
+    }
+    16.67%, 33.33% {
+        background-color: #FFBE46; /* pets-orange-200 */
+    }
+    33.34%, 50% {
+        background-color: #FFA838; /* pets-orange-300 */
+    }
+    50.01%, 66.66% {
+        background-color: #FF952B; /* pets-orange-400 */
+    }
+    66.67%, 83.33% {
+        background-color: #FF7C1B; /* pets-orange-500 */
+    }
+    83.34%, 100% {
+        background-color: #FF690F; /* pets-orange-600 */
+    }
+}
+
+@keyframes colorRollWithPause {
+    0% {
+        animation-timing-function: ease-in-out;
+    }
+    16.66% {
+        animation-timing-function: ease-in-out;
+    }
+    33.33% {
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        animation-timing-function: ease-in-out;
+    }
+    66.66% {
+        animation-timing-function: ease-in-out;
+    }
+    83.33% {
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        animation-timing-function: steps(1, end); /* Hold last color for pause */
+    }
+}
+
+#bg-pets-striped div:nth-child(1) {
+    animation: colorRoll 3.5s ease-in-out infinite, colorRollWithPause 8.5s steps(9, end) infinite;
+}
+
+#bg-pets-striped div:nth-child(2) {
+    animation: colorRoll 3.5s ease-in-out infinite, colorRollWithPause 8.5s steps(9, end) infinite;
+    animation-delay: 0.583s, 0.583s; /* Updated delay to match new timing */
+}
+
+#bg-pets-striped div:nth-child(3) {
+    animation: colorRoll 3.5s ease-in-out infinite, colorRollWithPause 8.5s steps(9, end) infinite;
+    animation-delay: 1.166s, 1.166s;
+}
+
+#bg-pets-striped div:nth-child(4) {
+    animation: colorRoll 3.5s ease-in-out infinite, colorRollWithPause 8.5s steps(9, end) infinite;
+    animation-delay: 1.75s, 1.75s;
+}
+
+#bg-pets-striped div:nth-child(5) {
+    animation: colorRoll 3.5s ease-in-out infinite, colorRollWithPause 8.5s steps(9, end) infinite;
+    animation-delay: 2.333s, 2.333s;
+}
+
+#bg-pets-striped div:nth-child(6) {
+    animation: colorRoll 3.5s ease-in-out infinite, colorRollWithPause 8.5s steps(9, end) infinite;
+    animation-delay: 2.916s, 2.916s;
+}
