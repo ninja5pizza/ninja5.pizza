@@ -19,7 +19,7 @@ Route::get('/collection', CollectionController::class)
     ->name('collection');
 
 Route::get('/{id}', function (int $id) {
-    if ($id > 0 && $id < 1500) {
+    if ($id > 0 && $id <= 1500) {
         return redirect('/pizza-ninjas/'.$id, 301);
     }
 
