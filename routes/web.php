@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\ChartController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DownloadController;
@@ -8,8 +9,6 @@ use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\PizzaNinjaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
-use App\Http\Resources\FloorPricesCollection;
-use App\Models\FloorPrice;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomepageController::class)
@@ -52,22 +51,5 @@ Route::get(
 
 Route::post('/search', SearchController::class)->name('search');
 
-Route::get('/api/chart/pizza-pets', function () {
-    return new FloorPricesCollection(
-        FloorPrice::where('symbol', 'pizza-pets')
-            ->take(1000)
-            ->latest()
-            ->get()
-            ->reverse()
-    );
-});
-
-Route::get('/api/chart/pizza-ninjas', function () {
-    return new FloorPricesCollection(
-        FloorPrice::where('symbol', 'pizza-ninjas')
-            ->take(1000)
-            ->latest()
-            ->get()
-            ->reverse()
-    );
-});
+Route::get('/api/chart/pizza-pets', [ChartController::class, 'pizza_pets']);
+Route::get('/api/chart/pizza-ninjas', [ChartController::class, 'pizza_ninjas']);
