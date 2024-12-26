@@ -51,5 +51,8 @@ Route::get(
 
 Route::post('/search', SearchController::class)->name('search');
 
-Route::get('/api/chart/pizza-pets', [ChartController::class, 'pizza_pets']);
-Route::get('/api/chart/pizza-ninjas', [ChartController::class, 'pizza_ninjas']);
+Route::get('/api/chart/pizza-pets', [ChartController::class, 'pizza_pets'])
+    ->middleware('throttle:1,1');
+
+Route::get('/api/chart/pizza-ninjas', [ChartController::class, 'pizza_ninjas'])
+   ->middleware('throttle:1,1');
