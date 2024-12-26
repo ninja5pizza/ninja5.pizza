@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\api\ChartController;
+use App\Http\Controllers\Api\ChartController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DownloadController;
