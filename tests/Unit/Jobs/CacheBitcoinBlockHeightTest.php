@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Jobs;
 
-use Tests\TestCase;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 use App\Jobs\CacheBitcoinBlockHeight;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
+use Tests\TestCase;
 
 class CacheBitcoinBlockHeightTest extends TestCase
 {

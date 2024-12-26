@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\CacheBitcoinBlockHeight;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
-use App\Jobs\CacheBitcoinBlockHeight;
 use Illuminate\Support\Facades\Cache;
 
 class CacheBitcoinBlockHeightCommand extends Command

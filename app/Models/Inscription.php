@@ -39,7 +39,7 @@ class Inscription extends Model
                 Str::of('opengraph/default/')
                     ->append($this->getInternalCollectionId())
                     ->append('.webp')
-                ),
+            ),
             url: Str::of('https://pizza.ninja/')->append($this->getInternalCollectionId()),
         );
     }
