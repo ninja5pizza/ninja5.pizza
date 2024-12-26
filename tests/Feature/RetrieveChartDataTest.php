@@ -13,6 +13,6 @@ class RetrieveChartDataTest extends TestCase
     #[Test]
     public function a_request_to_the_homepage_should_return_a_200_status_code(): void
     {
-        $this->get('/api/chart')->assertOk();
+        $this->get('/api/chart/pizza-ninjas')->assertOk();
     }
 }

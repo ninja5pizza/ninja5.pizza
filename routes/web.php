@@ -52,7 +52,7 @@ Route::get(
 
 Route::post('/search', SearchController::class)->name('search');
 
-Route::get('/api/chart', function () {
+Route::get('/api/chart/pizza-ninjas', function () {
     return new FloorPricesCollection(
         FloorPrice::where('symbol', 'pizza-ninjas')
             ->take(1000)

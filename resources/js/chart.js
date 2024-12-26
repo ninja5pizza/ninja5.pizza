@@ -1,6 +1,6 @@
 import { createChart } from 'lightweight-charts';
 
-const url = '/api/chart';
+const url = '/api/chart/pizza-ninjas';
 const response = await axios.get(url);
 
 const chart = createChart(
