@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
-class RetrieveChartDataTest extends TestCase
+class RetrieveChartTest extends TestCase
 {
     use RefreshDatabase;
 
