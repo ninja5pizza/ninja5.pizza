@@ -55,4 +55,4 @@ Route::get('/api/chart/pizza-pets', [ChartController::class, 'pizza_pets'])
     ->middleware('throttle:60,1');
 
 Route::get('/api/chart/pizza-ninjas', [ChartController::class, 'pizza_ninjas'])
-   ->middleware('throttle:60,1');
+    ->middleware('throttle:60,1');
