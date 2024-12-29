@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ChartController;
+use App\Http\Controllers\Api\StatsController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DownloadController;
@@ -55,4 +56,7 @@ Route::get('/api/chart/pizza-pets', [ChartController::class, 'pizza_pets'])
     ->middleware('throttle:60,1');
 
 Route::get('/api/chart/pizza-ninjas', [ChartController::class, 'pizza_ninjas'])
+    ->middleware('throttle:60,1');
+
+Route::get('/api/stats/pizza-pets', [StatsController::class, 'pizza_pets'])
     ->middleware('throttle:60,1');
