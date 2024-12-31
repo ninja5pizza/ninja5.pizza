@@ -1,7 +1,7 @@
 <section class="w-full mt-64 mb-72 flex flex-col items-center" aria-labelledby="pizza-pets-heading">
     <h2 id="pizza-pets-heading" class="sr-only">Pizza Pets</h2>
     <div class="relative w-full">
-        <a href="https://pizzapets.fun" target="_blank" rel="noopener">
+        <a href="https://pets.pizza.ninja" target="_blank" rel="noopener">
             <img
                 src="{{ cdn_asset('images/pizza_pets/logo.png') }}"
                 alt="Pizza Pets" width="377" height="318"
