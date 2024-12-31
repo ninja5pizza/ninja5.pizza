@@ -16,5 +16,11 @@
             <div class="h-10 bg-pets-orange-500"></div>
             <div class="h-10 bg-pets-orange-600"></div>
         </div>
+        <a
+            href="https://pets.pizza.ninja" target="_blank" rel="noopener"
+            class="flex w-full justify-center mt-12 text-sm leading-6 text-white hover:text-orange-100"
+        >
+            Pizza Pets <span aria-hidden="true">→</span>
+        </a>
     </div>
 </section>
