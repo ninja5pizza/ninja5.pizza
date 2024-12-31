@@ -19,7 +19,7 @@
                 <x-search/>
                 <a
                     href="{{ route('collection') }}"
-                    class="mt-4 md:mt-0 pl-6 text-sm leading-6 text-white"
+                    class="mt-4 md:mt-0 pl-6 text-sm leading-6 text-white hover:text-orange-100"
                 >
                     View collection <span aria-hidden="true">→</span>
                 </a>
