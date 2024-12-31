@@ -1,4 +1,4 @@
-<p align="center"><a href="https://ninja5.pizza" target="_blank"><img src="https://raw.githubusercontent.com/ninja5pizza/ninja5.pizza/refs/heads/main/public/images/240902-twitter-card-large.png" width="800" height="418" alt="NINJA5.pizza"></p>
+<p align="center"><a href="https://ninja5.pizza" target="_blank"><img src="https://cdn.pizza.ninja/opengraph/ninja5/default-twitter-card-large.png" width="800" height="418" alt="NINJA5.pizza"></p>
 
 # NINJA5.pizza
 
