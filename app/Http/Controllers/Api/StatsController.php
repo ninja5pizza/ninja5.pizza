@@ -23,6 +23,7 @@ class StatsController extends Controller
             'alive_count' => $alive_count,
             'dead_count' => $dead_count,
             'owner_count' => $model->owners,
+            'listed_for_sale' => $model->listed,
         ]);
     }
 }
