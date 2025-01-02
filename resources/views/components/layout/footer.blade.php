@@ -28,6 +28,6 @@
         </div>
     </div>
     <p class="mt-6 text-center leading-5 text-orange-100">
-        &copy; 2024 {{ config('app.name') }}. All rights reserved.
+        &copy; 2025 NINJA5.pizza All rights reserved.
     </p>
 </footer>
