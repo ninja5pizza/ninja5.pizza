@@ -8,6 +8,8 @@ use App\Traits\HasMcaChefArt;
 use App\Traits\HasMoodzAnimations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -28,6 +30,16 @@ class Inscription extends Model
         return [
             'meta' => 'array',
         ];
+    }
+
+    public function children(): HasMany
+    {
+        return $this->hasMany(Inscription::class, 'parent_id', 'id');
+    }
+
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo(Inscription::class, 'parent_id', 'id');
     }
 
     public function getDynamicSEOData(): SEOData
