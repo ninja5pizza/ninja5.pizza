@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Inscription;
 use Illuminate\Database\Seeder;
+use App\Models\OrdinalsCollection;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
@@ -54,7 +55,10 @@ class PizzaNinjasSeeder extends Seeder
                 return false;
             }
 
+            $collection = OrdinalsCollection::where('slug', 'pizza-ninjas')->first();
+
             Inscription::create([
+                'collection_id' => $collection->id,
                 'inscription_id' => $inscriptionId,
                 'name' => $name,
             ]);

@@ -32,6 +32,11 @@ class Inscription extends Model
         ];
     }
 
+    public function collection(): BelongsTo
+    {
+        return $this->belongsTo(OrdinalsCollection::class, 'collection_id');
+    }
+
     public function children(): HasMany
     {
         return $this->hasMany(Inscription::class, 'parent_id', 'id');
