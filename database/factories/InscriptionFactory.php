@@ -16,7 +16,6 @@ class InscriptionFactory extends Factory
             'name' => 'Pizza Ninjas #1',
             'inscription_id' => '9ad43b591e58b23d8550dfdae431432b6ea3a7079d09ef80ee1554c5a3f8d543i0',
             'created_at' => now(),
-            'updated_at' => now(),
         ];
     }
 }

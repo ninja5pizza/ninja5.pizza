@@ -20,6 +20,8 @@ class Inscription extends Model
 {
     use HasBtcLoongArt, HasFactory, HasJasmineArt, HasMcaChefArt, HasMoodzAnimations, HasSEO;
 
+    const UPDATED_AT = null;
+
     protected $fillable = [
         'inscription_id',
         'name',
