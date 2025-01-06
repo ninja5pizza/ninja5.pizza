@@ -22,13 +22,11 @@ class BlockHeightController extends Controller
             ])
             ->transform(function ($item) {
                 if (isset($item['time'])) {
-                    $datetime = Carbon::parse($item['time']);
-                    $item['time'] = $datetime->timestamp;
+                    $item['time'] = Carbon::parse($item['time'])->timestamp;
                 }
-
                 return $item;
             })
-            ->toJson();
+            ->toArray();
 
         return response()->json($data);
     }
