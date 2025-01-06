@@ -20,9 +20,9 @@ class BlockHeightController extends Controller
                 'height',
                 'time',
             ])
-            ->transform(function ($item) {
-                if (isset($item['time'])) {
-                    $item['time'] = Carbon::parse($item['time'])->timestamp;
+            ->map(function ($item, $key) {
+                if ($key === 'time') {
+                    $item = Carbon::parse($item)->timestamp;
                 }
                 return $item;
             })
