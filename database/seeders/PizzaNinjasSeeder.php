@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Inscription;
-use Illuminate\Database\Seeder;
 use App\Models\OrdinalsCollection;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
