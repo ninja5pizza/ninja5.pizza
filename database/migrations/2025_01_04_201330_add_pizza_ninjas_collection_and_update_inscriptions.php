@@ -30,9 +30,9 @@ return new class extends Migration
         }
 
         DB::table('inscriptions')->where('collection_id', $collection->id)->update([
-            'collection_id' => null
+            'collection_id' => null,
         ]);
 
-         DB::table('collections')->where('id', $collection->id)->delete();
+        DB::table('collections')->where('id', $collection->id)->delete();
     }
 };
