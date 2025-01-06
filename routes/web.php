@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BlockHeightController;
 use App\Http\Controllers\Api\ChartController;
 use App\Http\Controllers\Api\StatsController;
 use App\Http\Controllers\CollectionController;
@@ -51,6 +52,9 @@ Route::get(
     ->name('download-pfp');
 
 Route::post('/search', SearchController::class)->name('search');
+
+Route::get('/api/blockheight', BlockHeightController::class)
+    ->middleware('throttle:60,1');
 
 Route::get('/api/chart/pizza-pets', [ChartController::class, 'pizza_pets'])
     ->middleware('throttle:60,1');
