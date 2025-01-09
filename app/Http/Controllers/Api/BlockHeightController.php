@@ -24,6 +24,7 @@ class BlockHeightController extends Controller
                 if ($key === 'time') {
                     $item = Carbon::parse($item)->timestamp;
                 }
+
                 return $item;
             })
             ->toArray();
