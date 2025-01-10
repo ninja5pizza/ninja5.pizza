@@ -21,6 +21,7 @@
 
         <main class="flex flex-col md:flex-row my-12">
             @foreach($inscriptions as $inscription)
+                <span class="invisible">{{ $inscription->name }}</span>
                 @if($ninja5->fullSvgExistsForNumber($inscription->getInternalCollectionId()))
                 <div class="w-full flex justify-center border-b border-orange-700">
                     <a href="{{ route('inscription', $inscription) }}">
