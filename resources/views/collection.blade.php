@@ -23,7 +23,10 @@
             @foreach($inscriptions as $inscription)
             <div class="w-full flex justify-center border-b border-orange-700">
                 <a href="{{ route('inscription', $inscription) }}">
-                    @svg('ninjas.'.$inscription->getInternalCollectionId(), 'w-96 h-96 md:w-80 md:h-80')
+                    @svg('ninjas.'.$inscription->getInternalCollectionId(), [
+                        'title' => $inscription->name,
+                        'class' => 'w-96 h-96 md:w-80 md:h-80',
+                    ])
                 </a>
             </div>
             @endforeach
