@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Marslander>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Inscription>
  */
 class InscriptionFactory extends Factory
 {
@@ -13,8 +13,17 @@ class InscriptionFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->name,
-            'inscription_id' => '9ad43b591e58b23d8550dfdae431432b6ea3a7079d09ef80ee1554c5a3f8d543i0',
+            'inscription_id' => $this->generateOrdinalsInscriptionId(),
             'created_at' => now(),
         ];
+    }
+
+    private function generateOrdinalsInscriptionId(): string
+    {
+        $txid = $this->faker->regexify('[a-f0-9]{64}');
+
+        $index = $this->faker->numberBetween(0, 9);
+
+        return $txid.'i'.$index;
     }
 }
