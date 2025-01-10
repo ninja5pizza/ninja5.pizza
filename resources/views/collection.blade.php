@@ -21,14 +21,16 @@
 
         <main class="flex flex-col md:flex-row my-12">
             @foreach($inscriptions as $inscription)
-            <div class="w-full flex justify-center border-b border-orange-700">
-                <a href="{{ route('inscription', $inscription) }}">
-                    @svg('ninjas.'.$inscription->getInternalCollectionId(), [
-                        'title' => $inscription->name,
-                        'class' => 'w-96 h-96 md:w-80 md:h-80',
-                    ])
-                </a>
-            </div>
+                @if($ninja5->fullSvgExistsForNumber($inscription->getInternalCollectionId()))
+                <div class="w-full flex justify-center border-b border-orange-700">
+                    <a href="{{ route('inscription', $inscription) }}">
+                        @svg('ninjas.'.$inscription->getInternalCollectionId(), [
+                            'title' => $inscription->name,
+                            'class' => 'w-96 h-96 md:w-80 md:h-80',
+                        ])
+                    </a>
+                </div>
+                @endif
             @endforeach
         </main>
 
