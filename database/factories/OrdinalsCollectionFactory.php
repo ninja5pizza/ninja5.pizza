@@ -9,9 +9,8 @@ class OrdinalsCollectionFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => 1,
-            'name' => 'Pizza Ninjas',
-            'slug' => 'pizza-ninjas',
+            'name' => $this->faker->unique()->name,
+            'slug' => $this->faker->unique()->slug,
         ];
     }
 }
