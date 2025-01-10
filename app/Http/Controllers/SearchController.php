@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inscription;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -21,7 +22,10 @@ class SearchController extends Controller
 
         $query = Str::of($validated['query'])->after('#')->toString();
 
-        $inscription = Inscription::where('name', 'LIKE', "%#{$query}")
+        $inscription = Inscription::whereHas('collection', function (Builder $query) {
+            $query->where('slug', 'pizza-ninjas');
+        })
+            ->where('name', 'LIKE', "%#{$query}")
             ->orWhere('inscription_id', $query)
             ->orderBy('name')
             ->first();
