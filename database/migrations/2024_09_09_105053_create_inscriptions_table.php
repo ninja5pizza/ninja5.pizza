@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('inscription_id')->unique();
             $table->string('name')->nullable();
             $table->json('meta')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at');
         });
     }
 
