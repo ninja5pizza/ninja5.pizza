@@ -20,13 +20,13 @@ class SearchController extends Controller
             ],
         ]);
 
-        $query = Str::of($validated['query'])->after('#')->toString();
+        $searchQuery = Str::of($validated['query'])->after('#')->toString();
 
-        $inscription = Inscription::whereHas('collection', function (Builder $query) {
-            $query->where('slug', 'pizza-ninjas');
-        })
-            ->where('name', 'LIKE', "%#{$query}")
-            ->orWhere('inscription_id', $query)
+        $inscription = Inscription::whereRelation('collection', 'slug', 'pizza-ninjas')
+            ->where(function (Builder $query) use ($searchQuery) {
+                $query->where('name', 'LIKE', "%#{$searchQuery}")
+                    ->orWhere('inscription_id', $searchQuery);
+            })
             ->orderBy('name')
             ->first();
 
