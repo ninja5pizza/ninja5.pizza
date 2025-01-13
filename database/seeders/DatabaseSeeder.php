@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             OrdinalsCollectionSeeder::class,
             PizzaNinjasSeeder::class,
+            PizzaPetsPulverizerSeeder::class,
         ]);
     }
 }
