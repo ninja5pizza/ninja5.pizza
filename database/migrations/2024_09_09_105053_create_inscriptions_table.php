@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('inscription_id')->unique();
             $table->string('name')->nullable();
             $table->json('meta')->nullable();
+            $table->unsignedMediumInteger('created_at_block')->nullable();
             $table->timestamp('created_at');
         });
     }
