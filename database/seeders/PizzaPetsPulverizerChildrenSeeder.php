@@ -26,16 +26,16 @@ class PizzaPetsPulverizerChildrenSeeder extends Seeder
 
         Inscription::create([
             'parent_id' => $parentId,
-            'inscription_id' => '5cd56d91c845fe9905aa079c19c00dfe8e3379b876c2af484d7952e821933a45i0',
-            'created_at_block' => 877704,
-            'created_at' => Carbon::createFromTimestamp(1735946955),
+            'inscription_id' => 'ca11462aff5348d9b7590b6a0a426c0e27cd867a558ea24ba1d4eb236ff49d4di0',
+            'created_at_block' => 877861,
+            'created_at' => Carbon::createFromTimestamp(1736040221),
         ]);
 
         Inscription::create([
             'parent_id' => $parentId,
-            'inscription_id' => '8fb29b5a4c6d829905439f7a3c7ca411e8a5d32750429ca582feab2878ecc258i0',
-            'created_at_block' => 877905,
-            'created_at' => Carbon::createFromTimestamp(1736063768),
+            'inscription_id' => '8e11a2e535773629ed7afadab5dccff5ce3459d91ab44b7f614985f78c82b385i0',
+            'created_at_block' => 877909,
+            'created_at' => Carbon::createFromTimestamp(1736065478),
         ]);
     }
 
