@@ -3,13 +3,15 @@
 namespace Database\Seeders;
 
 use App\Models\Inscription;
-use Illuminate\Support\Carbon;
-use Illuminate\Database\Seeder;
 use App\Models\OrdinalsCollection;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class PizzaPetsPulverizerSeeder extends Seeder
 {
+    use WithoutModelEvents;
+
     public function run(): void
     {
         $collection = OrdinalsCollection::create([
