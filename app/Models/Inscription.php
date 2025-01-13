@@ -25,12 +25,14 @@ class Inscription extends Model
     protected $fillable = [
         'inscription_id',
         'name',
+        'created_at_block',
     ];
 
     protected function casts(): array
     {
         return [
             'meta' => 'array',
+            'created_at_block' => 'integer',
         ];
     }
 
