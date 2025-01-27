@@ -1,8 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
- svg .ninja-1 {
+@theme {
+  --font-sans: InterVariable, ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-pizza-orange: #ff5400;
+  --color-pets-orange-100: #ffd255;
+  --color-pets-orange-200: #ffbe46;
+  --color-pets-orange-300: #ffa838;
+  --color-pets-orange-400: #ff952b;
+  --color-pets-orange-500: #ff7c1b;
+  --color-pets-orange-600: #ff690f;
+  --color-material-theme-ocean: #0f111a;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+svg .ninja-1 {
     fill: transparent;
     -webkit-transition: fill 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.8s;
             transition: fill 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.8s;
