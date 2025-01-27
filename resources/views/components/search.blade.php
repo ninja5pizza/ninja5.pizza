@@ -19,7 +19,7 @@
                 required
             />
         </div>
-        <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-orange-700 rounded-lg border border-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300">
+        <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-orange-700 rounded-lg border border-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-hidden focus:ring-orange-300">
             <x-icon-search class="w-4 h-4 text-neutral-100" aria-hidden="true"/>
             <span class="sr-only">Search</span>
         </button>

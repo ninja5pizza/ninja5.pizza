@@ -1,4 +1,4 @@
-<div class="min-w-48 overflow-hidden rounded-lg bg-white shadow">
+<div class="min-w-48 overflow-hidden rounded-lg bg-white shadow-sm">
     <div class="bg-neutral-600 px-2 py-1 sm:px-4 text-sm text-neutral-100 font-medium">
         {{ $traitType }}
     </div>
