@@ -127,6 +127,12 @@ return [
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i39',
         ],
 
+        'edmond_dantes_j' => [
+            'twitter_name' => 'mercedes',
+            'pizza_ninjas_number' => 399,
+            'inscription_id' => '6a74748d2df24b852ccaade43b27dfd12bd887755f3a9436838141209dce43fai58',
+        ],
+
         'EricNelson' => [
             'twitter_name' => 'Blessed',
             'pizza_ninjas_number' => 424,
@@ -239,6 +245,12 @@ return [
             'twitter_name' => 'trevor.btc',
             'pizza_ninjas_number' => 184,
             'inscription_id' => '38a8d63382d89ac6e52bc1e47b27ceb501bb66637575006762499fee00ad4f31i20',
+        ],
+
+        'tttolley87' => [
+            'twitter_name' => 'El Gato / OP639',
+            'pizza_ninjas_number' => 292,
+            'inscription_id' => '650fe4b0abc458836ef869906afbed7c306b1f948a4b3e9412812a7f83900033i110',
         ],
 
         'yafeelmi1st' => [
