@@ -3,11 +3,10 @@
 namespace App\View\Components;
 
 use App\Models\PizzaNinja;
-use App\Models\Inscription;
-use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\View\Component;
 
 class RandomNinjas extends Component
 {
