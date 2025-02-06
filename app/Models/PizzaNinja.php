@@ -2,14 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class PizzaNinja extends Inscription
 {
     protected $table = 'inscriptions';
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('pizzaNinjasCollection', function (Builder $builder) {
+            $builder->whereHas('collection', function ($query) {
+                $query->where('slug', 'pizza-ninjas');
+            });
+        });
+    }
 
     public function getDynamicSEOData(): SEOData
     {
