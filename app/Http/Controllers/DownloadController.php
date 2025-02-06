@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inscription;
+use App\Models\PizzaNinja;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -23,7 +23,7 @@ class DownloadController extends Controller
         'wallpaper_2160_3840',
     ];
 
-    public function __invoke(Inscription $inscription, string $format)
+    public function __invoke(PizzaNinja $inscription, string $format)
     {
         $this->boot($inscription, $format);
 
@@ -43,21 +43,21 @@ class DownloadController extends Controller
         }
     }
 
-    private function boot(Inscription $inscription, string $format): void
+    private function boot(PizzaNinja $inscription, string $format): void
     {
         $this->file_name = $this->getFileName($inscription, $format);
         $this->cloudflare_path = $this->getCloudflarePath($inscription, $format);
         $this->download_file_name = $this->getDownloadFileName($inscription, $format);
     }
 
-    private function getFileName(Inscription $inscription, string $format): string
+    private function getFileName(PizzaNinja $inscription, string $format): string
     {
         return Str::of($inscription->getInternalCollectionId())
             ->append('.'.$format)
             ->toString();
     }
 
-    private function getCloudflarePath(Inscription $inscription, string $format): string
+    private function getCloudflarePath(PizzaNinja $inscription, string $format): string
     {
         if (Str::startsWith($format, 'wallpaper_')) {
             $dimensions = Str::after($format, 'wallpaper_');
@@ -79,7 +79,7 @@ class DownloadController extends Controller
             ->toString();
     }
 
-    private function getDownloadFileName(Inscription $inscription, string $format): string
+    private function getDownloadFileName(PizzaNinja $inscription, string $format): string
     {
         if (Str::startsWith($format, 'wallpaper_')) {
             return Str::of($inscription->name)
