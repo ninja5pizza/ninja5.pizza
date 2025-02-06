@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inscription;
+use App\Models\PizzaNinja;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
@@ -18,7 +18,7 @@ class ProfileController extends Controller
 
         $inscription_id = collect($ninja)->get('inscription_id');
 
-        $inscription = Inscription::where(
+        $inscription = PizzaNinja::where(
             'inscription_id',
             $inscription_id
         )->firstOrFail();
