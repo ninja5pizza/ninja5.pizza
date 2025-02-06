@@ -22,8 +22,7 @@ class SearchController extends Controller
 
         $searchQuery = Str::of($validated['query'])->after('#')->toString();
 
-        $inscription = PizzaNinja::whereRelation('collection', 'slug', 'pizza-ninjas')
-            ->where(function (Builder $query) use ($searchQuery) {
+        $inscription = PizzaNinja::where(function (Builder $query) use ($searchQuery) {
                 $query->where('name', 'LIKE', "%#{$searchQuery}")
                     ->orWhere('inscription_id', $searchQuery);
             })

@@ -14,10 +14,7 @@ class RandomNinjas extends Component
 
     public function __construct()
     {
-        $this->records = PizzaNinja::whereHas('collection', function (Builder $query) {
-            $query->where('slug', 'pizza-ninjas');
-        })
-            ->inRandomOrder()
+        $this->records = PizzaNinja::inRandomOrder()
             ->limit(5)
             ->get();
     }

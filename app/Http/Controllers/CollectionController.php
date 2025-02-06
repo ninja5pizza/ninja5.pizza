@@ -10,10 +10,7 @@ class CollectionController extends Controller
 {
     public function __invoke(): View
     {
-        $inscriptions = PizzaNinja::whereHas('collection', function (Builder $query) {
-            $query->where('slug', 'pizza-ninjas');
-        })
-            ->orderBy('name')
+        $inscriptions = PizzaNinja::orderBy('name')
             ->paginate(5);
 
         return view('collection', [
