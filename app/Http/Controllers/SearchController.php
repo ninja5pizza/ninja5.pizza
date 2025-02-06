@@ -23,9 +23,9 @@ class SearchController extends Controller
         $searchQuery = Str::of($validated['query'])->after('#')->toString();
 
         $inscription = PizzaNinja::where(function (Builder $query) use ($searchQuery) {
-                $query->where('name', 'LIKE', "%#{$searchQuery}")
-                    ->orWhere('inscription_id', $searchQuery);
-            })
+            $query->where('name', 'LIKE', "%#{$searchQuery}")
+                ->orWhere('inscription_id', $searchQuery);
+        })
             ->orderBy('name')
             ->first();
 

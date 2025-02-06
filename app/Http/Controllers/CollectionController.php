@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\PizzaNinja;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
 
 class CollectionController extends Controller
