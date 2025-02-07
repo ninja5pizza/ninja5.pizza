@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inscription;
+use App\Models\PizzaNinja;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -22,11 +22,10 @@ class SearchController extends Controller
 
         $searchQuery = Str::of($validated['query'])->after('#')->toString();
 
-        $inscription = Inscription::whereRelation('collection', 'slug', 'pizza-ninjas')
-            ->where(function (Builder $query) use ($searchQuery) {
-                $query->where('name', 'LIKE', "%#{$searchQuery}")
-                    ->orWhere('inscription_id', $searchQuery);
-            })
+        $inscription = PizzaNinja::where(function (Builder $query) use ($searchQuery) {
+            $query->where('name', 'LIKE', "%#{$searchQuery}")
+                ->orWhere('inscription_id', $searchQuery);
+        })
             ->orderBy('name')
             ->first();
 
