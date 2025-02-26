@@ -5,17 +5,17 @@
     "keywords": ["ninja", "5", "five", "pizza", "ninjas"],
     "require": {
         "php": "^8.3",
-        "blade-ui-kit/blade-icons": "^1.7",
-        "laravel/framework": "^11.41",
+        "blade-ui-kit/blade-icons": "^1.8",
+        "laravel/framework": "^12.0",
         "laravel/horizon": "^5.30",
         "laravel/tinker": "^2.10",
         "league/flysystem-aws-s3-v3": "^3.0",
         "league/flysystem-read-only": "^3.0",
-        "ralphjsmit/laravel-seo": "^1.6"
+        "ralphjsmit/laravel-seo": "^1.7"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",
-        "laravel/pint": "^1.20",
+        "laravel/pint": "^1.21",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "phpunit/phpunit": "^11.5"
