@@ -12,12 +12,17 @@ use App\Http\Controllers\PizzaNinjaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
+use App\Models\PizzaNinja;
 
 Route::get('/', HomepageController::class)
     ->name('home');
 
 Route::get('/collection', CollectionController::class)
     ->name('collection');
+
+Route::get('/collection/{tribe}', [CollectionController::class, 'tribe'])
+    ->whereIn('tribe', (new PizzaNinja())->tribes()->keys()->all())
+    ->name('collection.tribe');
 
 Route::get('/{id}', function (int $id) {
     if ($id > 0 && $id <= 1500) {

@@ -12,6 +12,16 @@ class PizzaNinja extends Inscription
 {
     protected $table = 'inscriptions';
 
+    protected array $tribes = [
+        'cats' => 'cat-head_',
+        'frogs' => 'frog-head_',
+    ];
+
+    public function tribes(): Collection
+    {
+        return new Collection($this->tribes);
+    }
+
     protected static function boot()
     {
         parent::boot();
@@ -46,6 +56,11 @@ class PizzaNinja extends Inscription
         }
 
         return false;
+    }
+
+    public function fullSvgExistsForNumber(int $number): bool
+    {
+        return Storage::disk('ninjas')->exists($number.'.svg');
     }
 
     public function getInternalCollectionId(): int
