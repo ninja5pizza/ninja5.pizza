@@ -15,9 +15,12 @@ class PizzaNinja extends Inscription
     protected array $tribes = [
         'cats' => 'cat-head_',
         'frogs' => 'frog-head_',
+        'hooded' => 'hooded-head_',
+        'monomi' => 'monomi-head_',
         'ninjalerts' => 'ninjalerts-head_',
         'pepe' => 'pepe-head_',
         'turtles' => 'turtles-head_',
+        'tv' => 'tv-head_',
     ];
 
     public function tribes(): Collection
