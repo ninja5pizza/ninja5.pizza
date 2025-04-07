@@ -50,7 +50,7 @@
                         value="{{ route('collection.tribe', $key) }}"
                         {{ ($current_tribe ?? '') === $key ? 'selected' : '' }}
                     >
-                        Ninja {{ ucfirst($key) }}
+                        {{ ucfirst($key) }}
                     </option>
                 @endforeach
             </select>
