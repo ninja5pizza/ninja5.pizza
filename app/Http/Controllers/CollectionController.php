@@ -22,10 +22,7 @@ class CollectionController extends Controller
         $tribes = (new PizzaNinja())->tribes();
 
         $inscriptions = PizzaNinja::query()
-            ->whereRaw(
-                'EXISTS (SELECT 1 FROM JSON_TABLE(meta, "$[*]" COLUMNS(trait VARCHAR(255) PATH "$.trait")) as jt WHERE jt.trait LIKE ?)',
-                [$tribes->get($tribe) . '%']
-            )
+            ->where('meta', 'LIKE', '%' . $tribes->get($tribe) . '%')
             ->orderBy('name')
             ->paginate(5);
 
