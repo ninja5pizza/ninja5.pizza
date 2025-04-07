@@ -14,6 +14,7 @@ class CollectionController extends Controller
 
         return view('collection', [
             'inscriptions' => $inscriptions,
+            'tribes' => (new PizzaNinja())->tribes(),
         ]);
     }
 
