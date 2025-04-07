@@ -20,14 +20,17 @@ class CollectionController extends Controller
     public function tribe(string $tribe): View
     {
         $tribes = (new PizzaNinja())->tribes();
+        $current_tribe = $tribes->get($tribe);
 
         $inscriptions = PizzaNinja::query()
-            ->where('meta', 'LIKE', '%' . $tribes->get($tribe) . '%')
+            ->where('meta', 'LIKE', '%' . $current_tribe . '%')
             ->orderBy('name')
             ->paginate(5);
 
         return view('collection', [
             'inscriptions' => $inscriptions,
+            'tribes' => $tribes,
+            'current_tribe' => $tribe,
         ]);
     }
 }

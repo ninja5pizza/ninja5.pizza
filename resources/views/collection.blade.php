@@ -39,6 +39,23 @@
             {{ $inscriptions->onEachSide(5)->links() }}
         </section>
 
+        <div class="container mx-auto px-4 mt-8 mb-12 text-center">
+            <select
+                class="bg-white text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                onchange="window.location.href=this.value"
+            >
+                <option value="{{ route('collection') }}">All Ninjas</option>
+                @foreach($tribes as $key => $value)
+                    <option
+                        value="{{ route('collection.tribe', $key) }}"
+                        {{ ($current_tribe ?? '') === $key ? 'selected' : '' }}
+                    >
+                        Ninja {{ ucfirst($key) }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
         <x-layout.footer/>
     </body>
 </html>
