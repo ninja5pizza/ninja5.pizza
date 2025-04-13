@@ -129,12 +129,12 @@ class PizzaNinja extends Inscription
     {
         $rawString = $this->getRawTraitForInscriptionId($id);
 
-        return Str::of($rawString)->split('/\__+/')->map(function ($item) {
+        return Str::of($rawString)->split('/\__+/')->map(function (string $item): string {
             return Str::of($item)->headline();
         });
     }
 
-    public function getTraitTypeForInscriptionId(string $id, $upper = true): string
+    public function getTraitTypeForInscriptionId(string $id, bool $upper = true): string
     {
         $trait = (new Collection($this->meta))
             ->where('id', $id)
