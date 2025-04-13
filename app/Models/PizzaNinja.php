@@ -55,13 +55,9 @@ class PizzaNinja extends Inscription
 
     public function fullSvgExists(): bool
     {
-        if (Storage::disk('ninjas')->exists(
+        return Storage::disk('ninjas')->exists(
             $this->getInternalCollectionId().'.svg'
-        )) {
-            return true;
-        }
-
-        return false;
+        );
     }
 
     public function fullSvgExistsForNumber(int $number): bool
