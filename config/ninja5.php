@@ -79,7 +79,7 @@ return [
             'inscription_id' => 'fd9e4f52b0017d11e5e0541c252505a62b8d89a3412cfeca584aadedffe2d77bi10',
         ],
 
-        'Agent_Keyway' => [
+        'MrKeyway' => [
             'twitter_name' => 'Keyway',
             'pizza_ninjas_number' => 501,
             'inscription_id' => '9f9b2c8ffa7c6ceb2ee820ad4dec998fe94a4b338162b29d5267b240f98abbabi0',
