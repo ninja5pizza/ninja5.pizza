@@ -6,17 +6,17 @@
     "require": {
         "php": "^8.3",
         "blade-ui-kit/blade-icons": "^1.8",
-        "laravel/framework": "^12.15",
-        "laravel/horizon": "^5.32",
+        "laravel/framework": "^12.21",
+        "laravel/horizon": "^5.33",
         "laravel/tinker": "^2.10",
         "league/flysystem-aws-s3-v3": "^3.0",
         "league/flysystem-read-only": "^3.0",
         "ralphjsmit/laravel-seo": "^1.7"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.15",
+        "barryvdh/laravel-debugbar": "^3.16",
         "fakerphp/faker": "^1.24",
-        "laravel/pint": "^1.22",
+        "laravel/pint": "^1.24",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.8",
         "phpunit/phpunit": "^11.5"
