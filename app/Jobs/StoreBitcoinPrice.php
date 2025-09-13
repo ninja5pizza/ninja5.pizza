@@ -32,7 +32,7 @@ class StoreBitcoinPrice implements ShouldQueue
                 'currency' => Str::upper($currency),
                 'created_at' => $this->getTimestamp(),
             ], [
-                'price' => round($price, 2),
+                'price' => $price,
             ]);
         }
     }
