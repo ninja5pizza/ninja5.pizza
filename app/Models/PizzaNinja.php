@@ -10,7 +10,7 @@ use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class PizzaNinja extends Inscription
 {
-    protected $table = 'inscriptions';
+    protected $table = 'ninja5_inscriptions';
 
     protected array $tribes = [
         'cats' => 'cat-head_',
