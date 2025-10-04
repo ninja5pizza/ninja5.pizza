@@ -16,6 +16,8 @@ class Inscription extends Model
 {
     use HasBtcLoongArt, HasFactory, HasJasmineArt, HasMcaChefArt, HasMoodzAnimations, HasSEO;
 
+    protected $table = 'ninja5_inscriptions';
+
     const UPDATED_AT = null;
 
     protected $fillable = [
