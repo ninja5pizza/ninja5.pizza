@@ -7,14 +7,14 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "^4.1.13",
-        "@vitejs/plugin-vue": "^6.0.1",
-        "axios": "^1.12.1",
+        "@tailwindcss/postcss": "^4.1.17",
+        "@vitejs/plugin-vue": "^6.0.2",
+        "axios": "^1.13.2",
         "laravel-vite-plugin": "^2.0.1",
-        "lightweight-charts": "^5.0.8",
-        "shiki": "^3.12.2",
-        "tailwindcss": "^4.1.13",
-        "vite": "^7.1.5",
-        "vue": "^3.5.21"
+        "lightweight-charts": "^5.0.9",
+        "shiki": "^3.19.0",
+        "tailwindcss": "^4.1.17",
+        "vite": "^7.2.6",
+        "vue": "^3.5.25"
     }
 }
