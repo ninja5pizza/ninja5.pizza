@@ -77,7 +77,9 @@ class PizzaNinja extends Inscription
     {
         return (new Collection(
             $this->meta
-        ))->count();
+        ))
+            ->reject(fn ($trait) => $trait['id'] === 'non-visual')
+            ->count();
     }
 
     public function getSvgComponentsTotalFileSize(): int
@@ -102,7 +104,9 @@ class PizzaNinja extends Inscription
     {
         return (new Collection(
             $this->meta
-        ))->pluck('id');
+        ))
+            ->reject(fn ($trait) => $trait['id'] === 'non-visual')
+            ->pluck('id');
     }
 
     public function getConfigForInscriptionId(string $id): array

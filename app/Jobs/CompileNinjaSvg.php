@@ -2,12 +2,12 @@
 
 namespace App\Jobs;
 
-use App\Models\Inscription;
-use App\View\Components\NinjaSvgComponent;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Queue\Queueable;
-use Illuminate\Support\Facades\Storage;
+use App\Models\PizzaNinja;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use App\View\Components\NinjaSvgComponent;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class CompileNinjaSvg implements ShouldQueue
 {
@@ -18,7 +18,7 @@ class CompileNinjaSvg implements ShouldQueue
     public string $content = '';
 
     public function __construct(
-        public Inscription $inscription,
+        public PizzaNinja $inscription,
         public bool $overwrite = false,
     ) {
         $this->file_name = $this->inscription->getInternalCollectionId().'.svg';

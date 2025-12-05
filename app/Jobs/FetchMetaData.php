@@ -32,7 +32,7 @@ class FetchMetaData implements ShouldQueue
         $response = Http::withHeaders([
             'Accept-Encoding' => 'gzip, deflate, br, zstd',
         ])
-            ->withOptions(['decode_content' => false])
+            // ->withOptions(['decode_content' => false])
             ->get($this->url);
 
         if (! $response->successful()) {
@@ -69,16 +69,44 @@ class FetchMetaData implements ShouldQueue
 
     protected function extractJsonFromHtml(string $html): ?string
     {
+        // First, try to extract from const metadata = [...]
+        $metadataPattern = '/const\s+metadata\s*=\s*(\[[\s\S]*?\]);/';
+
+        $metadataMatch = Str::of($html)
+            ->match($metadataPattern)
+            ->trim(' \t\n\r\0\x0B,;');
+
+        if ($metadataMatch->isNotEmpty()) {
+            $json = $this->convertJavaScriptToJson($metadataMatch->toString());
+
+            if (json_decode($json) !== null) {
+                return $json;
+            }
+        }
+
+        // Try existing pattern: Ninja.load(...)
         $pattern = '/Ninja\.load\((.*?)\)/s';
 
-        preg_match($pattern, $html, $matches);
+        $match = Str::of($html)
+            ->match($pattern)
+            ->trim(' \t\n\r\0\x0B,');
 
-        if (! empty($matches[1])) {
-            $jsonString = trim($matches[1], " \t\n\r\0\x0B,");
-
-            return $jsonString;
+        if ($match->isJson()) {
+            return $match->toString();
         }
 
         return null;
+    }
+
+    protected function convertJavaScriptToJson(string $javascript): string
+    {
+        return Str::of($javascript)
+            // Replace single quotes with double quotes
+            ->replace("'", '"')
+            // Add quotes around unquoted keys (word followed by colon)
+            ->replaceMatches('/(\w+):\s/', '"$1": ')
+            // Remove trailing commas before closing brackets/braces
+            ->replaceMatches('/,(\s*[}\]])/', '$1')
+            ->toString();
     }
 }

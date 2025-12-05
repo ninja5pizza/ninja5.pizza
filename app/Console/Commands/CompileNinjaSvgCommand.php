@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Jobs\CompileNinjaSvg;
-use App\Models\Inscription;
+use App\Models\PizzaNinja;
 use Illuminate\Console\Command;
 
 class CompileNinjaSvgCommand extends Command
@@ -30,7 +30,7 @@ class CompileNinjaSvgCommand extends Command
             return Command::INVALID;
         }
 
-        $inscription = Inscription::where('name', 'LIKE', "%#{$id}")
+        $inscription = PizzaNinja::where('name', 'LIKE', "%#{$id}")
             ->orWhere('inscription_id', $id)
             ->orderBy('name')
             ->first();
@@ -56,7 +56,7 @@ class CompileNinjaSvgCommand extends Command
 
     protected function compileAllNinjas(): void
     {
-        foreach (Inscription::whereNotNull('inscription_id')->whereNotNull('meta')->get() as $inscription) {
+        foreach (PizzaNinja::whereNotNull('inscription_id')->whereNotNull('meta')->get() as $inscription) {
             CompileNinjaSvg::dispatch($inscription, $this->option('force'));
         }
     }

@@ -10,6 +10,8 @@ use Illuminate\View\Component;
 
 class NinjaSvgComponent extends Component implements Htmlable
 {
+    private string $backgroundColor = '#FF5400';
+
     private string $innerSvgContent = '';
 
     private string $styleElement = '';
@@ -41,6 +43,8 @@ class NinjaSvgComponent extends Component implements Htmlable
         $this->replacePlaceholders();
 
         $this->removeClassAttributesFromInnerSvg();
+
+        $this->removeDefaultOpacityValues();
     }
 
     protected function extractStyleElement(): void
@@ -184,6 +188,15 @@ class NinjaSvgComponent extends Component implements Htmlable
         );
     }
 
+    protected function removeDefaultOpacityValues(): void
+    {
+        $this->innerSvgContent = Str::replaceMatches(
+            pattern: '/ opacity=["\']1(?:\.0+)?["\']/i',
+            replace: fn () => '',
+            subject: $this->innerSvgContent
+        );
+    }
+
     protected function replacePlaceholders(): void
     {
         $this->placeholders->each(function ($value, $placeholder) {
@@ -218,7 +231,7 @@ class NinjaSvgComponent extends Component implements Htmlable
 
     public function backgroundRectangle(): string
     {
-        return '<rect x="0" y="0" width="1000" height="1000" fill="#FF5400"/>'.PHP_EOL;
+        return '<rect x="0" y="0" width="1000" height="1000" fill="'.$this->backgroundColor.'"/>'.PHP_EOL;
     }
 
     public function innerSvgContent(): string

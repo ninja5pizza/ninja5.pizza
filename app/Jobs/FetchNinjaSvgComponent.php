@@ -39,13 +39,13 @@ class FetchNinjaSvgComponent implements ShouldQueue
         }
 
         $response = Http::withHeaders([
-            'Accept-Encoding' => 'gzip, deflate, br, zstd',
+            'Accept-Encoding' => 'gzip, deflate, zstd',
         ])
-            ->withOptions(['decode_content' => false])
+            // ->withOptions(['decode_content' => false])
             ->get($this->url);
 
         if (! $response->successful()) {
-            throw new Exception('HTTP Request failed with status: '.$response->status());
+            throw new Exception('HTTP Request failed with status: '.$response->status().' Inscription ID: '.$this->inscription_id);
         }
 
         if ($response->header('Content-Type') !== 'image/svg+xml') {
@@ -55,7 +55,11 @@ class FetchNinjaSvgComponent implements ShouldQueue
         if ($response->successful()) {
             Storage::disk('ninja_components')->put(
                 $this->file_name,
-                $response->body()
+                Str::of($response->body())
+                    ->remove('<?xml version="1.0" encoding="UTF-8" ?>')
+                    ->remove('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">')
+                    ->trim()
+                    ->toString()
             );
         }
     }

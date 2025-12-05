@@ -85,7 +85,9 @@ class FetchNinjaSvgComponentCommand extends Command
             ->get()
             ->pluck('meta')
             ->flatMap(function (array $item) {
-                return collect($item)->pluck('id');
+                return collect($item)
+                    ->reject(fn ($trait) => $trait['id'] === 'non-visual')
+                    ->pluck('id');
             })
             ->unique()
             ->each(function ($inscription_id) {
