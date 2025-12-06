@@ -60,7 +60,7 @@
                                         <a
                                             aria-label="View this Ninja in fullscreen mode"
                                             class="text-orange-200 hover:text-orange-100"
-                                            href="{{ Str::of('https://ordiscan.com/content/')->append($inscription->inscription_id) }}"
+                                            href="{{ Str::of('https://pizza.ninja/content/')->append($inscription->inscription_id) }}"
                                             rel="noopener"
                                             target="_blank"
                                         >
