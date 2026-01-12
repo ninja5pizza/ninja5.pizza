@@ -42,6 +42,7 @@ class PizzaNinja extends Inscription
     public function getDynamicSEOData(): SEOData
     {
         return new SEOData(
+            canonical_url: Str::of('https://pizza.ninja/inscription/')->append($this->inscription_id),
             title: $this->name.' | '.config('app.name'),
             description: 'This is '.$this->name.' on Bitcoin Ordinals!',
             image: cdn_asset(
@@ -49,7 +50,7 @@ class PizzaNinja extends Inscription
                     ->append($this->getInternalCollectionId())
                     ->append('.webp')
             ),
-            url: Str::of('https://pizza.ninja/')->append($this->getInternalCollectionId()),
+            url: Str::of('https://pizza.ninja/inscription/')->append($this->inscription_id),
         );
     }
 
