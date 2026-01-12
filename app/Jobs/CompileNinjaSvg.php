@@ -3,11 +3,11 @@
 namespace App\Jobs;
 
 use App\Models\PizzaNinja;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
 use App\View\Components\NinjaSvgComponent;
-use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CompileNinjaSvg implements ShouldQueue
 {
