@@ -17,8 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomepageController::class)
     ->name('home');
 
-Route::get('/collection', CollectionController::class)
-    ->name('collection');
+// Route::get('/collection', CollectionController::class)
+//     ->name('collection');
+
+Route::get('/collection', function () {
+    return redirect('https://pizza.ninja/collection', 301);
+})->name('collection');
 
 Route::get('/collection/{tribe}', [CollectionController::class, 'tribe'])
     ->whereIn('tribe', (new PizzaNinja)->tribes()->keys()->all())
