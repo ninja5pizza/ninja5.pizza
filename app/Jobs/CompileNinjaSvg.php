@@ -31,6 +31,7 @@ class CompileNinjaSvg implements ShouldQueue
         }
 
         $this->compile();
+        $this->cleanupOrphanPlaceholders();
 
         if (Str::of($this->content)->isEmpty()) {
             return;
@@ -62,6 +63,13 @@ class CompileNinjaSvg implements ShouldQueue
             ->prepend($svg->backgroundRectangle())
             ->prepend($svg->openTag())
             ->append($svg->closeTag())
+            ->toString();
+    }
+
+    protected function cleanupOrphanPlaceholders(): void
+    {
+        $this->content = Str::of($this->content)
+            ->replaceMatches('/(\s*)fill="%%ST\d+%%"/', '')
             ->toString();
     }
 }
